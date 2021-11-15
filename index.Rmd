@@ -1,0 +1,18 @@
+--- 
+title: "Supplementary Materials for Gene Co-expression Network Estimation in Spatial Transcriptomics"
+author: "Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation in Spatial Transcriptomics."
+---
+
+# (APPENDIX) Supplementary Materials {-}
+# Introduction {-}
+We start with a detailed description of the methodology in section \@ref(method). In section \@ref(simulation) further details of simulation study have been discussed. Eploratory analysis and more findings of real data analysis have been laid out in section \@ref(realdata).
+
+

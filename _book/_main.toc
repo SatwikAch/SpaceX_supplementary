@@ -1,0 +1,11 @@
+\contentsline {chapter}{Introduction}{5}{appendix*.2}
+\contentsline {chapter}{\numberline {A}Methodology}{7}{appendix.A}
+\contentsline {section}{\numberline {A.1}Poisson Mixed Model}{7}{section.A.1}
+\contentsline {section}{\numberline {A.2}Multi-Study Factor Model (MSFA)}{8}{section.A.2}
+\contentsline {section}{\numberline {A.3}Multiplicative gamma shrinkage prior}{8}{section.A.3}
+\contentsline {chapter}{\numberline {B}Simulation Study}{11}{appendix.B}
+\contentsline {chapter}{\numberline {C}Real Data Analysis}{15}{appendix.C}
+\contentsline {section}{\numberline {C.1}Exploratory analysis of the datasets}{15}{section.C.1}
+\contentsline {subsection}{\numberline {C.1.1}Merfish Data}{15}{subsection.C.1.1}
+\contentsline {subsection}{\numberline {C.1.2}Breast Cancer Data}{16}{subsection.C.1.2}
+\contentsline {section}{\numberline {C.2}Community detection}{16}{section.C.2}

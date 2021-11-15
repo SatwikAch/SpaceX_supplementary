@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>B Simulation Study | Supplementary Materials for Gene Co-expression Network Estimation in Spatial Transcriptomics</title>
+  <meta name="description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation in Spatial Transcriptomics." />
+  <meta name="generator" content="bookdown 0.22.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="B Simulation Study | Supplementary Materials for Gene Co-expression Network Estimation in Spatial Transcriptomics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation in Spatial Transcriptomics." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="B Simulation Study | Supplementary Materials for Gene Co-expression Network Estimation in Spatial Transcriptomics" />
+  
+  <meta name="twitter:description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation in Spatial Transcriptomics." />
+  
+
+<meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
+
+
+<meta name="date" content="2021-10-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="methodology.html"/>
+<link rel="next" href="real-data-analysis.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Network Estimation in Spatial Transcriptomics</a></li>
+
+<li class="divider"></li>
+<li class="appendix"><span><b>Supplementary Materials</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="A" data-path="methodology.html"><a href="methodology.html"><i class="fa fa-check"></i><b>A</b> Methodology</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="methodology.html"><a href="methodology.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.1</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="A.2" data-path="methodology.html"><a href="methodology.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.2</b> Multi-Study Factor Model (MSFA)</a></li>
+<li class="chapter" data-level="A.3" data-path="methodology.html"><a href="methodology.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.3</b> Multiplicative gamma shrinkage prior</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="simulation-study.html"><a href="simulation-study.html"><i class="fa fa-check"></i><b>B</b> Simulation Study</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="simulation-study.html"><a href="simulation-study.html#induced-correlation-study"><i class="fa fa-check"></i><b>B.1</b> Induced Correlation Study</a></li>
+<li class="chapter" data-level="B.2" data-path="simulation-study.html"><a href="simulation-study.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2</b> Comparative analysis with different norm measures</a></li>
+<li class="chapter" data-level="B.3" data-path="simulation-study.html"><a href="simulation-study.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.3</b> Estimation of latent factors</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="real-data-analysis.html"><a href="real-data-analysis.html"><i class="fa fa-check"></i><b>C</b> Real Data Analysis</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="real-data-analysis.html"><a href="real-data-analysis.html#exploratory"><i class="fa fa-check"></i><b>C.1</b> Exploratory analysis of the datasets</a>
+<ul>
+<li class="chapter" data-level="C.1.1" data-path="real-data-analysis.html"><a href="real-data-analysis.html#merfish-data"><i class="fa fa-check"></i><b>C.1.1</b> Merfish Data</a></li>
+<li class="chapter" data-level="C.1.2" data-path="real-data-analysis.html"><a href="real-data-analysis.html#breast-cancer-data"><i class="fa fa-check"></i><b>C.1.2</b> Breast Cancer Data</a></li>
+</ul></li>
+<li class="chapter" data-level="C.2" data-path="real-data-analysis.html"><a href="real-data-analysis.html#communitydetection"><i class="fa fa-check"></i><b>C.2</b> Community detection</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Supplementary Materials for Gene Co-expression Network Estimation in Spatial Transcriptomics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="simulation-study" class="section level1" number="2">
+<h1><span class="header-section-number">B</span> Simulation Study</h1>
+<div id="induced-correlation-study" class="section level2" number="2.1">
+<h2><span class="header-section-number">B.1</span> Induced Correlation Study</h2>
+<p>In this section, we provide more details about the simulation study. First we consider <span class="math inline">\(3\)</span> different values of <span class="math inline">\(\rho\)</span> <span class="math inline">\((0.1,0.15,0.2)\)</span> and make a induced correlation plot by using the squared exponential spatial kernel. The plots are generented for all cell types and cell type specific cases. The vertical line denotes the value of induced correlation at the distance <span class="math inline">\(0.01\)</span>. For example the induced spatial correlations for all cell types (first figure of <a href="simulation-study.html#fig:induceCORR">B.1</a>) w.r.t. <span class="math inline">\(0.01\)</span> distance are <span class="math inline">\(0.88\)</span>, <span class="math inline">\(0.80\)</span>, <span class="math inline">\(0.61\)</span> for <span class="math inline">\(\text S_{\text High}\)</span> (<span class="math inline">\(\rho = 0.2\)</span>), <span class="math inline">\(\text S_{\text Med}\)</span> (<span class="math inline">\(\rho = 0.15\)</span>), <span class="math inline">\(\text S_{\text Low}\)</span> (<span class="math inline">\(\rho = 0.1\)</span>) methods respectively.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:induceCORR"></span>
+<img src="images/Merfish_induced_correlation_final.jpeg" alt="Induced correlation plot for the Merfish data" width="80%" />
+<p class="caption">
+Figure B.1: Induced correlation plot for the Merfish data
+</p>
+</div>
+</div>
+<div id="comparative-analysis-with-different-norm-measures" class="section level2" number="2.2">
+<h2><span class="header-section-number">B.2</span> Comparative analysis with different norm measures</h2>
+<p>We consider the simulation setting discussed in the section 3 of the manuscript. The <span class="math inline">\(5\)</span> different methods are compared w.r.t. different norms other than <strong>RV coefficent</strong> <span class="citation">(<a href="#ref-robert1976unifying" role="doc-biblioref">Robert and Escoufier 1976</a>)</span>. The <strong>RV coefficent</strong> between two matrices <span class="math inline">\(S_{1}\)</span> and <span class="math inline">\(S_{2}\)</span> is defined as <span class="math display">\[\text{RV}(S_{1},S_{2}) = \frac{ tr(  S_{1}^{T} S_{2} ) }{ \sqrt{ tr(  S_{1}^{T} S_{1} )  tr(  S_{2}^{T} S_{2} ) }  }.\]</span> We consider 4 different norms:
+I. <strong>Euclidean or Frobenius</strong>
+<span class="math display">\[
+d_{E}(S_{1},S_{2}) = \mid \mid S_{1} - S_{2} \mid \mid, 
+\]</span>
+II. <strong>Log-Euclidean</strong>
+<span class="math display">\[
+d_{L}(S_{1},S_{2}) = \mid \mid \log(S_{1}) - \log(S_{2}) \mid \mid,
+\]</span>
+III. <strong>Root Euclidean</strong>
+<span class="math display">\[
+d_{H}(S_{1},S_{2}) = \mid \mid S_{1}^{1/2} - S_{2}^{1/2} \mid \mid, 
+\]</span></p>
+<ol start="4" style="list-style-type: upper-roman">
+<li><strong>Riemanian</strong>
+<span class="math display">\[
+d_{R}(S_{1},S_{2}) = \mid \mid S_{1}^{-1/2} S_{2} S_{1}^{-1/2} \mid \mid.
+\]</span></li>
+</ol>
+<p>Figure <a href="simulation-study.html#fig:Euclid">B.2</a>, <a href="simulation-study.html#fig:RootEuclid">B.3</a>, <a href="simulation-study.html#fig:LogEuclid">B.4</a> and <a href="simulation-study.html#fig:ReiEuclid">B.5</a> are boxplot of distances between true <span class="math inline">\((\Sigma_{True})\)</span> and estimated <span class="math inline">\((\Sigma_{Est})\)</span> covariance matrices where the distances are measured in Euclidean, root Euclidean, log Euclidean and Riemanian norms <span class="citation">(<a href="#ref-dryden2009non" role="doc-biblioref">Dryden et al. 2009</a>)</span> respectively. In all the norms we observe that spatial settings are performing better in terms of estimation than the no-spatial settings. Among the spatial settings the estimation accuracy increase with an increment in induced spatial correlation.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Euclid"></span>
+<img src="images/Distance_Euclidean_plot.jpeg" alt="Boxplot of **Euclidean** distance $d_E(\Sigma_{True}, \Sigma_{Est})$ across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We compare the Euclidean distance for different method settings." width="80%" />
+<p class="caption">
+Figure B.2: Boxplot of <strong>Euclidean</strong> distance <span class="math inline">\(d_E(\Sigma_{True}, \Sigma_{Est})\)</span> across <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{l}\)</span> <span class="math inline">\((l = 1, \dots , L)\)</span>. We compare the Euclidean distance for different method settings.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:RootEuclid"></span>
+<img src="images/Root_Euclidean_plot.jpeg" alt="Boxplot of **root Euclidean** distance $d_{H}(\Sigma_{True}, \Sigma_{Est})$ across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We compare the root Euclidean distance for different method settings." width="80%" />
+<p class="caption">
+Figure B.3: Boxplot of <strong>root Euclidean</strong> distance <span class="math inline">\(d_{H}(\Sigma_{True}, \Sigma_{Est})\)</span> across <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{l}\)</span> <span class="math inline">\((l = 1, \dots , L)\)</span>. We compare the root Euclidean distance for different method settings.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:LogEuclid"></span>
+<img src="images/Log_Euclidean_plot.jpeg" alt="Boxplot of **log Euclidean** distance $d_{L}( \Sigma_{True}, \Sigma_{Est})$ across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We compare the log Euclidean distance for different method settings." width="80%" />
+<p class="caption">
+Figure B.4: Boxplot of <strong>log Euclidean</strong> distance <span class="math inline">\(d_{L}( \Sigma_{True}, \Sigma_{Est})\)</span> across <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{l}\)</span> <span class="math inline">\((l = 1, \dots , L)\)</span>. We compare the log Euclidean distance for different method settings.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ReiEuclid"></span>
+<img src="images/Rei_Euclidean_plot.jpeg" alt="Boxplot of **Riemanian** distance $d_{R}( \Sigma_{True}, \Sigma_{Est})$ across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We compare the Riemanian distance for different method settings." width="80%" />
+<p class="caption">
+Figure B.5: Boxplot of <strong>Riemanian</strong> distance <span class="math inline">\(d_{R}( \Sigma_{True}, \Sigma_{Est})\)</span> across <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{l}\)</span> <span class="math inline">\((l = 1, \dots , L)\)</span>. We compare the Riemanian distance for different method settings.
+</p>
+</div>
+</div>
+<div id="estimation-of-latent-factors" class="section level2" number="2.3">
+<h2><span class="header-section-number">B.3</span> Estimation of latent factors</h2>
+<p>We follow same procedure from section 3.3 of <span class="citation"><a href="#ref-de2018bayesian" role="doc-biblioref">De Vito et al.</a> (<a href="#ref-de2018bayesian" role="doc-biblioref">2018</a>)</span> to estimate shared and cluster specific number of factors i.e. <span class="math inline">\(K\)</span> and <span class="math inline">\(K_{c}\)</span> <span class="math inline">\((c=1,2, \dots C)\)</span>. Figure <a href="simulation-study.html#fig:factor1">B.6</a> shows shared and cluster specfic estimated factor loadings accross <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(5\)</span> different methods. Figure <a href="simulation-study.html#fig:factor2">B.7</a> shows the median estimate of shared and cluster specfic factor loadings for <span class="math inline">\(5\)</span> different methods. From both figures one can observe that spatial settings are estimating the loadings more precisely than the non-spatial settings.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:factor1"></span>
+<img src="images/Loading_Dimension_plot.jpeg" alt="Estimated dimension of factor loadings for shared and cluster specific cases accross $50$ replicates. Black solid line denotes the true dimensions." width="80%" />
+<p class="caption">
+Figure B.6: Estimated dimension of factor loadings for shared and cluster specific cases accross <span class="math inline">\(50\)</span> replicates. Black solid line denotes the true dimensions.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:factor2"></span>
+<img src="images/Median_Loading_plot.jpeg" alt="Estimated Factor loadings with credible intervals." width="80%" />
+<p class="caption">
+Figure B.7: Estimated Factor loadings with credible intervals.
+</p>
+</div>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-de2018bayesian" class="csl-entry">
+De Vito, Roberta, Ruggero Bellio, Lorenzo Trippa, and Giovanni Parmigiani. 2018. <span>“Bayesian Multi-Study Factor Analysis for High-Throughput Biological Data.”</span> <em>arXiv Preprint arXiv:1806.09896</em>.
+</div>
+<div id="ref-dryden2009non" class="csl-entry">
+Dryden, Ian L, Alexey Koloydenko, Diwei Zhou, and others. 2009. <span>“Non-Euclidean Statistics for Covariance Matrices, with Applications to Diffusion Tensor Imaging.”</span> <em>The Annals of Applied Statistics</em> 3 (3): 1102–23.
+</div>
+<div id="ref-robert1976unifying" class="csl-entry">
+Robert, Paul, and Yves Escoufier. 1976. <span>“A Unifying Tool for Linear Multivariate Statistical Methods: The RV-Coefficient.”</span> <em>Journal of the Royal Statistical Society: Series C (Applied Statistics)</em> 25 (3): 257–65.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="methodology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="real-data-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-Simulation-study.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

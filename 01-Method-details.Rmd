@@ -1,11 +1,56 @@
-# Methodology
+# Methodology {#method}
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
+In this section, we provide a detailed discussion of the estimation procedure for the SpaceX model equation 1 in section 2.1 of the paper. A full-scale MCMC will be computationally expensive on a complex hierarchical model. For computational advantage, we decompose the model into two parts (I) sPMM: spatial Poisson mixed model [@sun2017differential] and (II) MSFA: Multi-study factor analysis model [@de2018bayesian]. We enable this model decomposition through a standard Gaussian random variable.
 
-## A section
+## Poisson Mixed Model
 
-All chapter sections start with a second-level (`##`) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+We can break the SpaceX model and write the spatial Poisson mixed model as
 
-### An unnumbered section {-}
+\begin{align}
+\begin{split}
+& \text{log}({\boldsymbol \lambda}^{c}_{g}) = {{\bf X}^{c}}^{T} {\boldsymbol \beta}^{c}_{g} + {\bf s}^{c} + {\bf z}^{c}_{g}, \\
+& {\boldsymbol \lambda}^{c}_{g} = ( \lambda^{c}_{1g}, \dots , \lambda^{c}_{N_{c}g} )^{T}, \\
+&{\bf s}^{c} = ( s^{c}_{1}, \dots , s^{c}_{N_{c}} )^{T} \sim \text{MVN}(0, \sigma_{1}^{2}\Omega^{c}(s)), \\
+&{\bf z}^{c}_{g} = (z^{1}_{1g}, \dots , z^{c}_{N_{c}g})^{T} \sim \text{MVN}(0, \sigma_{2}^{2} I_{N_{c} \times N_{c} }).
+\end{split}
+(\#eq:PMM-supp)
+\end{align}
 
-Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the shorter `{-}` at the end of the heading, like in this section.
+Here $\Omega^{c}(s_{1}, s_{2}) = \text{exp} (- \mid \mid s_{1} - s_{2} \mid \mid^{2} / 2 \rho^{2}_{c} ),$ $c = 1, \dots, C$. We estimate the length scale parameter of spatial kernel $\rho_{c}$ based on the steps discussed in section 1 of supplementary information in @sun2017differential. Here $Z^{c}_{g}$ captures the cluster specific latent gene expressions and a multi-variate hierarchical modeling of $Z^{c}_{g}(s_{i})$ will help us to identify the gene co-expression network.
+
+## Multi-Study Factor Model (MSFA)
+The 2nd stage of the modeling framework is multi-study factor analysis [@de2018bayesian] which is provided as follows 
+\begin{align}
+\begin{split}
+& \hat{\bf z}^{c}_{i} = \boldsymbol \Phi {\bf f}_{i} + \boldsymbol \Psi^{c} {\bf d}^{c}_{i} + {\bf e}^{c}_{i}, \\
+& {\bf f}_{i} \sim N_{K}(0, {\bf I}_{K}), \hspace{0.5cm} {\bf d}^{c}_{i} \sim N_{K_{c}}(0,{\bf I}_{K_{c}}),\\
+& {\bf e}^{c}_{i} \sim N_{G}(0,\boldsymbol \Xi_{c}), \hspace{0.5cm} \boldsymbol \Xi_{c} = \text{diag}(\xi^{c}_{1}, \dots, \xi^{c}_{G} ).
+\end{split}
+(\#eq:MSFA-supp)
+\end{align}
+The marginal distribution of $\hat{\bf z}^{c}_{i}$ is a multivariate normal distribution with mean $0$ and covariance matrix $\Sigma_{c}$ s.t.
+\begin{align}
+\Sigma_{c} = \Phi \Phi^{T} + \Psi^{c} {\Psi^{c}}^{T} + \Xi_{c} = \Sigma_{\Phi} + \Sigma_{\Psi^{c}} + \Xi_{c}
+(\#eq:sigma-decomposition)
+\end{align}
+$\Sigma_{\Phi} = \Phi \Phi^{T}$  and $\Sigma_{\Psi^{c}} =  \Psi^{c} {\Psi^{c}}^{T}$ are covariance of shared and cluster specific factors respectively. The decomposition of $\Sigma_{c}$ in \@ref(eq:sigma-decomposition) is not a unique since we can set $\Phi^{*} = \Phi Q$ and ${\Psi^{*}}^{c} = \Psi^{c} Q_{c}$ where $Q$ and $Q_{c}$ are square orthonormal matrices. This will also lead to the same decomposition $\Sigma^{c} = \Phi^{*} {\Phi^{*}}^{T} + {\Psi^{*}}^{c} {{\Psi^{*}}^{c}}^{T} = \Phi \Phi^{T} + \Psi_{c} \Psi_{c}^{T}$. To overcome the indeterminacy through orthonormal matrices, the factor loading matrices are restricted to be lower triangular matrices [@geweke1996measuring; @lopes2004bayesian].
+
+## Multiplicative gamma shrinkage prior
+We follow the same steps from @de2018bayesian and place multiplicative gamma shrinkage prior [@bhattacharya2011sparse] prior on the shared and cluster specific loading matrices i.e. $\Phi$ and $\Psi_{c}$ $c=1,\dots,C$. The shared and cluster specific latent factors ($K$ and $K_{c}$ respectively) are selected following methodology described in section 3.3 of @de2018bayesian. The multiplicative gamma prior on elements of shared covariance matrices are provided as follows 
+\begin{equation}
+\begin{split}
+& \phi_{gk} \mid \delta_{gk}, \eta_{k} \sim N(0, \delta_{gk}^{-1} \eta_{k}^{-1}), \hspace{0.5cm} g = 1, \dots , G, \hspace{0.25cm} k = 1, \dots, \infty, \\
+& \delta_{gk} \sim \Gamma(\frac{\nu}{2}, \frac{\nu}{2}) \hspace{0.5cm}  \eta_{k} = \prod_{j=1}^{k} \zeta_{j} \hspace{0.5cm} \zeta_{1} \sim \Gamma(a_{1},1) \hspace{0.5cm}  \zeta_{j} \sim \Gamma(a_{2},1), \hspace{0.2cm} j \ge 2. 
+\end{split}
+\end{equation}
+Here $\delta_{gk}$ is the local shrinkage parameter for $G$ column elements of $k$th column and $\eta_{k}$ is the global shrinkage parameter where $\zeta_{j}$ $(j=1,2. \dots)$ are independent. We repeat the same process to posit prior on the elements of cluster-specific loading matrices 
+
+\begin{equation}
+\begin{split}
+& \psi^{c}_{gk_{c}} \mid \delta^{c}_{gk_{c}}, \eta^{c}_{k_{c}} \sim N(0, {\delta^{c^{-1}}_{gk_{c}}} {\eta^{c^{-1}}_{k_{c}}}), \hspace{0.5cm} g = 1, \dots , G, \hspace{0.2cm} k_{c} = 1, \dots, \infty \hspace{0.2cm} \text{and} \hspace{0.2cm} c = 1, \dots , C,\\
+& \delta^{c}_{gk_{c}} \sim \Gamma(\frac{\nu^{c}}{2}, \frac{\nu^{c}}{2}) \hspace{0.5cm}  \eta^{c}_{k_{c}} = \prod_{j=1}^{k_{c}} \zeta^{c}_{j} \hspace{0.5cm} \zeta^{c}_{1} \sim \Gamma(a^{c}_{1},1) \hspace{0.5cm}  \zeta^{c}_{j} \sim \Gamma(a^{c}_{2},1), \hspace{0.2cm} j \ge 2.
+\end{split}
+\end{equation}
+Here $\delta^{c}_{gk_{c}}$ $\eta^{c}_{k_{c}}$ are local and global parameters respectively and $\zeta_{j}^{c}$ $(c=1,2, \dots C)$ are independent of each other. We determine $K$ and $K_{c}$ following methodology described in section 3.3 of @de2018bayesian.
+
+
