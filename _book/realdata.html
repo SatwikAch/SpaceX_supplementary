@@ -24,7 +24,7 @@
 <meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
 
 
-<meta name="date" content="2021-11-10" />
+<meta name="date" content="2021-11-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="simulation.html"/>
-<link rel="next" href="Implement-SpaceX.html"/>
+<link rel="next" href="ImplementSpaceX.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -183,12 +183,12 @@ div.csl-indent {
 <li class="chapter" data-level="C.2" data-path="realdata.html"><a href="realdata.html#communitydetection"><i class="fa fa-check"></i><b>C.2</b> Community detection</a></li>
 <li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.3</b> List of hub genes and edges</a></li>
 </ul></li>
-<li class="chapter" data-level="D" data-path="Implement-SpaceX.html"><a href="Implement-SpaceX.html"><i class="fa fa-check"></i><b>D</b> Implementation of SpaceX</a>
+<li class="chapter" data-level="D" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html"><i class="fa fa-check"></i><b>D</b> Implementation of SpaceX</a>
 <ul>
-<li class="chapter" data-level="D.1" data-path="Implement-SpaceX.html"><a href="Implement-SpaceX.html#installation"><i class="fa fa-check"></i><b>D.1</b> Installation</a></li>
-<li class="chapter" data-level="D.2" data-path="Implement-SpaceX.html"><a href="Implement-SpaceX.html#data-inputs"><i class="fa fa-check"></i><b>D.2</b> Data inputs</a></li>
-<li class="chapter" data-level="D.3" data-path="Implement-SpaceX.html"><a href="Implement-SpaceX.html#output"><i class="fa fa-check"></i><b>D.3</b> Output</a></li>
-<li class="chapter" data-level="D.4" data-path="Implement-SpaceX.html"><a href="Implement-SpaceX.html#example"><i class="fa fa-check"></i><b>D.4</b> Example</a></li>
+<li class="chapter" data-level="D.1" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html#installation"><i class="fa fa-check"></i><b>D.1</b> Installation</a></li>
+<li class="chapter" data-level="D.2" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html#data-inputs"><i class="fa fa-check"></i><b>D.2</b> Data inputs</a></li>
+<li class="chapter" data-level="D.3" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html#output"><i class="fa fa-check"></i><b>D.3</b> Output</a></li>
+<li class="chapter" data-level="D.4" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html#example"><i class="fa fa-check"></i><b>D.4</b> Example</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -218,32 +218,38 @@ div.csl-indent {
 <h2><span class="header-section-number">C.1</span> Exploratory analysis of the datasets</h2>
 <div id="merfish-data" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">C.1.1</span> Merfish Data</h3>
-<p>The MERFISH dataset is obtained from the preoptic area of the mouse hypothalamus <span class="citation">(<a href="#ref-Moffitteaau5324" role="doc-biblioref">Moffitt et al. 2018</a>)</span>. The dataset consists of <span class="math inline">\(160\)</span> genes and corresponding gene expressions are measured in <span class="math inline">\(4975\)</span> spatial locations. There are <span class="math inline">\(7\)</span> pre-determined spatial clusters in the dataset named Astrocyte, Endothelial, Ependymal, Excitatory, Inhibitory, Immature, Mature, and the corresponding sizes are <span class="math inline">\(724\)</span>, <span class="math inline">\(503\)</span>, <span class="math inline">\(314\)</span>, <span class="math inline">\(1024\)</span>, <span class="math inline">\(1694\)</span>, <span class="math inline">\(168\)</span>, <span class="math inline">\(385\)</span> respectively. The dataset consists of <span class="math inline">\(2\)</span> more clusters named Microglia, Pericytes with cluster sizes <span class="math inline">\(90\)</span>, <span class="math inline">\(73\)</span> respectively which are less than <span class="math inline">\(100\)</span>. Those two clusters are removed from the dataset. After removing those two clusters, we have gene expressions from <span class="math inline">\(4812\)</span> locations corresponding to <span class="math inline">\(160\)</span> genes. There are no genes with more than <span class="math inline">\(95\%\)</span> zeros reads. Figure <a href="realdata.html#fig:zeroperMF">C.1</a> shows the violin plot of the percentage of zero reads among the genes for each cluster in the MERFISH dataset.</p>
+<p>The MERFISH dataset is obtained from the preoptic area of the mouse hypothalamus <span class="citation">(<a href="#ref-Moffitteaau5324" role="doc-biblioref">Moffitt et al. 2018</a>)</span>. The dataset consists of <span class="math inline">\(160\)</span> genes and corresponding gene expressions are measured in <span class="math inline">\(4975\)</span> spatial locations. There are <span class="math inline">\(7\)</span> pre-determined spatial clusters in the dataset named Astrocyte, Endothelial, Ependymal, Excitatory, Inhibitory, Immature, Mature, and the corresponding sizes are <span class="math inline">\(724\)</span>, <span class="math inline">\(503\)</span>, <span class="math inline">\(314\)</span>, <span class="math inline">\(1024\)</span>, <span class="math inline">\(1694\)</span>, <span class="math inline">\(168\)</span>, <span class="math inline">\(385\)</span> respectively. The dataset consists of <span class="math inline">\(2\)</span> more clusters named Microglia, Pericytes with cluster sizes <span class="math inline">\(90\)</span>, <span class="math inline">\(73\)</span> respectively which are less than <span class="math inline">\(100\)</span>. Those two clusters are removed from the dataset. After removing those two clusters, we have gene expressions from <span class="math inline">\(4812\)</span> locations corresponding to <span class="math inline">\(160\)</span> genes. There are no genes with more than <span class="math inline">\(95\%\)</span> zeros reads. The left panel of Figure <a href="realdata.html#fig:zeroperMF">C.1</a> shows the violin plot of the percentage of zero reads among the genes for each cluster in the MERFISH dataset. The Umap representation of the Merfish data has been provided on the right panel of Figure <a href="realdata.html#fig:zeroperMF">C.1</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:zeroperMF"></span>
-<img src="images/Zero_percentage_violin.jpeg" alt="Violin plot of percentage of zero reads among the genes for each cluster w.r.t. Merfish data." width="80%" />
+<img src="images/Merfish_zero_umap.jpg" alt="Left panel shows the violin plot of percentage of zero reads among the genes for each cluster w.r.t. Merfish data and the right panel shows the Umap." width="90%" />
 <p class="caption">
-Figure C.1: Violin plot of percentage of zero reads among the genes for each cluster w.r.t. Merfish data.
+Figure C.1: Left panel shows the violin plot of percentage of zero reads among the genes for each cluster w.r.t. Merfish data and the right panel shows the Umap.
 </p>
 </div>
 </div>
 <div id="breast-cancer-data" class="section level3" number="3.1.2">
 <h3><span class="header-section-number">C.1.2</span> Breast Cancer Data</h3>
-<p>The human breast cancer dataset contains expression levels from <span class="math inline">\(5262\)</span> genes measured at <span class="math inline">\(250\)</span> locations <span class="citation">(<a href="#ref-staahl2016visualization" role="doc-biblioref">Ståhl et al. 2016</a>)</span>. We use the SPARK method with <span class="math inline">\(5\%\)</span> FDR cut-off on p-values to detect <span class="math inline">\(290\)</span> spatially expressed genes to carry forward our analysis.</p>
+<p>The human breast cancer dataset contains expression levels from <span class="math inline">\(5262\)</span> genes measured at <span class="math inline">\(250\)</span> locations <span class="citation">(<a href="#ref-staahl2016visualization" role="doc-biblioref">Ståhl et al. 2016</a>)</span>. We use the SPARK method with <span class="math inline">\(5\%\)</span> FDR cut-off on p-values to detect <span class="math inline">\(290\)</span> spatially expressed genes to carry forward our analysis. The violin plot of the percentage of zero reads among the genes for each spatially contiguous cluster in the Breast cancer dataset is shown in the left panel of Figure <a href="realdata.html#fig:BCperzero">C.2</a>. On the right panel of Figure <a href="realdata.html#fig:BCperzero">C.2</a>, we have provided the Umap.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:BCperzero"></span>
+<img src="images/BC_zero_umap.jpg" alt="On the left panel, we have violin plot of percentage of zero reads among the genes for each cluster w.r.t. Breast Cancer data and the Umap is shown on the right panel." width="80%" />
+<p class="caption">
+Figure C.2: On the left panel, we have violin plot of percentage of zero reads among the genes for each cluster w.r.t. Breast Cancer data and the Umap is shown on the right panel.
+</p>
+</div>
 </div>
 </div>
 <div id="communitydetection" class="section level2" number="3.2">
 <h2><span class="header-section-number">C.2</span> Community detection</h2>
-<p>The community detection is a downstream analysis of the shared and cluster-specific networks which are obtained from the SpaceX method. The communities are detected by optimizing modularity over partitions in a network structure <span class="citation">(<a href="#ref-brandes2007modularity" role="doc-biblioref">Brandes et al. 2007</a>)</span>. Figure <a href="realdata.html#fig:comMERFISH">C.2</a> and <a href="realdata.html#fig:comBC">C.3</a> show the detected community modules from shared and cluster-specific co-expression networks for MERFISH and breast cancer data respectively.</p>
+<p>The community detection is a downstream analysis of the shared and cluster-specific networks which are obtained from the SpaceX method. The communities are detected by optimizing modularity over partitions in a network structure <span class="citation">(<a href="#ref-brandes2007modularity" role="doc-biblioref">Brandes et al. 2007</a>)</span>. Figure <a href="realdata.html#fig:comMERFISH">C.3</a> and <a href="realdata.html#fig:comBC">C.4</a> show the detected community modules from shared and cluster-specific co-expression networks for MERFISH and breast cancer data respectively.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:comMERFISH"></span>
 <img src="images/merfishCom.png" alt="Shared and cell-type specific community detection for Merfish data" width="95%" />
 <p class="caption">
-Figure C.2: Shared and cell-type specific community detection for Merfish data
+Figure C.3: Shared and cell-type specific community detection for Merfish data
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:comBC"></span>
 <img src="images/BC_Com.png" alt="Shared and cell-type specific community detection for Breast cancer data" width="80%" />
 <p class="caption">
-Figure C.3: Shared and cell-type specific community detection for Breast cancer data
+Figure C.4: Shared and cell-type specific community detection for Breast cancer data
 </p>
 </div>
 </div>
@@ -271,7 +277,7 @@ Ståhl, Patrik L, Fredrik Salmén, Sanja Vickovic, Anna Lundmark, José Fernánd
         </div>
       </div>
 <a href="simulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Implement-SpaceX.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ImplementSpaceX.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

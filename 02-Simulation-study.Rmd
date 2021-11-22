@@ -9,6 +9,7 @@ knitr::include_graphics("images/Merfish_induced_correlation_final.jpeg")
 
 ## Comparative analysis with different norm measures
 We consider the simulation setting discussed in the section 3 of the manuscript. The $5$  different methods are compared w.r.t. different norms other than **RV coefficent** [@robert1976unifying]. The **RV coefficent** between two matrices $S_{1}$ and $S_{2}$ is defined as $$\text{RV}(S_{1},S_{2}) = \frac{ tr(  S_{1}^{T} S_{2} ) }{ \sqrt{ tr(  S_{1}^{T} S_{1} )  tr(  S_{2}^{T} S_{2} ) }  }.$$ We consider 4 different norms:
+
 I. **Euclidean or Frobenius** 
 $$
 d_{E}(S_{1},S_{2}) = \mid \mid S_{1} - S_{2} \mid \mid, 

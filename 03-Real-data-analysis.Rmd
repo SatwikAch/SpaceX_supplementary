@@ -6,17 +6,19 @@ We applied the SpaceX method on two spatial transcriptomics datasets which are o
 ## Exploratory analysis of the datasets {#exploratory}
 
 ### Merfish Data
-The MERFISH dataset is obtained from the preoptic area of the mouse hypothalamus [@Moffitteaau5324]. The dataset consists of $160$ genes and corresponding gene expressions are measured in $4975$ spatial locations. There are $7$ pre-determined spatial clusters in the dataset named Astrocyte, Endothelial, Ependymal, Excitatory, Inhibitory, Immature, Mature, and the corresponding sizes are $724$, $503$, $314$, $1024$, $1694$, $168$, $385$ respectively. The dataset consists of $2$ more clusters named Microglia, Pericytes with cluster sizes $90$, $73$ respectively which are less than $100$. Those two clusters are removed from the dataset. After removing those two clusters, we have gene expressions from $4812$ locations corresponding to $160$ genes. There are no genes with more than $95\%$ zeros reads. Figure \@ref(fig:zeroperMF) shows the violin plot of the percentage of zero reads among the genes for each cluster in the MERFISH dataset. 
+The MERFISH dataset is obtained from the preoptic area of the mouse hypothalamus [@Moffitteaau5324]. The dataset consists of $160$ genes and corresponding gene expressions are measured in $4975$ spatial locations. There are $7$ pre-determined spatial clusters in the dataset named Astrocyte, Endothelial, Ependymal, Excitatory, Inhibitory, Immature, Mature, and the corresponding sizes are $724$, $503$, $314$, $1024$, $1694$, $168$, $385$ respectively. The dataset consists of $2$ more clusters named Microglia, Pericytes with cluster sizes $90$, $73$ respectively which are less than $100$. Those two clusters are removed from the dataset. After removing those two clusters, we have gene expressions from $4812$ locations corresponding to $160$ genes. There are no genes with more than $95\%$ zeros reads. The left panel of Figure \@ref(fig:zeroperMF) shows the violin plot of the percentage of zero reads among the genes for each cluster in the MERFISH dataset. The Umap representation of the Merfish data has been provided on the right panel of Figure \@ref(fig:zeroperMF).
 
-```{r zeroperMF,echo=F, fig.cap='Violin plot of percentage of zero reads among the genes for each cluster w.r.t. Merfish data.', out.width='80%', fig.asp=0.6, fig.align='center'}
-knitr::include_graphics("images/Zero_percentage_violin.jpeg")
+```{r zeroperMF,echo=F, fig.cap='Left panel shows the violin plot of percentage of zero reads among the genes for each cluster w.r.t. Merfish data and the right panel shows the Umap.', out.width='90%', fig.asp=0.6, fig.align='center'}
+knitr::include_graphics("images/Merfish_zero_umap.jpg")
 ```
 
 
 ### Breast Cancer Data 
-The human breast cancer dataset contains expression levels from $5262$ genes measured at $250$ locations [@staahl2016visualization]. We use the SPARK method with $5\%$ FDR cut-off on p-values to detect $290$ spatially expressed genes to carry forward our analysis. 
+The human breast cancer dataset contains expression levels from $5262$ genes measured at $250$ locations [@staahl2016visualization]. We use the SPARK method with $5\%$ FDR cut-off on p-values to detect $290$ spatially expressed genes to carry forward our analysis. The violin plot of the percentage of zero reads among the genes for each spatially contiguous cluster in the Breast cancer dataset is shown in the left panel of Figure \@ref(fig:BCperzero). On the right panel of Figure \@ref(fig:BCperzero), we have provided the Umap. 
 
-
+```{r BCperzero,echo=F, fig.cap='On the left panel, we have violin plot of percentage of zero reads among the genes for each cluster w.r.t. Breast Cancer data and the Umap is shown on the right panel.', out.width='80%', fig.asp=0.6, fig.align='center'}
+knitr::include_graphics("images/BC_zero_umap.jpg")
+```
 
 ## Community detection {#communitydetection}
 

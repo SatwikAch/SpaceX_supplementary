@@ -7,6 +7,7 @@ fig:ReiEuclid
 fig:factor1
 fig:factor2
 fig:zeroperMF
+fig:BCperzero
 fig:comMERFISH
 fig:comBC
 method
@@ -23,7 +24,7 @@ merfish-data
 breast-cancer-data
 communitydetection
 list-of-hub-genes-and-edges
-Implement_SpaceX
+ImplementSpaceX
 installation
 data-inputs
 output

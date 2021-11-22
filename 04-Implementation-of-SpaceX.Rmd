@@ -1,4 +1,4 @@
-# Implementation of SpaceX {#Implement_SpaceX}
+# Implementation of SpaceX {#ImplementSpaceX}
 
 SpaceX function extimates shared and cluster specfic gene co-expression networks for spatial transcriptomics data. More details about the SpaceX method can be found in the main manuscript. See below for detailed discussion on installation of SpaceX package, Data inputs and outputs followed by an example.  
 
@@ -15,7 +15,9 @@ Please make sure to provide both inputs as dataframe.
 
 The first input is **Gene_expression_mat** which is $N \times G$ dataframe. Here $N$ denotes the number of spatial locations and $G$ denotes number of genes. 
 
-The second input is **Spatial_locations** is a $N \times 3$ dataframe which contains spatial coordinates and cluster annotations. Here (x,y) coordinates are on the first two columns and cluster annotations are on the third column.
+The second input is **Spatial_locations** is a dataframe which contains spatial coordinates.
+
+The third input is **Cluster_annotations**.
 
 ## Output
 You will obtain a list of objects as output.
@@ -45,7 +47,7 @@ Next, we'll apply the SpaceX method on the Breast cancer dataset.
 
 ```{r, eval=FALSE}
 # Application to SpaceX method
-BC_fit <- SpaceX(BC_count,BC_loc)
+BC_fit <- SpaceX(BC_count,BC_loc[,1:2],BC_loc[,3])
 
 # SigmaPhi :: Shared Covariance matrix
 # SigmaLambda :: Cluster specific Covaraince matrices

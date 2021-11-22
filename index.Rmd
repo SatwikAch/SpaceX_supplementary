@@ -13,6 +13,14 @@ description: "This containes all the supplementary materials for the paper named
 
 # (APPENDIX) Supplementary Materials {-}
 # Introduction {-}
-We start with a detailed description of the methodology in section \@ref(method). In section \@ref(simulation) further details of simulation study have been discussed. Eploratory analysis and more findings of real data analysis have been laid out in section \@ref(realdata).
+
+The spatial transcriptomics method depicts the positioning of a single cell on a spatially structured tissue. Knowledge about gene expressions and the spatial distribution of mRNA allows us to uncover cellular and subcellular heterogeneity in tissues, tumors, and immune cells. Spatial transcriptomics provides a unique opportunity to decipher both the cellular and subcellular architecture in both tissues and individual cells along with detection of gene co-expression patterns at both levels. These approaches are very insightful to study disease propagation in the field of embryology, oncology, and histology. The SpaceX method is a statistical tool to quantify spatially varying gene co-expression patterns in a tissue consists of different cell type based or sptailly contiguous clusters. 
+
+This is a supplementary file of the paper named SpaceX: Gene Co-expression Network Estimation in Spatial Transcriptomics. The sectional contents of the supplementary file is mentioned below. 
+
+1. We start with a detailed description of the methodology in section \@ref(method). 
+2. In section \@ref(simulation), further details of simulation study have been discussed. 
+3. Eploratory analysis and more findings of real data analysis have been laid out in section \@ref(realdata). 
+4. Finally, we discuss the detailed steps for implementation of the SpaceX package in section \@ref(ImplementSpaceX). 
 
 
