@@ -4,8 +4,17 @@
 \contentsline {section}{\numberline {A.2}Multi-Study Factor Model (MSFA)}{8}{section.A.2}
 \contentsline {section}{\numberline {A.3}Multiplicative gamma shrinkage prior}{8}{section.A.3}
 \contentsline {chapter}{\numberline {B}Simulation Study}{11}{appendix.B}
-\contentsline {chapter}{\numberline {C}Real Data Analysis}{15}{appendix.C}
-\contentsline {section}{\numberline {C.1}Exploratory analysis of the datasets}{15}{section.C.1}
-\contentsline {subsection}{\numberline {C.1.1}Merfish Data}{15}{subsection.C.1.1}
-\contentsline {subsection}{\numberline {C.1.2}Breast Cancer Data}{16}{subsection.C.1.2}
-\contentsline {section}{\numberline {C.2}Community detection}{16}{section.C.2}
+\contentsline {section}{\numberline {B.1}Induced Correlation Study}{11}{section.B.1}
+\contentsline {section}{\numberline {B.2}Comparative analysis with different norm measures}{11}{section.B.2}
+\contentsline {section}{\numberline {B.3}Estimation of latent factors}{12}{section.B.3}
+\contentsline {chapter}{\numberline {C}Real Data Analysis}{17}{appendix.C}
+\contentsline {section}{\numberline {C.1}Exploratory analysis of the datasets}{17}{section.C.1}
+\contentsline {subsection}{\numberline {C.1.1}Merfish Data}{17}{subsection.C.1.1}
+\contentsline {subsection}{\numberline {C.1.2}Breast Cancer Data}{18}{subsection.C.1.2}
+\contentsline {section}{\numberline {C.2}Community detection}{18}{section.C.2}
+\contentsline {section}{\numberline {C.3}List of hub genes and edges}{18}{section.C.3}
+\contentsline {chapter}{\numberline {D}Implementation of SpaceX}{21}{appendix.D}
+\contentsline {section}{\numberline {D.1}Installation}{21}{section.D.1}
+\contentsline {section}{\numberline {D.2}Data inputs}{21}{section.D.2}
+\contentsline {section}{\numberline {D.3}Output}{22}{section.D.3}
+\contentsline {section}{\numberline {D.4}Example}{22}{section.D.4}

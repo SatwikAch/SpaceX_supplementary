@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 OCT 2021 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 DEC 2021 08:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -717,73 +717,93 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 File: bkm-pdftex.def 2011/12/02 v1.24 bookmark driver for pdfTeX (HO)
 \BKM@id=\count113
 ))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count114
+\FV@InFile=\read1
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count115
+\FV@StepNumber=\count116
+\FV@OutFile=\write3
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip48
+\fb@frw=\dimen117
+\fb@frh=\dimen118
+\FrameRule=\dimen119
+\FrameSep=\dimen120
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip48
-\LTright=\skip49
-\LTpre=\skip50
-\LTpost=\skip51
-\LTchunksize=\count114
-\LTcapwidth=\dimen117
-\LT@head=\box28
-\LT@firsthead=\box29
-\LT@foot=\box30
-\LT@lastfoot=\box31
-\LT@cols=\count115
-\LT@rows=\count116
-\c@LT@tables=\count117
-\c@LT@chunks=\count118
+\LTleft=\skip49
+\LTright=\skip50
+\LTpre=\skip51
+\LTpost=\skip52
+\LTchunksize=\count117
+\LTcapwidth=\dimen121
+\LT@head=\box29
+\LT@firsthead=\box30
+\LT@foot=\box31
+\LT@lastfoot=\box32
+\LT@cols=\count118
+\LT@rows=\count119
+\c@LT@tables=\count120
+\c@LT@chunks=\count121
 \LT@p@ftn=\toks23
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen118
-\lightrulewidth=\dimen119
-\cmidrulewidth=\dimen120
-\belowrulesep=\dimen121
-\belowbottomsep=\dimen122
-\aboverulesep=\dimen123
-\abovetopsep=\dimen124
-\cmidrulesep=\dimen125
-\cmidrulekern=\dimen126
-\defaultaddspace=\dimen127
-\@cmidla=\count119
-\@cmidlb=\count120
-\@aboverulesep=\dimen128
-\@belowrulesep=\dimen129
-\@thisruleclass=\count121
-\@lastruleclass=\count122
-\@thisrulewidth=\dimen130
+\heavyrulewidth=\dimen122
+\lightrulewidth=\dimen123
+\cmidrulewidth=\dimen124
+\belowrulesep=\dimen125
+\belowbottomsep=\dimen126
+\aboverulesep=\dimen127
+\abovetopsep=\dimen128
+\cmidrulesep=\dimen129
+\cmidrulekern=\dimen130
+\defaultaddspace=\dimen131
+\@cmidla=\count122
+\@cmidlb=\count123
+\@aboverulesep=\dimen132
+\@belowrulesep=\dimen133
+\@thisruleclass=\count124
+\@lastruleclass=\count125
+\@thisrulewidth=\dimen134
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen131
-\extrarowheight=\dimen132
+\col@sep=\dimen135
+\extrarowheight=\dimen136
 \NC@list=\toks24
-\extratabsurround=\skip52
-\backup@length=\skip53
+\extratabsurround=\skip53
+\backup@length=\skip54
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count123
-\calc@Bcount=\count124
-\calc@Adimen=\dimen133
-\calc@Bdimen=\dimen134
-\calc@Askip=\skip54
-\calc@Bskip=\skip55
+\calc@Acount=\count126
+\calc@Bcount=\count127
+\calc@Adimen=\dimen137
+\calc@Bdimen=\dimen138
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count125
-\calc@Cskip=\skip56
+\calc@Ccount=\count128
+\calc@Cskip=\skip57
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count126
+\etb@tempcnta=\count129
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box32
-\fn@width=\dimen135
+\fn@notes=\box33
+\fn@width=\dimen139
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
@@ -799,8 +819,8 @@ File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 )
-\Gin@req@height=\dimen136
-\Gin@req@width=\dimen137
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2015/03/04 v2.20.2
@@ -809,49 +829,50 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headfont=\toks27
 \thm@notefont=\toks28
 \thm@headpunct=\toks29
-\thm@preskip=\skip57
-\thm@postskip=\skip58
-\thm@headsep=\skip59
+\thm@preskip=\skip58
+\thm@postskip=\skip59
+\thm@headsep=\skip60
 \dth@everypar=\toks30
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip60
-\bibsep=\skip61
+\bibhang=\skip61
+\bibsep=\skip62
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count127
+\c@NAT@ctr=\count130
 ) (./_main.aux)
 \openout1 = `_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 133.
+
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 93.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 133.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 93.
+LaTeX Info: Redefining \microtypecontext on input line 133.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -868,31 +889,31 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count128
-\scratchdimen=\dimen138
-\scratchbox=\box33
-\nofMPsegments=\count129
-\nofMParguments=\count130
+\scratchcounter=\count131
+\scratchdimen=\dimen142
+\scratchbox=\box34
+\nofMPsegments=\count132
+\nofMParguments=\count133
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count131
-\MPscratchDim=\dimen139
-\MPnumerator=\count132
-\makeMPintoPDFobject=\count133
+\MPscratchCnt=\count134
+\MPscratchDim=\dimen143
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
 \everyMPtoPDFconversion=\toks32
 )
-\AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 93.
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring OFF on input line 133.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count134
+\c@section@level=\count137
 )
-LaTeX Info: Redefining \ref on input line 93.
-LaTeX Info: Redefining \pageref on input line 93.
-LaTeX Info: Redefining \nameref on input line 93.
+LaTeX Info: Redefining \ref on input line 133.
+LaTeX Info: Redefining \pageref on input line 133.
+LaTeX Info: Redefining \nameref on input line 133.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -909,35 +930,37 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 95.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 135.
+
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 95.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 135.
+
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 95.
-
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 135
+.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 95.
-
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 135
+.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 95.
+(Font)              <12> on input line 135.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 95.
+(Font)              <8> on input line 135.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 95.
-LaTeX Font Info:    Try loading font information for U+msa on input line 95.
+(Font)              <6> on input line 135.
+LaTeX Font Info:    Try loading font information for U+msa on input line 135.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -945,7 +968,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 95.
+LaTeX Font Info:    Try loading font information for U+msb on input line 135.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -965,183 +988,272 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 3.
 )
-\tf@toc=\write3
-\openout3 = `_main.toc'.
+\tf@toc=\write4
+\openout4 = `_main.toc'.
 
  [3] [4
 
-] [5] [6
+]
+
+LaTeX Warning: Reference `method' on page 5 undefined on input line 156.
+
+
+LaTeX Warning: Reference `simulation' on page 5 undefined on input line 158.
+
+
+LaTeX Warning: Reference `realdata' on page 5 undefined on input line 160.
+
+
+LaTeX Warning: Reference `ImplementSpaceX' on page 5 undefined on input line 16
+2.
+
+[5] [6
 
 ]
 Appendix A.
 
 Package natbib Warning: Citation `sun2017differential' on page 7 undefined on i
-nput line 113.
+nput line 168.
 
 
 Package natbib Warning: Citation `de2018bayesian' on page 7 undefined on input 
-line 113.
+line 168.
 
 
 Package natbib Warning: Citation `sun2017differential' on page 7 undefined on i
-nput line 130.
+nput line 185.
 
 
 Package natbib Warning: Citation `de2018bayesian' on page 7 undefined on input 
-line 135.
+line 190.
 
 [7]
 
 Package natbib Warning: Citation `geweke1996measuring' on page 8 undefined on i
-nput line 149.
+nput line 204.
 
 
 Package natbib Warning: Citation `lopes2004bayesian' on page 8 undefined on inp
-ut line 149.
+ut line 204.
 
 
 Package natbib Warning: Citation `de2018bayesian' on page 8 undefined on input 
-line 154.
+line 209.
 
 
 Package natbib Warning: Citation `bhattacharya2011sparse' on page 8 undefined o
-n input line 154.
+n input line 209.
 
 
 Package natbib Warning: Citation `de2018bayesian' on page 8 undefined on input 
-line 154.
+line 209.
 
 
-Overfull \hbox (18.7627pt too wide) in paragraph at lines 168--168
+Overfull \hbox (18.7627pt too wide) in paragraph at lines 223--223
 [] 
  []
 
 
 Package natbib Warning: Citation `de2018bayesian' on page 8 undefined on input 
-line 169.
+line 224.
 
 [8] [9] [10
 
 ]
 Appendix B.
 
-<images/Merfish_induced_correlation_final.jpeg, id=95, 1254.6875pt x 953.5625pt
->
+<images/Merfish_induced_correlation_final.jpeg, id=101, 1254.6875pt x 953.5625p
+t>
 File: images/Merfish_induced_correlation_final.jpeg Graphic file (type jpg)
  <use images/Merfish_induced_correlation_final.jpeg>
 Package pdftex.def Info: images/Merfish_induced_correlation_final.jpeg used on 
-input line 178.
+input line 236.
 (pdftex.def)             Requested size: 275.99382pt x 209.7553pt.
 
 
 Package natbib Warning: Citation `robert1976unifying' on page 11 undefined on i
-nput line 185.
+nput line 246.
 
-[11 <./images/Merfish_induced_correlation_final.jpeg>]
-<images/Distance_Euclidean_plot.jpeg, id=102, 1280.785pt x 953.5625pt>
+[11]
+
+LaTeX Warning: Reference `fig:Euclid' on page 12 undefined on input line 272.
+
+
+LaTeX Warning: Reference `fig:RootEuclid' on page 12 undefined on input line 27
+2.
+
+
+LaTeX Warning: Reference `fig:LogEuclid' on page 12 undefined on input line 272
+.
+
+
+LaTeX Warning: Reference `fig:ReiEuclid' on page 12 undefined on input line 272
+.
+
+
+Package natbib Warning: Citation `dryden2009non' on page 12 undefined on input 
+line 272.
+
+<images/Distance_Euclidean_plot.jpeg, id=112, 1280.785pt x 953.5625pt>
 File: images/Distance_Euclidean_plot.jpeg Graphic file (type jpg)
 
 <use images/Distance_Euclidean_plot.jpeg>
 Package pdftex.def Info: images/Distance_Euclidean_plot.jpeg used on input line
- 201.
+ 276.
 (pdftex.def)             Requested size: 275.98878pt x 205.47754pt.
 
-<images/Root_Euclidean_plot.jpeg, id=103, 1280.785pt x 953.5625pt>
+<images/Root_Euclidean_plot.jpeg, id=113, 1280.785pt x 953.5625pt>
 File: images/Root_Euclidean_plot.jpeg Graphic file (type jpg)
 
 <use images/Root_Euclidean_plot.jpeg>
-Package pdftex.def Info: images/Root_Euclidean_plot.jpeg used on input line 209
+Package pdftex.def Info: images/Root_Euclidean_plot.jpeg used on input line 285
 .
 (pdftex.def)             Requested size: 275.98878pt x 205.47754pt.
 
-<images/Log_Euclidean_plot.jpeg, id=104, 1280.785pt x 953.5625pt>
+<images/Log_Euclidean_plot.jpeg, id=114, 1280.785pt x 953.5625pt>
 File: images/Log_Euclidean_plot.jpeg Graphic file (type jpg)
 
 <use images/Log_Euclidean_plot.jpeg>
-Package pdftex.def Info: images/Log_Euclidean_plot.jpeg used on input line 217.
+Package pdftex.def Info: images/Log_Euclidean_plot.jpeg used on input line 294.
 
 (pdftex.def)             Requested size: 275.98878pt x 205.47754pt.
 
-<images/Rei_Euclidean_plot.jpeg, id=105, 1280.785pt x 953.5625pt>
+<images/Rei_Euclidean_plot.jpeg, id=115, 1280.785pt x 953.5625pt>
 File: images/Rei_Euclidean_plot.jpeg Graphic file (type jpg)
 
 <use images/Rei_Euclidean_plot.jpeg>
-Package pdftex.def Info: images/Rei_Euclidean_plot.jpeg used on input line 225.
+Package pdftex.def Info: images/Rei_Euclidean_plot.jpeg used on input line 303.
 
 (pdftex.def)             Requested size: 275.98878pt x 205.47754pt.
- [12 <./images/Distance_Euclidean_plot.jpeg>] [13 <./images/Root_Euclidean_plot
-.jpeg> <./images/Log_Euclidean_plot.jpeg>]
-[14 <./images/Rei_Euclidean_plot.jpeg>]
-Appendix C.
-
-Package natbib Warning: Citation `Moffitteaau5324' on page 15 undefined on inpu
-t line 234.
 
 
-Package natbib Warning: Citation `staahl2016visualization' on page 15 undefined
- on input line 234.
+Package natbib Warning: Citation `de2018bayesian' on page 12 undefined on input
+ line 313.
 
 
-Package natbib Warning: Citation `Moffitteaau5324' on page 15 undefined on inpu
-t line 242.
+LaTeX Warning: Reference `fig:factor1' on page 12 undefined on input line 313.
 
-<images/Zero_percentage_violin.jpeg, id=123, 1280.785pt x 953.5625pt>
-File: images/Zero_percentage_violin.jpeg Graphic file (type jpg)
 
-<use images/Zero_percentage_violin.jpeg>
-Package pdftex.def Info: images/Zero_percentage_violin.jpeg used on input line 
-246.
+LaTeX Warning: Reference `fig:factor2' on page 12 undefined on input line 313.
+
+<images/Loading_Dimension_plot.jpeg, id=116, 1280.785pt x 953.5625pt>
+File: images/Loading_Dimension_plot.jpeg Graphic file (type jpg)
+
+<use images/Loading_Dimension_plot.jpeg>
+Package pdftex.def Info: images/Loading_Dimension_plot.jpeg used on input line 
+317.
 (pdftex.def)             Requested size: 275.98878pt x 205.47754pt.
 
+<images/Median_Loading_plot.jpeg, id=117, 1280.785pt x 953.5625pt>
+File: images/Median_Loading_plot.jpeg Graphic file (type jpg)
 
-Package natbib Warning: Citation `staahl2016visualization' on page 15 undefined
- on input line 256.
-
-
-Underfull \vbox (badness 3601) has occurred while \output is active []
-
- [15
+<use images/Median_Loading_plot.jpeg>
+Package pdftex.def Info: images/Median_Loading_plot.jpeg used on input line 326
+.
+(pdftex.def)             Requested size: 275.98878pt x 205.47754pt.
+ [12 <./images/Merfish_induced_correlation_final.jpeg>] [13 <./images/Distance_
+Euclidean_plot.jpeg> <./images/Root_Euclidean_plot.jpeg>] [14 <./images/Log_Euc
+lidean_plot.jpeg> <./images/Rei_Euclidean_plot.jpeg>] [15 <./images/Loading_Dim
+ension_plot.jpeg> <./images/Median_Loading_plot.jpeg>] [16
 
 ]
+Appendix C.
 
-Package natbib Warning: Citation `brandes2007modularity' on page 16 undefined o
-n input line 261.
+Package natbib Warning: Citation `Moffitteaau5324' on page 17 undefined on inpu
+t line 336.
 
-<images/merfishCom.png, id=135, 4260.67786pt x 3425.23665pt>
+
+Package natbib Warning: Citation `staahl2016visualization' on page 17 undefined
+ on input line 336.
+
+
+Package natbib Warning: Citation `Moffitteaau5324' on page 17 undefined on inpu
+t line 344.
+
+<images/Merfish_zero_umap.jpg, id=153, 2514.46425pt x 1197.16826pt>
+File: images/Merfish_zero_umap.jpg Graphic file (type jpg)
+
+<use images/Merfish_zero_umap.jpg>
+Package pdftex.def Info: images/Merfish_zero_umap.jpg used on input line 348.
+(pdftex.def)             Requested size: 310.4705pt x 147.81892pt.
+
+
+Package natbib Warning: Citation `staahl2016visualization' on page 17 undefined
+ on input line 358.
+
+
+LaTeX Warning: Reference `fig:BCperzero' on page 17 undefined on input line 358
+.
+
+
+LaTeX Warning: Reference `fig:BCperzero' on page 17 undefined on input line 358
+.
+
+
+Underfull \vbox (badness 1831) has occurred while \output is active []
+
+ [17]
+<images/BC_zero_umap.jpg, id=164, 2005.43207pt x 1212.63742pt>
+File: images/BC_zero_umap.jpg Graphic file (type jpg)
+
+<use images/BC_zero_umap.jpg>
+Package pdftex.def Info: images/BC_zero_umap.jpg used on input line 362.
+(pdftex.def)             Requested size: 275.98491pt x 166.88156pt.
+
+
+Package natbib Warning: Citation `brandes2007modularity' on page 18 undefined o
+n input line 372.
+
+<images/merfishCom.png, id=167, 4260.67786pt x 3425.23665pt>
 File: images/merfishCom.png Graphic file (type png)
 
 <use images/merfishCom.png>
-Package pdftex.def Info: images/merfishCom.png used on input line 265.
+Package pdftex.def Info: images/merfishCom.png used on input line 376.
 (pdftex.def)             Requested size: 327.72864pt x 263.46704pt.
 
-<images/BC_Com.png, id=136, 3077.2566pt x 3079.06335pt>
+<images/BC_Com.png, id=168, 1960.32375pt x 1803.1365pt>
 File: images/BC_Com.png Graphic file (type png)
 
 <use images/BC_Com.png>
-Package pdftex.def Info: images/BC_Com.png used on input line 274.
-(pdftex.def)             Requested size: 276.00204pt x 276.1641pt.
+Package pdftex.def Info: images/BC_Com.png used on input line 385.
+(pdftex.def)             Requested size: 275.99889pt x 253.8681pt.
+ [18 <./images/Merfish_zero_umap.jpg>] [19 <./images/BC_zero_umap.jpg> <./image
+s/merfishCom.png>] [20 <./images/BC_Com.png>]
+Appendix D.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 408.
 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [21
+
+]
 No file _main.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
-[16 <./images/Zero_percentage_violin.jpeg>] [17 <./images/merfishCom.png>]
-[18 <./images/BC_Com.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
+[22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
  (./_main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 283.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 283.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 470.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
  ) 
 Here is how much of TeX's memory you used:
- 13422 strings out of 493089
- 192107 string characters out of 6134842
- 299527 words of memory out of 5000000
- 16570 multiletter control sequences out of 15000+600000
- 73624 words of font info for 94 fonts, out of 8000000 for 9000
+ 14061 strings out of 493089
+ 201694 string characters out of 6134842
+ 310435 words of memory out of 5000000
+ 17117 multiletter control sequences out of 15000+600000
+ 86379 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,17n,35p,1020b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,19n,35p,1150b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2015/t
 exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf-dist/
@@ -1152,18 +1264,20 @@ fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/l
 ocal/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
-blic/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr
-17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
-public/lm/lmsy7.pfb>
-Output written on _main.pdf (18 pages, 8193294 bytes).
+ts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
+mr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr17.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/lm/lmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm
+/lmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on _main.pdf (22 pages, 10466323 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
- 12401 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 355 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 12488 words of extra memory for PDF output out of 14400 (max. 10000000)
 
