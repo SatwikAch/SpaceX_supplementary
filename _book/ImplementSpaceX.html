@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>D Implementation of SpaceX | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics</title>
   <meta name="description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
-  <meta name="generator" content="bookdown 0.22.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="D Implementation of SpaceX | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
 
 
-<meta name="date" content="2021-12-23" />
+<meta name="date" content="2022-02-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="realdata.html"/>
 <link rel="next" href="references.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -120,28 +120,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -216,9 +194,11 @@ div.csl-indent {
 <p>SpaceX function extimates shared and cluster specfic gene co-expression networks for spatial transcriptomics data. More details about the SpaceX method can be found in the main manuscript. See below for detailed discussion on installation of SpaceX package, Data inputs and outputs followed by an example.</p>
 <div id="installation" class="section level2" number="4.1">
 <h2><span class="header-section-number">D.1</span> Installation</h2>
+<p>The package requires a dependency that is not available on CRAN. Install it with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ImplementSpaceX.html#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rdevito/MSFA&quot;</span>)</span></code></pre></div>
 <p>You can install the released version of SpaceX from (<a href="https://github.com/SatwikAch/SpaceX" class="uri">https://github.com/SatwikAch/SpaceX</a>) with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ImplementSpaceX.html#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;SatwikAch/SpaceX&quot;</span>)</span>
-<span id="cb1-2"><a href="ImplementSpaceX.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaceX)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="ImplementSpaceX.html#cb2-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;SatwikAch/SpaceX&quot;</span>)</span>
+<span id="cb2-2"><a href="ImplementSpaceX.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaceX)</span></code></pre></div>
 </div>
 <div id="data-inputs" class="section level2" number="4.2">
 <h2><span class="header-section-number">D.2</span> Data inputs</h2>
@@ -226,33 +206,35 @@ div.csl-indent {
 <p>The first input is <strong>Gene_expression_mat</strong> which is <span class="math inline">\(N \times G\)</span> dataframe. Here <span class="math inline">\(N\)</span> denotes the number of spatial locations and <span class="math inline">\(G\)</span> denotes number of genes.</p>
 <p>The second input is <strong>Spatial_locations</strong> is a dataframe which contains spatial coordinates.</p>
 <p>The third input is <strong>Cluster_annotations</strong>.</p>
+<p>The fourth input is <strong>Post_process</strong>. If TRUE, the code will return all the posterior samples, shared and cluster specific co-expressions. Please make sure to request for large enough memory to work with the posterior samples. Default is FALSE and the code will return the posterior samples of <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\Psi^c\)</span> (based on definition in equation 1 of the SpaceX paper) only.</p>
 </div>
 <div id="output" class="section level2" number="4.3">
 <h2><span class="header-section-number">D.3</span> Output</h2>
 <p>You will obtain a list of objects as output.</p>
-<p><strong>SigmaPhi</strong> denotes the Shared Covariance matrix i.e. <span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span>.</p>
-<p><strong>SigmaLambda</strong> denotes the cluster specific Covaraince matrices i.e. <span class="math inline">\(\Sigma_{\Psi^{c}} = \Psi^{c} {\Psi^{c}}^{T}\)</span>.</p>
+<p><strong>Posterior_samples</strong> contains all the posterior samples.</p>
+<p><strong>Shared_network</strong> provides the shared co-expression matrix (transformed correlation matrix of <span class="math inline">\(G_{s} = \Phi \Phi^{T}\)</span>).</p>
+<p><strong>Cluster_network</strong> provides the cluster specific co-expression matrices (transformed correlation matrices of <span class="math inline">\(G_{c} = \Phi \Phi^{T} + \Psi^{c} {\Psi^{c^{T}}}\)</span>).</p>
 </div>
 <div id="example" class="section level2" number="4.4">
 <h2><span class="header-section-number">D.4</span> Example</h2>
 <p>Here we provide an example to run the SpaceX method.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="ImplementSpaceX.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading the Breast cancer data</span></span>
-<span id="cb2-2"><a href="ImplementSpaceX.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="ImplementSpaceX.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Spatial locations</span></span>
-<span id="cb2-4"><a href="ImplementSpaceX.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(BC_loc)</span>
-<span id="cb2-5"><a href="ImplementSpaceX.html#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="ImplementSpaceX.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Gene expression for data</span></span>
-<span id="cb2-7"><a href="ImplementSpaceX.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(BC_count) </span>
-<span id="cb2-8"><a href="ImplementSpaceX.html#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="ImplementSpaceX.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Data processing</span></span>
-<span id="cb2-10"><a href="ImplementSpaceX.html#cb2-10" aria-hidden="true" tabindex="-1"></a>G <span class="ot">&lt;-</span><span class="fu">dim</span>(BC_count)[<span class="dv">2</span>] <span class="co"># number of genes</span></span>
-<span id="cb2-11"><a href="ImplementSpaceX.html#cb2-11" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span><span class="fu">dim</span>(BC_count)[<span class="dv">1</span>] <span class="co"># number of locations</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="ImplementSpaceX.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading the Breast cancer data</span></span>
+<span id="cb3-2"><a href="ImplementSpaceX.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="ImplementSpaceX.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Spatial locations</span></span>
+<span id="cb3-4"><a href="ImplementSpaceX.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(BC_loc)</span>
+<span id="cb3-5"><a href="ImplementSpaceX.html#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="ImplementSpaceX.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Gene expression for data</span></span>
+<span id="cb3-7"><a href="ImplementSpaceX.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(BC_count) </span>
+<span id="cb3-8"><a href="ImplementSpaceX.html#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="ImplementSpaceX.html#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Data processing</span></span>
+<span id="cb3-10"><a href="ImplementSpaceX.html#cb3-10" aria-hidden="true" tabindex="-1"></a>G <span class="ot">&lt;-</span><span class="fu">dim</span>(BC_count)[<span class="dv">2</span>] <span class="co"># number of genes</span></span>
+<span id="cb3-11"><a href="ImplementSpaceX.html#cb3-11" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span><span class="fu">dim</span>(BC_count)[<span class="dv">1</span>] <span class="co"># number of locations</span></span></code></pre></div>
 <p>Next, we’ll apply the SpaceX method on the Breast cancer dataset.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="ImplementSpaceX.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Application to SpaceX method</span></span>
-<span id="cb3-2"><a href="ImplementSpaceX.html#cb3-2" aria-hidden="true" tabindex="-1"></a>BC_fit <span class="ot">&lt;-</span> <span class="fu">SpaceX</span>(BC_count,BC_loc[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>],BC_loc[,<span class="dv">3</span>])</span>
-<span id="cb3-3"><a href="ImplementSpaceX.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="ImplementSpaceX.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># SigmaPhi :: Shared Covariance matrix</span></span>
-<span id="cb3-5"><a href="ImplementSpaceX.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># SigmaLambda :: Cluster specific Covaraince matrices</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="ImplementSpaceX.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Application to SpaceX method</span></span>
+<span id="cb4-2"><a href="ImplementSpaceX.html#cb4-2" aria-hidden="true" tabindex="-1"></a>BC_fit <span class="ot">&lt;-</span> <span class="fu">SpaceX</span>(BC_count,BC_loc[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>],BC_loc[,<span class="dv">3</span>],<span class="at">Post_process =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-3"><a href="ImplementSpaceX.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="ImplementSpaceX.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Shared_network :: Shared co-expression matrix</span></span>
+<span id="cb4-5"><a href="ImplementSpaceX.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cluster_network :: Cluster specific co-expression matrices</span></span></code></pre></div>
 
 </div>
 </div>
@@ -266,7 +248,6 @@ div.csl-indent {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -307,7 +288,7 @@ gitbook.start({
 },
 "download": ["_main.pdf", "_main.epub"],
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {

@@ -4,6 +4,10 @@ SpaceX function extimates shared and cluster specfic gene co-expression networks
 
 
 ## Installation 
+The package requires a dependency that is not available on CRAN. Install it with:
+```{r, eval=FALSE}
+devtools::install_github("rdevito/MSFA")
+```
 You can install the released version of SpaceX from (https://github.com/SatwikAch/SpaceX) with:
 ```{r, eval=FALSE}
 devtools::install_github("SatwikAch/SpaceX")
@@ -19,12 +23,16 @@ The second input is **Spatial_locations** is a dataframe which contains spatial 
 
 The third input is **Cluster_annotations**.
 
+The fourth input is **Post_process**. If TRUE, the code will return all the posterior samples, shared and cluster specific co-expressions. Please make sure to request for large enough memory to work with the posterior samples. Default is FALSE and the code will return the posterior samples of $\Phi$ and $\Psi^c$ (based on definition in equation 1 of the SpaceX paper) only.
+
 ## Output
 You will obtain a list of objects as output.
 
-**SigmaPhi** denotes the Shared Covariance matrix i.e. $\Sigma_{\Phi} = \Phi \Phi^{T}$.
+**Posterior_samples**	contains all the posterior samples.
 
-**SigmaLambda** denotes the cluster specific Covaraince matrices i.e. $\Sigma_{\Psi^{c}} =  \Psi^{c} {\Psi^{c}}^{T}$.
+**Shared_network** provides the shared co-expression matrix (transformed correlation matrix of $G_{s} = \Phi \Phi^{T}$).
+
+**Cluster_network** provides the cluster specific co-expression matrices (transformed correlation matrices of $G_{c} = \Phi \Phi^{T} + \Psi^{c} {\Psi^{c^{T}}}$).
 
 
 ## Example
@@ -47,8 +55,8 @@ Next, we'll apply the SpaceX method on the Breast cancer dataset.
 
 ```{r, eval=FALSE}
 # Application to SpaceX method
-BC_fit <- SpaceX(BC_count,BC_loc[,1:2],BC_loc[,3])
+BC_fit <- SpaceX(BC_count,BC_loc[,1:2],BC_loc[,3],Post_process = TRUE)
 
-# SigmaPhi :: Shared Covariance matrix
-# SigmaLambda :: Cluster specific Covaraince matrices
+# Shared_network :: Shared co-expression matrix
+# Cluster_network :: Cluster specific co-expression matrices
 ```

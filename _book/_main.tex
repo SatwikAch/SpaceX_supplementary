@@ -128,7 +128,7 @@
 
 \title{Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics}
 \author{Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani}
-\date{2021-12-23}
+\date{2022-02-03}
 
 \begin{document}
 \maketitle
@@ -402,6 +402,14 @@ SpaceX function extimates shared and cluster specfic gene co-expression networks
 \hypertarget{installation}{%
 \section{Installation}\label{installation}}
 
+The package requires a dependency that is not available on CRAN. Install it with:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"rdevito/MSFA"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
 You can install the released version of SpaceX from (\url{https://github.com/SatwikAch/SpaceX}) with:
 
 \begin{Shaded}
@@ -422,14 +430,18 @@ The second input is \textbf{Spatial\_locations} is a dataframe which contains sp
 
 The third input is \textbf{Cluster\_annotations}.
 
+The fourth input is \textbf{Post\_process}. If TRUE, the code will return all the posterior samples, shared and cluster specific co-expressions. Please make sure to request for large enough memory to work with the posterior samples. Default is FALSE and the code will return the posterior samples of \(\Phi\) and \(\Psi^c\) (based on definition in equation 1 of the SpaceX paper) only.
+
 \hypertarget{output}{%
 \section{Output}\label{output}}
 
 You will obtain a list of objects as output.
 
-\textbf{SigmaPhi} denotes the Shared Covariance matrix i.e.~\(\Sigma_{\Phi} = \Phi \Phi^{T}\).
+\textbf{Posterior\_samples} contains all the posterior samples.
 
-\textbf{SigmaLambda} denotes the cluster specific Covaraince matrices i.e.~\(\Sigma_{\Psi^{c}} = \Psi^{c} {\Psi^{c}}^{T}\).
+\textbf{Shared\_network} provides the shared co-expression matrix (transformed correlation matrix of \(G_{s} = \Phi \Phi^{T}\)).
+
+\textbf{Cluster\_network} provides the cluster specific co-expression matrices (transformed correlation matrices of \(G_{c} = \Phi \Phi^{T} + \Psi^{c} {\Psi^{c^{T}}}\)).
 
 \hypertarget{example}{%
 \section{Example}\label{example}}
@@ -457,10 +469,10 @@ Next, we'll apply the SpaceX method on the Breast cancer dataset.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Application to SpaceX method}
-\NormalTok{BC\_fit }\OtherTok{\textless{}{-}} \FunctionTok{SpaceX}\NormalTok{(BC\_count,BC\_loc[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{],BC\_loc[,}\DecValTok{3}\NormalTok{])}
+\NormalTok{BC\_fit }\OtherTok{\textless{}{-}} \FunctionTok{SpaceX}\NormalTok{(BC\_count,BC\_loc[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{],BC\_loc[,}\DecValTok{3}\NormalTok{],}\AttributeTok{Post\_process =} \ConstantTok{TRUE}\NormalTok{)}
 
-\CommentTok{\# SigmaPhi :: Shared Covariance matrix}
-\CommentTok{\# SigmaLambda :: Cluster specific Covaraince matrices}
+\CommentTok{\# Shared\_network :: Shared co{-}expression matrix}
+\CommentTok{\# Cluster\_network :: Cluster specific co{-}expression matrices}
 \end{Highlighting}
 \end{Shaded}
 
