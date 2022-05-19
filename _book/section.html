@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>D  | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics</title>
+  <meta name="description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="D  | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="D  | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics" />
+  
+  <meta name="twitter:description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
+  
+
+<meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
+
+
+<meta name="date" content="2022-05-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="realdata.html"/>
+<link rel="next" href="ImplementSpaceX.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Network Estimation in Spatial Transcriptomics</a></li>
+
+<li class="divider"></li>
+<li class="appendix"><span><b>Supplementary Materials</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="A" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>A</b> Methodology</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.1</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.2</b> Multi-Study Factor Model (MSFA)</a></li>
+<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.3</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.4" data-path="method.html"><a href="method.html#novelty-in-methodology-and-estimation-procedure"><i class="fa fa-check"></i><b>A.4</b> Novelty in Methodology and Estimation Procedure</a>
+<ul>
+<li class="chapter" data-level="A.4.1" data-path="method.html"><a href="method.html#differences-from-individual-methods-pqlseq-spark-and-msfa"><i class="fa fa-check"></i><b>A.4.1</b> Differences from individual methods (PQLseq, SPARK and MSFA)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="simulation.html"><a href="simulation.html"><i class="fa fa-check"></i><b>B</b> Simulation Study</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="simulation.html"><a href="simulation.html#induced-correlation-study"><i class="fa fa-check"></i><b>B.1</b> Induced Correlation Study</a></li>
+<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#data-generation-with-spatial-correlation"><i class="fa fa-check"></i><b>B.2</b> Data generation with spatial correlation</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2.1</b> Comparative analysis with different norm measures</a></li>
+<li class="chapter" data-level="B.2.2" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.2.2</b> Estimation of latent factors</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#data-generation-with-no-spatial-correlation"><i class="fa fa-check"></i><b>B.3</b> Data generation with no spatial correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="realdata.html"><a href="realdata.html"><i class="fa fa-check"></i><b>C</b> Real Data Analysis</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="realdata.html"><a href="realdata.html#exploratory"><i class="fa fa-check"></i><b>C.1</b> Exploratory analysis of the datasets</a>
+<ul>
+<li class="chapter" data-level="C.1.1" data-path="realdata.html"><a href="realdata.html#merfish-data"><i class="fa fa-check"></i><b>C.1.1</b> Merfish Data</a></li>
+<li class="chapter" data-level="C.1.2" data-path="realdata.html"><a href="realdata.html#breast-cancer-data"><i class="fa fa-check"></i><b>C.1.2</b> Breast Cancer Data</a></li>
+</ul></li>
+<li class="chapter" data-level="C.2" data-path="realdata.html"><a href="realdata.html#communitydetection"><i class="fa fa-check"></i><b>C.2</b> Community detection</a></li>
+<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#realdata-based-benchmarking-details"><i class="fa fa-check"></i><b>C.3</b> Realdata based benchmarking details</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i><b>D</b> </a>
+<ul>
+<li class="chapter" data-level="D.1" data-path="section.html"><a href="section.html#row-1-col-1"><i class="fa fa-check"></i><b>D.1</b> Row 1 Col 1</a></li>
+<li class="chapter" data-level="D.2" data-path="section.html"><a href="section.html#row-1-col-2"><i class="fa fa-check"></i><b>D.2</b> Row 1 Col 2</a></li>
+<li class="chapter" data-level="D.3" data-path="section.html"><a href="section.html#row-2-col-1"><i class="fa fa-check"></i><b>D.3</b> Row 2 Col 1</a></li>
+<li class="chapter" data-level="D.4" data-path="section.html"><a href="section.html#row-2-col-2"><i class="fa fa-check"></i><b>D.4</b> Row 2 Col 2</a></li>
+<li class="chapter" data-level="D.5" data-path="section.html"><a href="section.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>D.5</b> List of hub genes and edges</a></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html"><i class="fa fa-check"></i><b>E</b> Implementation of SpaceX</a>
+<ul>
+<li class="chapter" data-level="E.1" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html#installation"><i class="fa fa-check"></i><b>E.1</b> Installation</a></li>
+<li class="chapter" data-level="E.2" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html#data-inputs"><i class="fa fa-check"></i><b>E.2</b> Data inputs</a></li>
+<li class="chapter" data-level="E.3" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html#output"><i class="fa fa-check"></i><b>E.3</b> Output</a></li>
+<li class="chapter" data-level="E.4" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html#example"><i class="fa fa-check"></i><b>E.4</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section" class="section level1 multicol" number="4" columns="2">
+<h1><span class="header-section-number">D</span> </h1>
+<div id="row-1-col-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">D.1</span> Row 1 Col 1<a href="section.html#row-1-col-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>some content</p>
+</div>
+<div id="row-1-col-2" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">D.2</span> Row 1 Col 2<a href="section.html#row-1-col-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>some content</p>
+</div>
+<div id="row-2-col-1" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">D.3</span> Row 2 Col 1<a href="section.html#row-2-col-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>some content</p>
+</div>
+<div id="row-2-col-2" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">D.4</span> Row 2 Col 2<a href="section.html#row-2-col-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>some content</p>
+<p>Table @ref{tab:BICWAIC} shows the BIC and WAIC values for the SpaceX and non-spatial Poisson model w.r.t. the mouse hypothalamus and Breast cancer data. Based on the criteria based values from the table we can infer that the SpaceX model is a better fit to both spatial transcriptomics datasets than the non-spatial Poisson model.</p>
+</div>
+<div id="list-of-hub-genes-and-edges" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">D.5</span> List of hub genes and edges<a href="section.html#list-of-hub-genes-and-edges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A detailed list of hub genes and top edges for both the datasets can be found at <a href="https://github.com/SatwikAch/SpaceX" class="uri">https://github.com/SatwikAch/SpaceX</a>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="realdata.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ImplementSpaceX.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-Real-data-analysis.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

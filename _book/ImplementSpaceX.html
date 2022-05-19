@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>D Implementation of SpaceX | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics</title>
   <meta name="description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="D Implementation of SpaceX | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
 
 
-<meta name="date" content="2022-02-03" />
+<meta name="date" content="2022-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="realdata.html"/>
 <link rel="next" href="references.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -120,6 +119,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -141,15 +162,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="A" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>A</b> Methodology</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.1</b> Poisson Mixed Model</a></li>
-<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.2</b> Multi-Study Factor Model (MSFA)</a></li>
-<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.3</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#spacex-model"><i class="fa fa-check"></i><b>A.1</b> SpaceX model</a></li>
+<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.2</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.3</b> Multi-Study Factor Model (MSFA)</a></li>
+<li class="chapter" data-level="A.4" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.4</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.5" data-path="method.html"><a href="method.html#novelty-in-methodology-and-estimation-procedure"><i class="fa fa-check"></i><b>A.5</b> Novelty in Methodology and Estimation Procedure</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="method.html"><a href="method.html#differences-from-individual-methods-pqlseq-spark-and-msfa"><i class="fa fa-check"></i><b>A.5.1</b> Differences from individual methods (PQLseq, SPARK and MSFA)</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="method.html"><a href="method.html#modifiend-version-of-the-model-for-cell-type-based-clusters"><i class="fa fa-check"></i><b>A.6</b> Modifiend version of the model for cell-type based clusters</a></li>
 </ul></li>
 <li class="chapter" data-level="B" data-path="simulation.html"><a href="simulation.html"><i class="fa fa-check"></i><b>B</b> Simulation Study</a>
 <ul>
 <li class="chapter" data-level="B.1" data-path="simulation.html"><a href="simulation.html#induced-correlation-study"><i class="fa fa-check"></i><b>B.1</b> Induced Correlation Study</a></li>
-<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2</b> Comparative analysis with different norm measures</a></li>
-<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.3</b> Estimation of latent factors</a></li>
+<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#data-generation-with-spatial-correlation"><i class="fa fa-check"></i><b>B.2</b> Data generation with spatial correlation</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2.1</b> Comparative analysis with different norm measures</a></li>
+<li class="chapter" data-level="B.2.2" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.2.2</b> Estimation of latent factors</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#data-generation-with-no-spatial-correlation"><i class="fa fa-check"></i><b>B.3</b> Data generation with no spatial correlation</a></li>
+<li class="chapter" data-level="B.4" data-path="simulation.html"><a href="simulation.html#hub-gene-detection-based-simulation"><i class="fa fa-check"></i><b>B.4</b> Hub gene detection based simulation</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="realdata.html"><a href="realdata.html"><i class="fa fa-check"></i><b>C</b> Real Data Analysis</a>
 <ul>
@@ -159,7 +191,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="C.1.2" data-path="realdata.html"><a href="realdata.html#breast-cancer-data"><i class="fa fa-check"></i><b>C.1.2</b> Breast Cancer Data</a></li>
 </ul></li>
 <li class="chapter" data-level="C.2" data-path="realdata.html"><a href="realdata.html#communitydetection"><i class="fa fa-check"></i><b>C.2</b> Community detection</a></li>
-<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.3</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#benchmarking-on-real-spatial-transcriptomics-data"><i class="fa fa-check"></i><b>C.3</b> Benchmarking on real spatial transcriptomics data</a></li>
+<li class="chapter" data-level="C.4" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.4</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.5" data-path="realdata.html"><a href="realdata.html#corroboration-with-tcga-breast-cancer-data"><i class="fa fa-check"></i><b>C.5</b> Corroboration with TCGA Breast Cancer Data</a></li>
+<li class="chapter" data-level="C.6" data-path="realdata.html"><a href="realdata.html#network-similarity-between-cell-type-specific-networks"><i class="fa fa-check"></i><b>C.6</b> Network similarity between cell-type specific networks</a></li>
 </ul></li>
 <li class="chapter" data-level="D" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html"><i class="fa fa-check"></i><b>D</b> Implementation of SpaceX</a>
 <ul>
@@ -189,34 +224,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ImplementSpaceX" class="section level1" number="4">
-<h1><span class="header-section-number">D</span> Implementation of SpaceX</h1>
+<div id="ImplementSpaceX" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">D</span> Implementation of SpaceX<a href="ImplementSpaceX.html#ImplementSpaceX" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>SpaceX function extimates shared and cluster specfic gene co-expression networks for spatial transcriptomics data. More details about the SpaceX method can be found in the main manuscript. See below for detailed discussion on installation of SpaceX package, Data inputs and outputs followed by an example.</p>
-<div id="installation" class="section level2" number="4.1">
-<h2><span class="header-section-number">D.1</span> Installation</h2>
+<div id="installation" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">D.1</span> Installation<a href="ImplementSpaceX.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The package requires a dependency that is not available on CRAN. Install it with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ImplementSpaceX.html#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rdevito/MSFA&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ImplementSpaceX.html#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rdevito/MSFA&quot;</span>)</span></code></pre></div>
 <p>You can install the released version of SpaceX from (<a href="https://github.com/SatwikAch/SpaceX" class="uri">https://github.com/SatwikAch/SpaceX</a>) with:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="ImplementSpaceX.html#cb2-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;SatwikAch/SpaceX&quot;</span>)</span>
 <span id="cb2-2"><a href="ImplementSpaceX.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaceX)</span></code></pre></div>
 </div>
-<div id="data-inputs" class="section level2" number="4.2">
-<h2><span class="header-section-number">D.2</span> Data inputs</h2>
+<div id="data-inputs" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">D.2</span> Data inputs<a href="ImplementSpaceX.html#data-inputs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Please make sure to provide both inputs as dataframe.</p>
 <p>The first input is <strong>Gene_expression_mat</strong> which is <span class="math inline">\(N \times G\)</span> dataframe. Here <span class="math inline">\(N\)</span> denotes the number of spatial locations and <span class="math inline">\(G\)</span> denotes number of genes.</p>
 <p>The second input is <strong>Spatial_locations</strong> is a dataframe which contains spatial coordinates.</p>
 <p>The third input is <strong>Cluster_annotations</strong>.</p>
-<p>The fourth input is <strong>Post_process</strong>. If TRUE, the code will return all the posterior samples, shared and cluster specific co-expressions. Please make sure to request for large enough memory to work with the posterior samples. Default is FALSE and the code will return the posterior samples of <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\Psi^c\)</span> (based on definition in equation 1 of the SpaceX paper) only.</p>
+<p>The fourth input is <strong>sPMM</strong>. If TRUE, the code will return the estimates of sigma1_sq and sigma2_sq from the spatial Poisson mixed model.</p>
+<p>The fifth input is <strong>Post_process</strong>. If TRUE, the code will return all the posterior samples, shared and cluster specific co-expressions. Please make sure to request for large enough memory to work with the posterior samples. Default is FALSE and the code will return the posterior samples of <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\Psi^c\)</span> (based on definition in equation 1 of the SpaceX paper) only.</p>
 </div>
-<div id="output" class="section level2" number="4.3">
-<h2><span class="header-section-number">D.3</span> Output</h2>
+<div id="output" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">D.3</span> Output<a href="ImplementSpaceX.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You will obtain a list of objects as output.</p>
 <p><strong>Posterior_samples</strong> contains all the posterior samples.</p>
 <p><strong>Shared_network</strong> provides the shared co-expression matrix (transformed correlation matrix of <span class="math inline">\(G_{s} = \Phi \Phi^{T}\)</span>).</p>
 <p><strong>Cluster_network</strong> provides the cluster specific co-expression matrices (transformed correlation matrices of <span class="math inline">\(G_{c} = \Phi \Phi^{T} + \Psi^{c} {\Psi^{c^{T}}}\)</span>).</p>
 </div>
-<div id="example" class="section level2" number="4.4">
-<h2><span class="header-section-number">D.4</span> Example</h2>
+<div id="example" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">D.4</span> Example<a href="ImplementSpaceX.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here we provide an example to run the SpaceX method.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="ImplementSpaceX.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading the Breast cancer data</span></span>
 <span id="cb3-2"><a href="ImplementSpaceX.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -231,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-11"><a href="ImplementSpaceX.html#cb3-11" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span><span class="fu">dim</span>(BC_count)[<span class="dv">1</span>] <span class="co"># number of locations</span></span></code></pre></div>
 <p>Next, we’ll apply the SpaceX method on the Breast cancer dataset.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="ImplementSpaceX.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Application to SpaceX method</span></span>
-<span id="cb4-2"><a href="ImplementSpaceX.html#cb4-2" aria-hidden="true" tabindex="-1"></a>BC_fit <span class="ot">&lt;-</span> <span class="fu">SpaceX</span>(BC_count,BC_loc[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>],BC_loc[,<span class="dv">3</span>],<span class="at">Post_process =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-2"><a href="ImplementSpaceX.html#cb4-2" aria-hidden="true" tabindex="-1"></a>BC_fit <span class="ot">&lt;-</span> <span class="fu">SpaceX</span>(BC_count,BC_loc[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>],BC_loc[,<span class="dv">3</span>],<span class="at">sPMM=</span><span class="cn">FALSE</span>,<span class="at">Post_process =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb4-3"><a href="ImplementSpaceX.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="ImplementSpaceX.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Shared_network :: Shared co-expression matrix</span></span>
 <span id="cb4-5"><a href="ImplementSpaceX.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cluster_network :: Cluster specific co-expression matrices</span></span></code></pre></div>

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A Methodology | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics</title>
   <meta name="description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A Methodology | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
 
 
-<meta name="date" content="2022-02-03" />
+<meta name="date" content="2022-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="simulation.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -163,15 +162,26 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="A" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>A</b> Methodology</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.1</b> Poisson Mixed Model</a></li>
-<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.2</b> Multi-Study Factor Model (MSFA)</a></li>
-<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.3</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#spacex-model"><i class="fa fa-check"></i><b>A.1</b> SpaceX model</a></li>
+<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.2</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.3</b> Multi-Study Factor Model (MSFA)</a></li>
+<li class="chapter" data-level="A.4" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.4</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.5" data-path="method.html"><a href="method.html#novelty-in-methodology-and-estimation-procedure"><i class="fa fa-check"></i><b>A.5</b> Novelty in Methodology and Estimation Procedure</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="method.html"><a href="method.html#differences-from-individual-methods-pqlseq-spark-and-msfa"><i class="fa fa-check"></i><b>A.5.1</b> Differences from individual methods (PQLseq, SPARK and MSFA)</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="method.html"><a href="method.html#modifiend-version-of-the-model-for-cell-type-based-clusters"><i class="fa fa-check"></i><b>A.6</b> Modifiend version of the model for cell-type based clusters</a></li>
 </ul></li>
 <li class="chapter" data-level="B" data-path="simulation.html"><a href="simulation.html"><i class="fa fa-check"></i><b>B</b> Simulation Study</a>
 <ul>
 <li class="chapter" data-level="B.1" data-path="simulation.html"><a href="simulation.html#induced-correlation-study"><i class="fa fa-check"></i><b>B.1</b> Induced Correlation Study</a></li>
-<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2</b> Comparative analysis with different norm measures</a></li>
-<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.3</b> Estimation of latent factors</a></li>
+<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#data-generation-with-spatial-correlation"><i class="fa fa-check"></i><b>B.2</b> Data generation with spatial correlation</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2.1</b> Comparative analysis with different norm measures</a></li>
+<li class="chapter" data-level="B.2.2" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.2.2</b> Estimation of latent factors</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#data-generation-with-no-spatial-correlation"><i class="fa fa-check"></i><b>B.3</b> Data generation with no spatial correlation</a></li>
+<li class="chapter" data-level="B.4" data-path="simulation.html"><a href="simulation.html#hub-gene-detection-based-simulation"><i class="fa fa-check"></i><b>B.4</b> Hub gene detection based simulation</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="realdata.html"><a href="realdata.html"><i class="fa fa-check"></i><b>C</b> Real Data Analysis</a>
 <ul>
@@ -181,7 +191,10 @@ div.csl-indent {
 <li class="chapter" data-level="C.1.2" data-path="realdata.html"><a href="realdata.html#breast-cancer-data"><i class="fa fa-check"></i><b>C.1.2</b> Breast Cancer Data</a></li>
 </ul></li>
 <li class="chapter" data-level="C.2" data-path="realdata.html"><a href="realdata.html#communitydetection"><i class="fa fa-check"></i><b>C.2</b> Community detection</a></li>
-<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.3</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#benchmarking-on-real-spatial-transcriptomics-data"><i class="fa fa-check"></i><b>C.3</b> Benchmarking on real spatial transcriptomics data</a></li>
+<li class="chapter" data-level="C.4" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.4</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.5" data-path="realdata.html"><a href="realdata.html#corroboration-with-tcga-breast-cancer-data"><i class="fa fa-check"></i><b>C.5</b> Corroboration with TCGA Breast Cancer Data</a></li>
+<li class="chapter" data-level="C.6" data-path="realdata.html"><a href="realdata.html#network-similarity-between-cell-type-specific-networks"><i class="fa fa-check"></i><b>C.6</b> Network similarity between cell-type specific networks</a></li>
 </ul></li>
 <li class="chapter" data-level="D" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html"><i class="fa fa-check"></i><b>D</b> Implementation of SpaceX</a>
 <ul>
@@ -211,12 +224,121 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="method" class="section level1" number="1">
-<h1><span class="header-section-number">A</span> Methodology</h1>
-<p>In this section, we provide a detailed discussion of the estimation procedure for the SpaceX model equation 1 in section 2.1 of the paper. A full-scale MCMC will be computationally expensive on a complex hierarchical model. For computational advantage, we decompose the model into two parts (I) sPMM: spatial Poisson mixed model <span class="citation">(<a href="#ref-sun2017differential" role="doc-biblioref">Sun et al. 2017</a>)</span> and (II) MSFA: Multi-study factor analysis model <span class="citation">(<a href="#ref-de2018bayesian" role="doc-biblioref">De Vito et al. 2018</a>)</span>. We enable this model decomposition through a standard Gaussian random variable.</p>
-<div id="poisson-mixed-model" class="section level2" number="1.1">
-<h2><span class="header-section-number">A.1</span> Poisson Mixed Model</h2>
-<p>We can break the SpaceX model and write the spatial Poisson mixed model as</p>
+<div id="method" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">A</span> Methodology<a href="method.html#method" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this section, we start with a brief discussion of the model and interpretations of each term of the model. Next, A detailed discussion of the estimation procedure for the SpaceX model in equation 1 in section 2 of the paper (also mentioned in equation <a href="method.html#eq:Poi-mean-model-matrix-rev">(A.2)</a> ) is provided. Finally we discuss the methodological novelty of our SpaceX method.</p>
+<div id="spacex-model" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">A.1</span> SpaceX model<a href="method.html#spacex-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The gene expression is modeled with a Poisson distribution as
+<span class="math display" id="eq:SpaceX-supp">\[\begin{equation}
+y^{c}_{g}({\bf s}_{i}) \sim \text{Poi}\{ M^{c}({\bf s}_{i}) \lambda^{c}_{g}({\bf s}_{i})\}.
+\tag{A.1}
+\end{equation}\]</span>
+The interpretations of the notations in equation <a href="method.html#eq:SpaceX-supp">(A.1)</a> remains same as mentioned in the section 2.2 of the paper. We denote <span class="math inline">\(\Lambda^{c}\)</span> as a <span class="math inline">\(G \times N_{c}\)</span> (<span class="math inline">\(N_{c}\)</span> denotes size of the c-th cluster) matrix containing the rate parameters for all genes and c-th cluster.
+Subsequently, we model the cluster specific and spatially dependent rate parameter <span class="math inline">\(\bf \Lambda^{c}\)</span> with an additive log-linear equation, i.e. 
+<span class="math display" id="eq:Poi-mean-model-matrix-rev">\[\begin{equation}
+\text{log}({\bf \Lambda}^{c}) = {\bf B}^{c}{\bf X}^{c} + {\bf S}^{c} + {\bf \Phi F} + {\bf \Psi^{c} D^{c}} + {\boldsymbol{\mathcal{E}}}^{c}.
+\tag{A.2}
+\end{equation}\]</span></p>
+<p>We clearly mention the shared and cluster-specific parameters and their interpretations table <a href="method.html#tab:sharedclusterelements">A.1</a>.</p>
+<table>
+<thead>
+<tr>
+<th>
+Parameters
+</th>
+<th>
+Shared
+</th>
+<th>
+Cluster-specific
+</th>
+<th>
+Interpretations
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+<span class="math inline">\({\bf B}^{c}{\bf X}^{c}\)</span>
+</th>
+<th>
+<span class="math inline">\(\times\)</span>
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+<th>
+Covariate effect
+</th>
+</tr>
+<tr>
+<th>
+<span class="math inline">\({\bf S}^{c}\)</span>
+</th>
+<th>
+<span class="math inline">\(\times\)</span>
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+<th>
+Spatial information
+</th>
+</tr>
+<tr>
+<th>
+<span class="math inline">\({\bf \Phi F}\)</span>
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+<th>
+<span class="math inline">\(\times\)</span>
+</th>
+<th>
+Shared loadings and factors
+</th>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(\bf \Psi^{c} D^{c}\)</span>
+</th>
+<th>
+<span class="math inline">\(\times\)</span>
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+<th>
+Cluster loadings and factors
+</th>
+</tr>
+<tr>
+<th>
+<span class="math inline">\(\boldsymbol{\mathcal{E}}^{c}\)</span>
+</th>
+<th>
+<span class="math inline">\(\times\)</span>
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+<th>
+Error matrix
+</th>
+</tr>
+</tbody>
+<caption style="caption-side: bottom">
+<span id="tab:sharedclusterelements">Table A.1: </span> Shared and cluster-specific parameters along with their corresponding interpretations.
+</caption>
+</table>
+<p>A full-scale MCMC will be computationally expensive on a complex hierarchical model. For computational advantage, we decompose the model into two parts (I) sPMM: spatial Poisson mixed model <span class="citation">(<a href="#ref-sun2018heritability" role="doc-biblioref">S. Sun et al. 2018</a>)</span> and (II) MSFA: Multi-study factor analysis model <span class="citation">(<a href="#ref-de2018bayesian" role="doc-biblioref">De Vito et al. 2021</a>)</span>. We enable this model decomposition through a standard Gaussian random variable.</p>
+</div>
+<div id="poisson-mixed-model" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">A.2</span> Poisson Mixed Model<a href="method.html#poisson-mixed-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can break the SpaceX model <a href="method.html#eq:Poi-mean-model-matrix-rev">(A.2)</a> and write the spatial Poisson mixed model as</p>
 <p><span class="math display" id="eq:PMM-supp">\[\begin{align}
 \begin{split}
 &amp; \text{log}({\boldsymbol \lambda}^{c}_{g}) = {{\bf X}^{c}}^{T} {\boldsymbol \beta}^{c}_{g} + {\bf s}^{c} + {\bf z}^{c}_{g}, \\
@@ -224,35 +346,35 @@ div.csl-indent {
 &amp;{\bf s}^{c} = ( s^{c}_{1}, \dots , s^{c}_{N_{c}} )^{T} \sim \text{MVN}(0, \sigma_{1}^{2}\Omega^{c}(s)), \\
 &amp;{\bf z}^{c}_{g} = (z^{1}_{1g}, \dots , z^{c}_{N_{c}g})^{T} \sim \text{MVN}(0, \sigma_{2}^{2} I_{N_{c} \times N_{c} }).
 \end{split}
-\tag{A.1}
+\tag{A.3}
 \end{align}\]</span></p>
-<p>Here <span class="math inline">\(\Omega^{c}(s_{1}, s_{2}) = \text{exp} (- \mid \mid s_{1} - s_{2} \mid \mid^{2} / 2 \rho^{2}_{c} ),\)</span> <span class="math inline">\(c = 1, \dots, C\)</span>. We estimate the length scale parameter of spatial kernel <span class="math inline">\(\rho_{c}\)</span> based on the steps discussed in section 1 of supplementary information in <span class="citation"><a href="#ref-sun2017differential" role="doc-biblioref">Sun et al.</a> (<a href="#ref-sun2017differential" role="doc-biblioref">2017</a>)</span>. Here <span class="math inline">\(Z^{c}_{g}\)</span> captures the cluster specific latent gene expressions and a multi-variate hierarchical modeling of <span class="math inline">\(Z^{c}_{g}(s_{i})\)</span> will help us to identify the gene co-expression network.</p>
+<p>Here <span class="math inline">\(\Omega^{c}(s_{1}, s_{2}) = \text{exp} (- \mid \mid s_{1} - s_{2} \mid \mid^{2} / 2 \rho^{2}_{c} ),\)</span> <span class="math inline">\(c = 1, \dots, C\)</span>. We estimate the length scale parameter of spatial kernel <span class="math inline">\(\rho_{c}\)</span> based on the steps discussed in section 1 of supplementary information in <span class="citation">S. Sun, Zhu, and Zhou (<a href="#ref-sun2020statistical" role="doc-biblioref">2020</a>)</span>. Here <span class="math inline">\(Z^{c}_{g}\)</span> captures the cluster specific latent gene expressions and a multi-variate hierarchical modeling of <span class="math inline">\(Z^{c}_{g}(s_{i})\)</span> will help us to identify the gene co-expression network.</p>
 </div>
-<div id="multi-study-factor-model-msfa" class="section level2" number="1.2">
-<h2><span class="header-section-number">A.2</span> Multi-Study Factor Model (MSFA)</h2>
-<p>The 2nd stage of the modeling framework is multi-study factor analysis <span class="citation">(<a href="#ref-de2018bayesian" role="doc-biblioref">De Vito et al. 2018</a>)</span> which is provided as follows
+<div id="multi-study-factor-model-msfa" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">A.3</span> Multi-Study Factor Model (MSFA)<a href="method.html#multi-study-factor-model-msfa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The 2nd stage of the modeling framework is multi-study factor analysis <span class="citation">(<a href="#ref-de2018bayesian" role="doc-biblioref">De Vito et al. 2021</a>)</span> which is provided as follows
 <span class="math display" id="eq:MSFA-supp">\[\begin{align}
 \begin{split}
 &amp; \hat{\bf z}^{c}_{i} = \boldsymbol \Phi {\bf f}_{i} + \boldsymbol \Psi^{c} {\bf d}^{c}_{i} + {\bf e}^{c}_{i}, \\
 &amp; {\bf f}_{i} \sim N_{K}(0, {\bf I}_{K}), \hspace{0.5cm} {\bf d}^{c}_{i} \sim N_{K_{c}}(0,{\bf I}_{K_{c}}),\\
 &amp; {\bf e}^{c}_{i} \sim N_{G}(0,\boldsymbol \Xi_{c}), \hspace{0.5cm} \boldsymbol \Xi_{c} = \text{diag}(\xi^{c}_{1}, \dots, \xi^{c}_{G} ).
 \end{split}
-\tag{A.2}
+\tag{A.4}
 \end{align}\]</span>
 The marginal distribution of <span class="math inline">\(\hat{\bf z}^{c}_{i}\)</span> is a multivariate normal distribution with mean <span class="math inline">\(0\)</span> and covariance matrix <span class="math inline">\(\Sigma_{c}\)</span> s.t.
 <span class="math display" id="eq:sigma-decomposition">\[\begin{align}
 \Sigma_{c} = \Phi \Phi^{T} + \Psi^{c} {\Psi^{c}}^{T} + \Xi_{c} = \Sigma_{\Phi} + \Sigma_{\Psi^{c}} + \Xi_{c}
-\tag{A.3}
+\tag{A.5}
 \end{align}\]</span>
-<span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{\Psi^{c}} = \Psi^{c} {\Psi^{c}}^{T}\)</span> are covariance of shared and cluster specific factors respectively. The decomposition of <span class="math inline">\(\Sigma_{c}\)</span> in <a href="method.html#eq:sigma-decomposition">(A.3)</a> is not a unique since we can set <span class="math inline">\(\Phi^{*} = \Phi Q\)</span> and <span class="math inline">\({\Psi^{*}}^{c} = \Psi^{c} Q_{c}\)</span> where <span class="math inline">\(Q\)</span> and <span class="math inline">\(Q_{c}\)</span> are square orthonormal matrices. This will also lead to the same decomposition <span class="math inline">\(\Sigma^{c} = \Phi^{*} {\Phi^{*}}^{T} + {\Psi^{*}}^{c} {{\Psi^{*}}^{c}}^{T} = \Phi \Phi^{T} + \Psi_{c} \Psi_{c}^{T}\)</span>. To overcome the indeterminacy through orthonormal matrices, the factor loading matrices are restricted to be lower triangular matrices <span class="citation">(<a href="#ref-geweke1996measuring" role="doc-biblioref">Geweke and Zhou 1996</a>; <a href="#ref-lopes2004bayesian" role="doc-biblioref">Lopes and West 2004</a>)</span>.</p>
+<span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{\Psi^{c}} = \Psi^{c} {\Psi^{c}}^{T}\)</span> are covariance of shared and cluster specific factors respectively. The decomposition of <span class="math inline">\(\Sigma_{c}\)</span> in <a href="method.html#eq:sigma-decomposition">(A.5)</a> is not a unique since we can set <span class="math inline">\(\Phi^{*} = \Phi Q\)</span> and <span class="math inline">\({\Psi^{*}}^{c} = \Psi^{c} Q_{c}\)</span> where <span class="math inline">\(Q\)</span> and <span class="math inline">\(Q_{c}\)</span> are square orthonormal matrices. This will also lead to the same decomposition <span class="math inline">\(\Sigma^{c} = \Phi^{*} {\Phi^{*}}^{T} + {\Psi^{*}}^{c} {{\Psi^{*}}^{c}}^{T} = \Phi \Phi^{T} + \Psi_{c} \Psi_{c}^{T}\)</span>. To overcome the indeterminacy through orthonormal matrices, the factor loading matrices are restricted to be lower triangular matrices <span class="citation">(<a href="#ref-geweke1996measuring" role="doc-biblioref">Geweke and Zhou 1996</a>; <a href="#ref-lopes2004bayesian" role="doc-biblioref">Lopes and West 2004</a>)</span>.</p>
 </div>
-<div id="multiplicative-gamma-shrinkage-prior" class="section level2" number="1.3">
-<h2><span class="header-section-number">A.3</span> Multiplicative gamma shrinkage prior</h2>
-<p>We follow the same steps from <span class="citation"><a href="#ref-de2018bayesian" role="doc-biblioref">De Vito et al.</a> (<a href="#ref-de2018bayesian" role="doc-biblioref">2018</a>)</span> and place multiplicative gamma shrinkage prior <span class="citation">(<a href="#ref-bhattacharya2011sparse" role="doc-biblioref">Bhattacharya and Dunson 2011</a>)</span> prior on the shared and cluster specific loading matrices i.e. <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\Psi_{c}\)</span> <span class="math inline">\(c=1,\dots,C\)</span>. The shared and cluster specific latent factors (<span class="math inline">\(K\)</span> and <span class="math inline">\(K_{c}\)</span> respectively) are selected following methodology described in section 3.3 of <span class="citation"><a href="#ref-de2018bayesian" role="doc-biblioref">De Vito et al.</a> (<a href="#ref-de2018bayesian" role="doc-biblioref">2018</a>)</span>. The multiplicative gamma prior on elements of shared covariance matrices are provided as follows
+<div id="multiplicative-gamma-shrinkage-prior" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">A.4</span> Multiplicative gamma shrinkage prior<a href="method.html#multiplicative-gamma-shrinkage-prior" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We follow the same steps from <span class="citation">De Vito et al. (<a href="#ref-de2018bayesian" role="doc-biblioref">2021</a>)</span> and place multiplicative gamma shrinkage prior <span class="citation">(<a href="#ref-bhattacharya2011sparse" role="doc-biblioref">Bhattacharya and Dunson 2011</a>)</span> prior on the shared and cluster specific loading matrices i.e. <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\Psi_{c}\)</span> <span class="math inline">\(c=1,\dots,C\)</span>. The shared and cluster specific latent factors (<span class="math inline">\(K\)</span> and <span class="math inline">\(K_{c}\)</span> respectively) are selected following methodology described in section 3.3 of <span class="citation">De Vito et al. (<a href="#ref-de2018bayesian" role="doc-biblioref">2021</a>)</span>. The multiplicative gamma prior on elements of shared covariance matrices are provided as follows
 <span class="math display">\[\begin{equation}
 \begin{split}
 &amp; \phi_{gk} \mid \delta_{gk}, \eta_{k} \sim N(0, \delta_{gk}^{-1} \eta_{k}^{-1}), \hspace{0.5cm} g = 1, \dots , G, \hspace{0.25cm} k = 1, \dots, \infty, \\
-&amp; \delta_{gk} \sim \Gamma(\frac{\nu}{2}, \frac{\nu}{2}) \hspace{0.5cm}  \eta_{k} = \prod_{j=1}^{k} \zeta_{j} \hspace{0.5cm} \zeta_{1} \sim \Gamma(a_{1},1) \hspace{0.5cm}  \zeta_{j} \sim \Gamma(a_{2},1), \hspace{0.2cm} j \ge 2. 
+&amp; \delta_{gk} \sim \Gamma(\frac{\nu}{2}, \frac{\nu}{2}) \hspace{0.5cm}  \eta_{k} = \prod_{j=1}^{k} \zeta_{j} \hspace{0.5cm} \zeta_{1} \sim \Gamma(a_{1},1) \hspace{0.5cm}  \zeta_{j} \sim \Gamma(a_{2},1), \hspace{0.2cm} j \ge 2.
 \end{split}
 \end{equation}\]</span>
 Here <span class="math inline">\(\delta_{gk}\)</span> is the local shrinkage parameter for <span class="math inline">\(G\)</span> column elements of <span class="math inline">\(k\)</span>th column and <span class="math inline">\(\eta_{k}\)</span> is the global shrinkage parameter where <span class="math inline">\(\zeta_{j}\)</span> <span class="math inline">\((j=1,2. \dots)\)</span> are independent. We repeat the same process to posit prior on the elements of cluster-specific loading matrices</p>
@@ -262,17 +384,114 @@ Here <span class="math inline">\(\delta_{gk}\)</span> is the local shrinkage par
 &amp; \delta^{c}_{gk_{c}} \sim \Gamma(\frac{\nu^{c}}{2}, \frac{\nu^{c}}{2}) \hspace{0.5cm}  \eta^{c}_{k_{c}} = \prod_{j=1}^{k_{c}} \zeta^{c}_{j} \hspace{0.5cm} \zeta^{c}_{1} \sim \Gamma(a^{c}_{1},1) \hspace{0.5cm}  \zeta^{c}_{j} \sim \Gamma(a^{c}_{2},1), \hspace{0.2cm} j \ge 2.
 \end{split}
 \end{equation}\]</span>
-Here <span class="math inline">\(\delta^{c}_{gk_{c}}\)</span> <span class="math inline">\(\eta^{c}_{k_{c}}\)</span> are local and global parameters respectively and <span class="math inline">\(\zeta_{j}^{c}\)</span> <span class="math inline">\((c=1,2, \dots C)\)</span> are independent of each other. We determine <span class="math inline">\(K\)</span> and <span class="math inline">\(K_{c}\)</span> following methodology described in section 3.3 of <span class="citation"><a href="#ref-de2018bayesian" role="doc-biblioref">De Vito et al.</a> (<a href="#ref-de2018bayesian" role="doc-biblioref">2018</a>)</span>.</p>
+Here <span class="math inline">\(\delta^{c}_{gk_{c}}\)</span> <span class="math inline">\(\eta^{c}_{k_{c}}\)</span> are local and global parameters respectively and <span class="math inline">\(\zeta_{j}^{c}\)</span> <span class="math inline">\((c=1,2, \dots C)\)</span> are independent of each other. We determine <span class="math inline">\(K\)</span> and <span class="math inline">\(K_{c}\)</span> following methodology described in section 3.3 of <span class="citation">De Vito et al. (<a href="#ref-de2018bayesian" role="doc-biblioref">2021</a>)</span>.</p>
+</div>
+<div id="novelty-in-methodology-and-estimation-procedure" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">A.5</span> Novelty in Methodology and Estimation Procedure<a href="method.html#novelty-in-methodology-and-estimation-procedure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The SpaceX model <a href="method.html#eq:Poi-mean-model-matrix-rev">(A.2)</a> incorporates the spatial information in Poisson likelihood and builds on a factor model based components to estimate the gene co-expression networks. The PQLseq algorithm <span class="citation">(<a href="#ref-sun2018heritability" role="doc-biblioref">S. Sun et al. 2018</a>)</span> is based on a Poisson likelihood but it does not incorporate the spatial information. The hierarchical factor analysis model (MSFA, <span class="citation">De Vito et al. (<a href="#ref-de2018bayesian" role="doc-biblioref">2021</a>)</span>) model considers a Gaussian likelihood and does not take into account the spatial information. The SpaceX model incorporates the discrete nature of the single cell sequencing data and builds on a Poisson likelihood. The model accounts for the spatial effect whereas other two models do not. One can infer the gene co-expression networks while considering the spatial information but MSFA fails to incorporate the spatial locations. The detailed comparison between 3 models is summarized in Table <a href="method.html#tab:differentmodeloverviewqsn4">A.2</a>.</p>
+<p>An MCMC based algorithm for the SpaceX model will be computationally inefficient. We develop a tractable and computationally scalable Bayesian algorithm for the estimation procedure of the novel joint modeling framework. We decompose the whole model into two essential components (I) spatial Poisson model and (II) hierarchical factor analysis model.</p>
+<table>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+SpaceX model
+</th>
+<th>
+PQLseq
+</th>
+<th>
+MSFA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+Spatial information
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+<th>
+X
+</th>
+<th>
+X
+</th>
+</tr>
+<tr>
+<th>
+Poisson likelihood
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+<th>
+X
+</th>
+</tr>
+<tr>
+<th>
+Network inference
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+<th>
+X
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+</tr>
+<tr>
+<th>
+Gaussian likelihood
+</th>
+<th>
+X
+</th>
+<th>
+X
+</th>
+<th>
+<span class="math inline">\(\checkmark\)</span>
+</th>
+</tr>
+</tbody>
+<caption style="caption-side: bottom">
+<span id="tab:differentmodeloverviewqsn4">Table A.2: </span> Methodological comparison between SpaceX, PQLseq, MSFA models.
+</caption>
+</table>
+<div id="differences-from-individual-methods-pqlseq-spark-and-msfa" class="section level3 hasAnchor" number="1.5.1">
+<h3><span class="header-section-number">A.5.1</span> Differences from individual methods (PQLseq, SPARK and MSFA)<a href="method.html#differences-from-individual-methods-pqlseq-spark-and-msfa" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For spatial Poisson model, we use the scalable penalized quasi-likelihood algorithm named PQLseq. The algorithm is based on the generalized linear mixed model framework which accounts for the count nature of the single cell sequencing data. The algorithm can be used for detection of deferentially expressed genes. The PQLseq algorithm does not take into account the spatial information and the SPARK <span class="citation">(<a href="#ref-sun2020statistical" role="doc-biblioref">S. Sun, Zhu, and Zhou 2020</a>)</span> method was developed to address this limitation. Although, the SPARK method only estimates parameters while setting the spatial variance parameter to zero and develops a score test based procedure to identify spatially expressed genes. We build on the PQLseq algorithm for our estimation procedure of spatial Poisson mixed model such that the algorithm can accommodate the spatial information and estimates the parameters without setting the spatial variance parameter to zero. We use the modified version of the PQLseq algorithm to obtain the latent gene expressions and carry it forward in our next framework.</p>
+<p>We use the multi-study factor analysis (MSFA) model <span class="citation">(<a href="#ref-de2018bayesian" role="doc-biblioref">De Vito et al. 2021</a>)</span> on the latent gene expression matrix to estimate shared and cluster specific gene co-expressions. The MSFA model can not adapt for the count nature of the sequencing data and corresponding spatial locations. Our joint modeling framework in the SpaceX model addresses both concerns.</p>
+</div>
+</div>
+<div id="modifiend-version-of-the-model-for-cell-type-based-clusters" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">A.6</span> Modifiend version of the model for cell-type based clusters<a href="method.html#modifiend-version-of-the-model-for-cell-type-based-clusters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We aimed to modify our model to explicitly accommodate the spatial correlation between cell-type based clusters. To do so, we follow the standard notations as discussed throughout the paer and Supplementary Materials. Here, <span class="math inline">\(y^{c}_{g}(s_{i})\)</span> represents the gene expression for g-th gene for c-th cluster w.r.t. <span class="math inline">\(s_{i}\)</span> spatial locations. The gene expression is being modeled with a Poisson distribution as where <span class="math inline">\(M\)</span> is the normalizing constant and <span class="math inline">\(\lambda\)</span> is the rate parameter. The spatially dependent rate parameter <span class="math inline">\(\lambda\)</span> is modeled with a log-linear equation
+<span class="math display" id="eq:PoimeanModel-matrix-celltype">\[\begin{equation}
+\text{log}({\bf \Lambda}^{c}) = {\bf B}^{c}{\bf X}^{c} + {\bf S}^{c} + {\bf \Phi F} + {\bf \Gamma^{c}} {\bf \Psi^{c} D^{c}} + {\boldsymbol{\mathcal{E}}}^{c}.
+\tag{A.6}
+\end{equation}\]</span>
+Explanation of all the parameters except for the new parameter (<span class="math inline">\(\bf \Gamma^{c}\)</span>) remains the same. In this model, <span class="math inline">\(\bf \Gamma^{c}\)</span> now models the cell-type specific spatial process based on spatial distance between cell types. We adjust for spatial correlations for nearby cell-types through the term <span class="math inline">\(\bf S^{C}\)</span> and cross cell-type specific adjustment is factored in through <span class="math inline">\(\bf \Gamma^{C}\)</span>. While the extended model looks appealing, unfortunately, we realized that there are several levels of difficulties that need careful thinking before being fully incorporated in the model. For example, we are working with a Poisson likelihood which is non-Gaussian and spatial information needs to be included in the model. Identifiability issue is the main challenge for the model in <a href="method.html#eq:PoimeanModel-matrix-celltype">(A.6)</a>. Based on factor models literature, the loading matrices are usually restricted to be a lower triangular matrix for identifiability reasons in case of a Gaussian likelihood <span class="citation">(<a href="#ref-geweke1996measuring" role="doc-biblioref">Geweke and Zhou 1996</a>; <a href="#ref-lopes2004bayesian" role="doc-biblioref">Lopes and West 2004</a>)</span>. We need non-standard identifiable restrictions to estimate <span class="math inline">\(\bf \Gamma^{c}\)</span> and <span class="math inline">\(\bf \Psi^{c}\)</span> since they are incorporated in the model in multiplicative manner. Given these methodological underpinnings that require more rigorous theoretical work to overcome such difficulties, we leave this non-trivial methodological estimation algorithm as future work.</p>
 
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-bhattacharya2011sparse" class="csl-entry">
 Bhattacharya, Anirban, and David B Dunson. 2011. <span>“Sparse Bayesian Infinite Factor Models.”</span> <em>Biometrika</em>, 291–306.
 </div>
 <div id="ref-de2018bayesian" class="csl-entry">
-De Vito, Roberta, Ruggero Bellio, Lorenzo Trippa, and Giovanni Parmigiani. 2018. <span>“Bayesian Multi-Study Factor Analysis for High-Throughput Biological Data.”</span> <em>arXiv Preprint arXiv:1806.09896</em>.
+De Vito, Roberta, Ruggero Bellio, Lorenzo Trippa, and Giovanni Parmigiani. 2021. <span>“Bayesian Multistudy Factor Analysis for High-Throughput Biological Data.”</span> <em>The Annals of Applied Statistics</em> 15 (4): 1723–41.
 </div>
 <div id="ref-geweke1996measuring" class="csl-entry">
 Geweke, John, and Guofu Zhou. 1996. <span>“Measuring the Pricing Error of the Arbitrage Pricing Theory.”</span> <em>The Review of Financial Studies</em> 9 (2): 557–87.
@@ -280,8 +499,11 @@ Geweke, John, and Guofu Zhou. 1996. <span>“Measuring the Pricing Error of the 
 <div id="ref-lopes2004bayesian" class="csl-entry">
 Lopes, Hedibert Freitas, and Mike West. 2004. <span>“Bayesian Model Assessment in Factor Analysis.”</span> <em>Statistica Sinica</em>, 41–67.
 </div>
-<div id="ref-sun2017differential" class="csl-entry">
-Sun, Shiquan, Michelle Hood, Laura Scott, Qinke Peng, Sayan Mukherjee, Jenny Tung, and Xiang Zhou. 2017. <span>“Differential Expression Analysis for RNAseq Using Poisson Mixed Models.”</span> <em>Nucleic Acids Research</em> 45 (11): e106–6.
+<div id="ref-sun2018heritability" class="csl-entry">
+Sun, Shiquan, Jiaqiang Zhu, Sahar Mozaffari, Carole Ober, Mengjie Chen, and Xiang Zhou. 2018. <span>“Heritability Estimation and Differential Analysis of Count Data with Generalized Linear Mixed Models in Genomic Sequencing Studies.”</span> <em>Bioinformatics</em> 35 (3): 487–96.
+</div>
+<div id="ref-sun2020statistical" class="csl-entry">
+Sun, Shiquan, Jiaqiang Zhu, and Xiang Zhou. 2020. <span>“Statistical Analysis of Spatial Expression Patterns for Spatially Resolved Transcriptomic Studies.”</span> <em>Nature Methods</em> 17 (2): 193–200.
 </div>
 </div>
             </section>

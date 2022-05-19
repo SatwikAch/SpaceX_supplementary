@@ -6,7 +6,7 @@ SpaceX function extimates shared and cluster specfic gene co-expression networks
 ## Installation 
 The package requires a dependency that is not available on CRAN. Install it with:
 ```{r, eval=FALSE}
-devtools::install_github("rdevito/MSFA")
+remotes::install_github("rdevito/MSFA")
 ```
 You can install the released version of SpaceX from (https://github.com/SatwikAch/SpaceX) with:
 ```{r, eval=FALSE}
@@ -23,7 +23,9 @@ The second input is **Spatial_locations** is a dataframe which contains spatial 
 
 The third input is **Cluster_annotations**.
 
-The fourth input is **Post_process**. If TRUE, the code will return all the posterior samples, shared and cluster specific co-expressions. Please make sure to request for large enough memory to work with the posterior samples. Default is FALSE and the code will return the posterior samples of $\Phi$ and $\Psi^c$ (based on definition in equation 1 of the SpaceX paper) only.
+The fourth input is **sPMM**. If TRUE, the code will return the estimates of sigma1_sq and sigma2_sq from the spatial Poisson mixed model.
+
+The fifth input is **Post_process**. If TRUE, the code will return all the posterior samples, shared and cluster specific co-expressions. Please make sure to request for large enough memory to work with the posterior samples. Default is FALSE and the code will return the posterior samples of $\Phi$ and $\Psi^c$ (based on definition in equation 1 of the SpaceX paper) only.
 
 ## Output
 You will obtain a list of objects as output.
@@ -55,7 +57,7 @@ Next, we'll apply the SpaceX method on the Breast cancer dataset.
 
 ```{r, eval=FALSE}
 # Application to SpaceX method
-BC_fit <- SpaceX(BC_count,BC_loc[,1:2],BC_loc[,3],Post_process = TRUE)
+BC_fit <- SpaceX(BC_count,BC_loc[,1:2],BC_loc[,3],sPMM=FALSE,Post_process = TRUE)
 
 # Shared_network :: Shared co-expression matrix
 # Cluster_network :: Cluster specific co-expression matrices

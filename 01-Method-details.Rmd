@@ -1,10 +1,74 @@
 # Methodology {#method}
 
-In this section, we provide a detailed discussion of the estimation procedure for the SpaceX model equation 1 in section 2.1 of the paper. A full-scale MCMC will be computationally expensive on a complex hierarchical model. For computational advantage, we decompose the model into two parts (I) sPMM: spatial Poisson mixed model [@sun2017differential] and (II) MSFA: Multi-study factor analysis model [@de2018bayesian]. We enable this model decomposition through a standard Gaussian random variable.
+In this section, we start with a brief discussion of the model and interpretations of each term of the model. Next, A detailed discussion of the estimation procedure for the SpaceX model in equation 1 in section 2 of the paper (also mentioned in equation \@ref(eq:Poi-mean-model-matrix-rev) ) is provided. Finally we discuss the methodological novelty of our SpaceX method. 
+
+
+## SpaceX model
+The gene expression is modeled with a Poisson distribution as
+\begin{equation}
+y^{c}_{g}({\bf s}_{i}) \sim \text{Poi}\{ M^{c}({\bf s}_{i}) \lambda^{c}_{g}({\bf s}_{i})\}.
+(\#eq:SpaceX-supp)
+\end{equation}
+The interpretations of the notations in equation \@ref(eq:SpaceX-supp) remains same as mentioned in the section 2.2 of the paper.  We denote $\Lambda^{c}$ as a $G \times N_{c}$ ($N_{c}$ denotes size of the c-th cluster) matrix containing the rate parameters for all genes and c-th cluster. 
+Subsequently, we model the cluster specific and spatially dependent rate parameter $\bf \Lambda^{c}$ with an additive log-linear equation, i.e. 
+\begin{equation}
+\text{log}({\bf \Lambda}^{c}) = {\bf B}^{c}{\bf X}^{c} + {\bf S}^{c} + {\bf \Phi F} + {\bf \Psi^{c} D^{c}} + {\boldsymbol{\mathcal{E}}}^{c}.
+(\#eq:Poi-mean-model-matrix-rev)
+\end{equation}
+
+We clearly mention the shared and cluster-specific parameters and their interpretations table \@ref(tab:sharedclusterelements).  
+
+
+<table>
+<thead>
+<tr>
+  <th> Parameters </th>
+  <th> Shared </th>
+  <th> Cluster-specific </th>
+  <th> Interpretations </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th> ${\bf B}^{c}{\bf X}^{c}$ </th> 
+  <th> $\times$ </th>
+  <th> $\checkmark$ </th>
+  <th> Covariate effect </th>
+</tr>
+<tr>
+  <th> ${\bf S}^{c}$ </th>
+  <th> $\times$ </th>
+  <th> $\checkmark$ </th>
+  <th> Spatial information </th>
+</tr>
+<tr>
+  <th>${\bf \Phi F}$</th>  
+  <th> $\checkmark$ </th>
+  <th> $\times$ </th>
+  <th> Shared loadings and factors </th>
+</tr>
+<tr>
+  <th> $\bf \Psi^{c} D^{c}$ </th> 
+  <th> $\times$ </th>
+  <th> $\checkmark$ </th>
+  <th> Cluster loadings and factors </th>
+</tr>
+<tr>
+  <th> $\boldsymbol{\mathcal{E}}^{c}$ </th>
+  <th> $\times$ </th>
+  <th> $\checkmark$ </th>
+  <th> Error matrix </th>
+</tr>
+</tbody>
+<caption style='caption-side: bottom'>
+(#tab:sharedclusterelements) Shared and cluster-specific parameters along with their corresponding interpretations. </caption>
+</table>
+
+A full-scale MCMC will be computationally expensive on a complex hierarchical model. For computational advantage, we decompose the model into two parts (I) sPMM: spatial Poisson mixed model [@sun2018heritability] and (II) MSFA: Multi-study factor analysis model [@de2018bayesian]. We enable this model decomposition through a standard Gaussian random variable.
 
 ## Poisson Mixed Model
 
-We can break the SpaceX model and write the spatial Poisson mixed model as
+We can break the SpaceX model \@ref(eq:Poi-mean-model-matrix-rev) and write the spatial Poisson mixed model as
 
 \begin{align}
 \begin{split}
@@ -16,7 +80,7 @@ We can break the SpaceX model and write the spatial Poisson mixed model as
 (\#eq:PMM-supp)
 \end{align}
 
-Here $\Omega^{c}(s_{1}, s_{2}) = \text{exp} (- \mid \mid s_{1} - s_{2} \mid \mid^{2} / 2 \rho^{2}_{c} ),$ $c = 1, \dots, C$. We estimate the length scale parameter of spatial kernel $\rho_{c}$ based on the steps discussed in section 1 of supplementary information in @sun2017differential. Here $Z^{c}_{g}$ captures the cluster specific latent gene expressions and a multi-variate hierarchical modeling of $Z^{c}_{g}(s_{i})$ will help us to identify the gene co-expression network.
+Here $\Omega^{c}(s_{1}, s_{2}) = \text{exp} (- \mid \mid s_{1} - s_{2} \mid \mid^{2} / 2 \rho^{2}_{c} ),$ $c = 1, \dots, C$. We estimate the length scale parameter of spatial kernel $\rho_{c}$ based on the steps discussed in section 1 of supplementary information in @sun2020statistical. Here $Z^{c}_{g}$ captures the cluster specific latent gene expressions and a multi-variate hierarchical modeling of $Z^{c}_{g}(s_{i})$ will help us to identify the gene co-expression network.
 
 ## Multi-Study Factor Model (MSFA)
 The 2nd stage of the modeling framework is multi-study factor analysis [@de2018bayesian] which is provided as follows 
@@ -53,4 +117,61 @@ Here $\delta_{gk}$ is the local shrinkage parameter for $G$ column elements of $
 \end{equation}
 Here $\delta^{c}_{gk_{c}}$ $\eta^{c}_{k_{c}}$ are local and global parameters respectively and $\zeta_{j}^{c}$ $(c=1,2, \dots C)$ are independent of each other. We determine $K$ and $K_{c}$ following methodology described in section 3.3 of @de2018bayesian.
 
+
+## Novelty in Methodology and Estimation Procedure
+The SpaceX model \@ref(eq:Poi-mean-model-matrix-rev) incorporates the spatial information in Poisson likelihood and builds on a factor model based components to estimate the gene co-expression networks. The PQLseq algorithm [@sun2018heritability] is based on a Poisson likelihood but it does not incorporate the spatial information. The hierarchical factor analysis model (MSFA, @de2018bayesian) model considers a Gaussian likelihood and does not take into account the spatial information. The SpaceX model incorporates the discrete nature of the single cell sequencing data and builds on a Poisson likelihood. The model accounts for the spatial effect whereas other two models do not. One can infer the gene co-expression networks while considering the spatial information but MSFA fails to incorporate the spatial locations. The detailed comparison between 3 models is summarized in Table \@ref(tab:differentmodeloverviewqsn4).
+
+An MCMC based algorithm for the SpaceX model will be computationally inefficient. We develop a tractable and computationally scalable Bayesian algorithm for the estimation procedure of the novel joint modeling framework. We decompose the whole model into two essential components (I) spatial Poisson model and (II) hierarchical factor analysis model.
+
+<table>
+<thead>
+<tr>
+  <th> </th>
+  <th>SpaceX model</th>
+  <th>PQLseq</th>
+  <th>MSFA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th>Spatial information</th>
+  <th>$\checkmark$</th>
+  <th> X </th>
+  <th> X </th>
+</tr>
+<tr>
+  <th>Poisson likelihood</th>
+  <th> $\checkmark$ </th>
+  <th> $\checkmark$ </th>
+  <th> X </th>
+</tr>
+<tr>
+  <th>Network inference</th>
+  <th>$\checkmark$</th>
+  <th>X</th>
+  <th>$\checkmark$</th>
+</tr>
+<tr>
+  <th>Gaussian likelihood</th>
+  <th>X</th>
+  <th>X</th>
+  <th>$\checkmark$</th>
+</tr>
+</tbody>
+<caption style='caption-side: bottom'>
+(#tab:differentmodeloverviewqsn4) Methodological comparison between SpaceX, PQLseq, MSFA models. </caption>
+</table>
+
+### Differences from individual methods (PQLseq, SPARK and MSFA)
+For spatial Poisson model, we use the scalable penalized quasi-likelihood algorithm named PQLseq. The algorithm is based on the generalized linear mixed model framework which accounts for the count nature of the single cell sequencing data. The algorithm can be used for detection of deferentially expressed genes. The PQLseq algorithm does not take into account the spatial information and the SPARK [@sun2020statistical] method was developed to address this limitation. Although, the SPARK method only estimates parameters while setting the spatial variance parameter to zero and develops a score test based procedure to identify spatially expressed genes. We build on the PQLseq algorithm for our estimation procedure of spatial Poisson mixed model such that the algorithm can accommodate the spatial information and estimates the parameters without setting the spatial variance parameter to zero. We use the modified version of the PQLseq algorithm to obtain the latent gene expressions and carry it forward in our next framework. 
+
+We use the multi-study factor analysis (MSFA) model [@de2018bayesian] on the latent gene expression matrix to estimate shared and cluster specific gene co-expressions. The MSFA model can not adapt for the count nature of the sequencing data and corresponding spatial locations. Our joint modeling framework in the SpaceX model addresses both concerns. 
+
+## Modifiend version of the model for cell-type based clusters 
+We aimed to modify our model to explicitly accommodate the spatial correlation between cell-type based clusters. To do so, we follow the standard notations as discussed throughout the paer and Supplementary Materials. Here, $y^{c}_{g}(s_{i})$ represents the gene expression for g-th gene for c-th cluster w.r.t. $s_{i}$ spatial locations. The gene expression is being modeled with a Poisson distribution as where $M$ is the normalizing constant and $\lambda$ is the rate parameter. The spatially dependent rate parameter $\lambda$ is modeled with a log-linear equation
+\begin{equation}
+\text{log}({\bf \Lambda}^{c}) = {\bf B}^{c}{\bf X}^{c} + {\bf S}^{c} + {\bf \Phi F} + {\bf \Gamma^{c}} {\bf \Psi^{c} D^{c}} + {\boldsymbol{\mathcal{E}}}^{c}.
+(\#eq:PoimeanModel-matrix-celltype)
+\end{equation}
+Explanation of all the parameters except for the new parameter ($\bf \Gamma^{c}$) remains the same. In this model, $\bf \Gamma^{c}$ now models the cell-type specific spatial process based on spatial distance between cell types. We adjust for spatial correlations for nearby cell-types through the term $\bf S^{C}$ and cross cell-type specific adjustment is factored in through $\bf \Gamma^{C}$. While the extended model looks appealing, unfortunately, we realized that there are several levels of difficulties that need careful thinking before being fully incorporated in the model. For example, we are working with a Poisson likelihood which is non-Gaussian and spatial information needs to be included in the model. Identifiability issue is the main challenge for the model in \@ref(eq:PoimeanModel-matrix-celltype). Based on factor models literature, the loading matrices are usually restricted to be a lower triangular matrix for identifiability reasons in case of a Gaussian likelihood [@geweke1996measuring; @lopes2004bayesian]. We need non-standard identifiable restrictions to estimate $\bf \Gamma^{c}$ and $\bf \Psi^{c}$ since they are incorporated in the model in multiplicative manner. Given these  methodological underpinnings that require more rigorous theoretical work to overcome such difficulties, we leave this non-trivial methodological estimation algorithm as future work.
 

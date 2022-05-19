@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>C Real Data Analysis | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics</title>
   <meta name="description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="C Real Data Analysis | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
 
 
-<meta name="date" content="2022-02-03" />
+<meta name="date" content="2022-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="simulation.html"/>
 <link rel="next" href="ImplementSpaceX.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -163,15 +162,26 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="A" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>A</b> Methodology</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.1</b> Poisson Mixed Model</a></li>
-<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.2</b> Multi-Study Factor Model (MSFA)</a></li>
-<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.3</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#spacex-model"><i class="fa fa-check"></i><b>A.1</b> SpaceX model</a></li>
+<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.2</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.3</b> Multi-Study Factor Model (MSFA)</a></li>
+<li class="chapter" data-level="A.4" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.4</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.5" data-path="method.html"><a href="method.html#novelty-in-methodology-and-estimation-procedure"><i class="fa fa-check"></i><b>A.5</b> Novelty in Methodology and Estimation Procedure</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="method.html"><a href="method.html#differences-from-individual-methods-pqlseq-spark-and-msfa"><i class="fa fa-check"></i><b>A.5.1</b> Differences from individual methods (PQLseq, SPARK and MSFA)</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="method.html"><a href="method.html#modifiend-version-of-the-model-for-cell-type-based-clusters"><i class="fa fa-check"></i><b>A.6</b> Modifiend version of the model for cell-type based clusters</a></li>
 </ul></li>
 <li class="chapter" data-level="B" data-path="simulation.html"><a href="simulation.html"><i class="fa fa-check"></i><b>B</b> Simulation Study</a>
 <ul>
 <li class="chapter" data-level="B.1" data-path="simulation.html"><a href="simulation.html#induced-correlation-study"><i class="fa fa-check"></i><b>B.1</b> Induced Correlation Study</a></li>
-<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2</b> Comparative analysis with different norm measures</a></li>
-<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.3</b> Estimation of latent factors</a></li>
+<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#data-generation-with-spatial-correlation"><i class="fa fa-check"></i><b>B.2</b> Data generation with spatial correlation</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2.1</b> Comparative analysis with different norm measures</a></li>
+<li class="chapter" data-level="B.2.2" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.2.2</b> Estimation of latent factors</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#data-generation-with-no-spatial-correlation"><i class="fa fa-check"></i><b>B.3</b> Data generation with no spatial correlation</a></li>
+<li class="chapter" data-level="B.4" data-path="simulation.html"><a href="simulation.html#hub-gene-detection-based-simulation"><i class="fa fa-check"></i><b>B.4</b> Hub gene detection based simulation</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="realdata.html"><a href="realdata.html"><i class="fa fa-check"></i><b>C</b> Real Data Analysis</a>
 <ul>
@@ -181,7 +191,10 @@ div.csl-indent {
 <li class="chapter" data-level="C.1.2" data-path="realdata.html"><a href="realdata.html#breast-cancer-data"><i class="fa fa-check"></i><b>C.1.2</b> Breast Cancer Data</a></li>
 </ul></li>
 <li class="chapter" data-level="C.2" data-path="realdata.html"><a href="realdata.html#communitydetection"><i class="fa fa-check"></i><b>C.2</b> Community detection</a></li>
-<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.3</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#benchmarking-on-real-spatial-transcriptomics-data"><i class="fa fa-check"></i><b>C.3</b> Benchmarking on real spatial transcriptomics data</a></li>
+<li class="chapter" data-level="C.4" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.4</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.5" data-path="realdata.html"><a href="realdata.html#corroboration-with-tcga-breast-cancer-data"><i class="fa fa-check"></i><b>C.5</b> Corroboration with TCGA Breast Cancer Data</a></li>
+<li class="chapter" data-level="C.6" data-path="realdata.html"><a href="realdata.html#network-similarity-between-cell-type-specific-networks"><i class="fa fa-check"></i><b>C.6</b> Network similarity between cell-type specific networks</a></li>
 </ul></li>
 <li class="chapter" data-level="D" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html"><i class="fa fa-check"></i><b>D</b> Implementation of SpaceX</a>
 <ul>
@@ -211,13 +224,13 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="realdata" class="section level1" number="3">
-<h1><span class="header-section-number">C</span> Real Data Analysis</h1>
+<div id="realdata" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">C</span> Real Data Analysis<a href="realdata.html#realdata" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>We applied the SpaceX method on two spatial transcriptomics datasets which are obtained from the preoptic region of the mouse hypothalamus <span class="citation">(<a href="#ref-Moffitteaau5324" role="doc-biblioref">Moffitt et al. 2018</a>)</span> and the human breast cancer dataset <span class="citation">(<a href="#ref-staahl2016visualization" role="doc-biblioref">Ståhl et al. 2016</a>)</span>. Here we provide details of preprocessing and exploratory analysis of both datasets in section <a href="realdata.html#exploratory">C.1</a>. We illustrate the detailed application of the community detection algorithm on those two datasets in section <a href="realdata.html#communitydetection">C.2</a>.</p>
-<div id="exploratory" class="section level2" number="3.1">
-<h2><span class="header-section-number">C.1</span> Exploratory analysis of the datasets</h2>
-<div id="merfish-data" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">C.1.1</span> Merfish Data</h3>
+<div id="exploratory" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">C.1</span> Exploratory analysis of the datasets<a href="realdata.html#exploratory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="merfish-data" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">C.1.1</span> Merfish Data<a href="realdata.html#merfish-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The MERFISH dataset is obtained from the preoptic area of the mouse hypothalamus <span class="citation">(<a href="#ref-Moffitteaau5324" role="doc-biblioref">Moffitt et al. 2018</a>)</span>. The dataset consists of <span class="math inline">\(160\)</span> genes and corresponding gene expressions are measured in <span class="math inline">\(4975\)</span> spatial locations. There are <span class="math inline">\(7\)</span> pre-determined spatial clusters in the dataset named Astrocyte, Endothelial, Ependymal, Excitatory, Inhibitory, Immature, Mature, and the corresponding sizes are <span class="math inline">\(724\)</span>, <span class="math inline">\(503\)</span>, <span class="math inline">\(314\)</span>, <span class="math inline">\(1024\)</span>, <span class="math inline">\(1694\)</span>, <span class="math inline">\(168\)</span>, <span class="math inline">\(385\)</span> respectively. The dataset consists of <span class="math inline">\(2\)</span> more clusters named Microglia, Pericytes with cluster sizes <span class="math inline">\(90\)</span>, <span class="math inline">\(73\)</span> respectively which are less than <span class="math inline">\(100\)</span>. Those two clusters are removed from the dataset. After removing those two clusters, we have gene expressions from <span class="math inline">\(4812\)</span> locations corresponding to <span class="math inline">\(160\)</span> genes. There are no genes with more than <span class="math inline">\(95\%\)</span> zeros reads. The left panel of Figure <a href="realdata.html#fig:zeroperMF">C.1</a> shows the violin plot of the percentage of zero reads among the genes for each cluster in the MERFISH dataset. The Umap representation of the Merfish data has been provided on the right panel of Figure <a href="realdata.html#fig:zeroperMF">C.1</a>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:zeroperMF"></span>
 <img src="images/Merfish_zero_umap.jpg" alt="Left panel shows the violin plot of percentage of zero reads among the genes for each cluster w.r.t. Merfish data and the right panel shows the Umap." width="90%" />
@@ -226,8 +239,8 @@ Figure C.1: Left panel shows the violin plot of percentage of zero reads among t
 </p>
 </div>
 </div>
-<div id="breast-cancer-data" class="section level3" number="3.1.2">
-<h3><span class="header-section-number">C.1.2</span> Breast Cancer Data</h3>
+<div id="breast-cancer-data" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">C.1.2</span> Breast Cancer Data<a href="realdata.html#breast-cancer-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The human breast cancer dataset contains expression levels from <span class="math inline">\(5262\)</span> genes measured at <span class="math inline">\(250\)</span> locations <span class="citation">(<a href="#ref-staahl2016visualization" role="doc-biblioref">Ståhl et al. 2016</a>)</span>. We use the SPARK method with <span class="math inline">\(5\%\)</span> FDR cut-off on p-values to detect <span class="math inline">\(290\)</span> spatially expressed genes to carry forward our analysis. The violin plot of the percentage of zero reads among the genes for each spatially contiguous cluster in the Breast cancer dataset is shown in the left panel of Figure <a href="realdata.html#fig:BCperzero">C.2</a>. On the right panel of Figure <a href="realdata.html#fig:BCperzero">C.2</a>, we have provided the Umap.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:BCperzero"></span>
 <img src="images/BC_zero_umap.jpg" alt="On the left panel, we have violin plot of percentage of zero reads among the genes for each cluster w.r.t. Breast Cancer data and the Umap is shown on the right panel." width="80%" />
@@ -237,8 +250,8 @@ Figure C.2: On the left panel, we have violin plot of percentage of zero reads a
 </div>
 </div>
 </div>
-<div id="communitydetection" class="section level2" number="3.2">
-<h2><span class="header-section-number">C.2</span> Community detection</h2>
+<div id="communitydetection" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">C.2</span> Community detection<a href="realdata.html#communitydetection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The community detection is a downstream analysis of the shared and cluster-specific networks which are obtained from the SpaceX method. The communities are detected by optimizing modularity over partitions in a network structure <span class="citation">(<a href="#ref-brandes2007modularity" role="doc-biblioref">Brandes et al. 2007</a>)</span>. Figure <a href="realdata.html#fig:comMERFISH">C.3</a> and <a href="realdata.html#fig:comBC">C.4</a> show the detected community modules from shared and cluster-specific co-expression networks for MERFISH and breast cancer data respectively.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:comMERFISH"></span>
 <img src="images/merfishCom.png" alt="Shared and cell-type specific community detection for Merfish data" width="95%" />
@@ -253,22 +266,163 @@ Figure C.4: Shared and cell-type specific community detection for Breast cancer 
 </p>
 </div>
 </div>
-<div id="list-of-hub-genes-and-edges" class="section level2" number="3.3">
-<h2><span class="header-section-number">C.3</span> List of hub genes and edges</h2>
+<div id="benchmarking-on-real-spatial-transcriptomics-data" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">C.3</span> Benchmarking on real spatial transcriptomics data<a href="realdata.html#benchmarking-on-real-spatial-transcriptomics-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this section, we benchmark our models on two real spatial transcriptomics datasets based on model fitting criteria. To this end, we use information-based criteria – a standard and well-established technique to compare the model fits between hierarchical Bayesian models <span class="citation">(<a href="#ref-gelman2014understanding" role="doc-biblioref">Gelman, Hwang, and Vehtari 2014</a>)</span>. In this case, we use two information criteria-based metrics to assess our model fitting: (i) Bayesian analogue of AIC <span class="citation">(<a href="#ref-akaike1998information" role="doc-biblioref">Akaike 1998</a>)</span>, defined as the Bayesian information criteria (BIC, <span class="citation">Watanabe (<a href="#ref-watanabe2013widely" role="doc-biblioref">2013</a>)</span>); and (ii) Watanabe-Akaike information criterion (WAIC) <span class="citation">(<a href="#ref-watanabe2010asymptotic" role="doc-biblioref">Watanabe 2010</a>)</span>, an improvement on the AIC and a fully Bayesian approach to measure model accuracy computed with log pointwise posterior predictive density and then adding a correction for the effective number of parameters to adjust for over-fitting. These criterion based methods are often used for model selection and specifically for spatial datasets <span class="citation">(<a href="#ref-banerjee2003frailty" role="doc-biblioref">Banerjee, Wall, and Carlin 2003</a>; <a href="#ref-banerjee2000geostatistical" role="doc-biblioref">Banerjee, Gelfand, and Polasek 2000</a>; <a href="#ref-lee2009performance" role="doc-biblioref">Lee and Ghosh 2009</a>)</span>. In both cases, lower (relative) values indicate better model fits.</p>
+<p>Table <a href="realdata.html#tab:BICWAIC">C.1</a> shows the BIC and WAIC values for the SpaceX and non-spatial Poisson model for both the mouse hypothalamus and breast cancer data. Based on the criteria based values from the Table <a href="realdata.html#tab:BICWAIC">C.1</a>, we can conclude that the SpaceX model is a better fit to both spatial transcriptomics datasets than the non-spatial Poisson model. For example, there is 64.7% and 46.6% of relative gain in accuracy of model fitting of the SpaceX model and non-spatial model w.r.t. BIC and WAIC respectively in case of Merfish data. A similar inference can be drawn for the breast cancer data where the relative gains are 66.4% and 45.5% for BIC and WAIC respectively in case of model fitting.</p>
+<table>
+<thead>
+<tr>
+<td>
+</td>
+<td>
+BIC (Merfish)
+</td>
+<td>
+WAIC (Merfish)
+</td>
+<td>
+BIC (Breast cancer)
+</td>
+<td>
+WAIC (Breast cancer)
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+SpaceX Model
+</td>
+<td>
+13520
+</td>
+<td>
+43783
+</td>
+<td>
+24346
+</td>
+<td>
+54179
+</td>
+</tr>
+<tr>
+<td>
+Non-spatial Poisson model
+</td>
+<td>
+38274
+</td>
+<td>
+82045
+</td>
+<td>
+72523
+</td>
+<td>
+99474
+</td>
+</tr>
+</tbody>
+<caption style="caption-side: bottom">
+<span id="tab:BICWAIC">Table C.1: </span> Criteria based values for application of the SpaceX and non-spatial Poisson model to spatial transcriptomics data i.e. mouse hypothalamus and Breast cancer data.
+</caption>
+</table>
+</div>
+<div id="list-of-hub-genes-and-edges" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">C.4</span> List of hub genes and edges<a href="realdata.html#list-of-hub-genes-and-edges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A detailed list of hub genes and top edges for both the datasets can be found at <a href="https://github.com/SatwikAch/SpaceX" class="uri">https://github.com/SatwikAch/SpaceX</a>.</p>
+</div>
+<div id="corroboration-with-tcga-breast-cancer-data" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">C.5</span> Corroboration with TCGA Breast Cancer Data<a href="realdata.html#corroboration-with-tcga-breast-cancer-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To corroborate some of our findings, we consider the TCGA-based gene expression from 67 breast cancer tissues and 20,000 genes using parallel high-throughput sequencing <span class="citation">(<a href="#ref-wirth2011expression" role="doc-biblioref">Wirth et al. 2011</a>; <a href="#ref-weinstein2013cancer" role="doc-biblioref">Weinstein et al. 2013</a>)</span>. To make a fair “apples-to-apples” comparison, we used the same intersecting gene set from the spatial transcriptomics based breast cancer data used in our paper . We used a network-based algorithm: personalized cancer-specific integrated network estimation (PRECISE, <span class="citation">Ha et al. (<a href="#ref-ha2018personalized" role="doc-biblioref">2018</a>)</span>) to obtain gene networks. PRECISE is Bayesian method for gene-network reconstruction for bulk-sequencing data that uses a regression-based approach. The PRECISE method detected <span class="math inline">\(77\)</span> hub genes out of total <span class="math inline">\(290\)</span> genes compared to the SpaceX method, which detected <span class="math inline">\(59\)</span> hub genes – with <span class="math inline">\(19\)</span> intersecting hub genes using both methods. The list of all the hub genes detected from each method and intersection hub genes from both method can be found at the webiste mentioned below under the name <strong>BC_Hub_genes_TCGA.csv</strong> (<a href="https://github.com/SatwikAch/SpaceX/tree/main/Hub%20genes" class="uri">https://github.com/SatwikAch/SpaceX/tree/main/Hub%20genes</a>).</p>
+<p>Interestingly, multiple collagens genes (COL16A1, COL6A2, COL5A1) are detected as hub genes by both methods. Collagen biosynthesis can be regulated by cancer cells through mutated genes, transcription factors and signaling pathways <span class="citation">(<a href="#ref-xu2019role" role="doc-biblioref">Xu et al. 2019</a>)</span>. Understanding of the structural properties and functions of collagen in cancer will lead to anticancer therapy. The LUM gene is associated with collagen genes and effectively regulates estrogen receptors and function properties of breast cancer cells <span class="citation">(<a href="#ref-karamanou2017lumican" role="doc-biblioref">Karamanou et al. 2017</a>)</span>. Upregulation in FN1 gene indicates development various types of tumors <span class="citation">(<a href="#ref-sun2020high" role="doc-biblioref">Y. Sun et al. 2020</a>)</span>. XBP1 can induce cell invasion and metastasis in breast cancer cells by promoting high expression <span class="citation">(<a href="#ref-chen2020emerging" role="doc-biblioref">S. Chen et al. 2020</a>)</span>. VIM gene
+is used as a biomarker for the early detection of cancer <span class="citation">(<a href="#ref-mohebi2020expression" role="doc-biblioref">Mohebi et al. 2020</a>)</span>.</p>
+</div>
+<div id="network-similarity-between-cell-type-specific-networks" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">C.6</span> Network similarity between cell-type specific networks<a href="realdata.html#network-similarity-between-cell-type-specific-networks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We further evaluated the performance of SpaceX to detect similarity between cell-cell interactions. To this end, we used Hamming distance, a well-established similarity measure between two networks, which has been used in several network topology based research studies <span class="citation">(<a href="#ref-tian2005hamming" role="doc-biblioref">Tian and Shen 2005</a>, <a href="#ref-tian2006multicast" role="doc-biblioref">2006</a>; <a href="#ref-ehounou2020minimizing" role="doc-biblioref">Ehounou et al. 2020</a>)</span>. In our case, the Hamming distance is equivalent to the distance between their two co-expression networks, i.e., the number of elements having a similar (or different) values in each of the two networks. A low (high) value in Hamming distance between two networks implies those two networks are more (less) similar to each other.</p>
+<p>The mouse hypothalamus data consists of 7 cell-type based clusters among 4812 spatial locations. The SpaceX method provides gene co-expression networks specifically for each cell types. Using the Hamming distance as similarity metric, we measure the network similarity between cell-type specific networks obtained from the Mouse hypthalamaous data analyses in Section 4.1 of the paper. The heatmap of the Hamming distances between cell-type specific networks is shown in Figure <a href="realdata.html#fig:hammDist">C.5</a>. We can observe that the co-expression network of immature cell-type is further apart than other cell type specific network in terms of Hamming distance. We rescale the Hamming distance with maximum value such that the distances are in [0,1] interval. Specifically, the Hamming distances of immature cell type network with other cell type (Endothelial, Astrocyte, Mature, Inhibitory, Excitatory, Ependymal) networks are 1, 0.73, 0.83, 0.79, 0.82, 0.73 respectively. Based on Figure <a href="realdata.html#fig:hammDist">C.5</a>, network of endothelial cell type is distant from other cell-type based networks except for the immature cell-type. The distance of Astrocyte cell-type netwrok from Ependymal and Excitatory are 0.27 and 0.32 respectively. The neuronal cell type specific networks have lower distance than others which leads to infer a higher level of similarity between cell-type based networks than others. This similarity and disparity based finding aligns with multiple prior works which discuss about hypothalamic cell diversity <span class="citation">(<a href="#ref-chen2017single" role="doc-biblioref">R. Chen et al. 2017</a>; <a href="#ref-mickelsen2020cellular" role="doc-biblioref">Mickelsen et al. 2020</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hammDist"></span>
+<img src="images/Hamming_distance_Merfish.jpg" alt="The Figure shows heatmap of Hamming distances between cell-type specific networks." width="60%" />
+<p class="caption">
+Figure C.5: The Figure shows heatmap of Hamming distances between cell-type specific networks.
+</p>
+</div>
 
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-akaike1998information" class="csl-entry">
+Akaike, Hirotogu. 1998. <span>“Information Theory and an Extension of the Maximum Likelihood Principle.”</span> In <em>Selected Papers of Hirotugu Akaike</em>, 199–213. Springer.
+</div>
+<div id="ref-banerjee2000geostatistical" class="csl-entry">
+Banerjee, Sudipto, Alan E Gelfand, and Wolfgang Polasek. 2000. <span>“Geostatistical Modelling for Spatial Interaction Data with Application to Postal Service Performance.”</span> <em>Journal of Statistical Planning and Inference</em> 90 (1): 87–105.
+</div>
+<div id="ref-banerjee2003frailty" class="csl-entry">
+Banerjee, Sudipto, Melanie M Wall, and Bradley P Carlin. 2003. <span>“Frailty Modeling for Spatially Correlated Survival Data, with Application to Infant Mortality in Minnesota.”</span> <em>Biostatistics</em> 4 (1): 123–42.
+</div>
 <div id="ref-brandes2007modularity" class="csl-entry">
 Brandes, Ulrik, Daniel Delling, Marco Gaertler, Robert Gorke, Martin Hoefer, Zoran Nikoloski, and Dorothea Wagner. 2007. <span>“On Modularity Clustering.”</span> <em>IEEE Transactions on Knowledge and Data Engineering</em> 20 (2): 172–88.
+</div>
+<div id="ref-chen2017single" class="csl-entry">
+Chen, Renchao, Xiaoji Wu, Lan Jiang, and Yi Zhang. 2017. <span>“Single-Cell RNA-Seq Reveals Hypothalamic Cell Diversity.”</span> <em>Cell Reports</em> 18 (13): 3227–41.
+</div>
+<div id="ref-chen2020emerging" class="csl-entry">
+Chen, Shanshan, Jing Chen, Xin Hua, Yue Sun, Rui Cui, Jun Sha, and Xiaoli Zhu. 2020. <span>“The Emerging Role of Xbp1 in Cancer.”</span> <em>Biomedicine &amp; Pharmacotherapy</em> 127: 110069.
+</div>
+<div id="ref-ehounou2020minimizing" class="csl-entry">
+Ehounou, Wilfried Joseph, Dominique Barth, Arnaud De Moissac, Dimitri Watel, and Marc-Antoine Weisser. 2020. <span>“Minimizing the Hamming Distance Between a Graph and a Line-Graph to Discover the Topology of an Electrical Network.”</span> <em>J. Graph Algorithms Appl.</em> 24 (3): 133–53.
+</div>
+<div id="ref-gelman2014understanding" class="csl-entry">
+Gelman, Andrew, Jessica Hwang, and Aki Vehtari. 2014. <span>“Understanding Predictive Information Criteria for <span>B</span>ayesian Models.”</span> <em>Statistics and Computing</em> 24 (6): 997–1016.
+</div>
+<div id="ref-ha2018personalized" class="csl-entry">
+Ha, Min Jin, Sayantan Banerjee, Rehan Akbani, Han Liang, Gordon B Mills, Kim-Anh Do, and Veerabhadran Baladandayuthapani. 2018. <span>“Personalized Integrated Network Modeling of the Cancer Proteome Atlas.”</span> <em>Scientific Reports</em> 8 (1): 1–14.
+</div>
+<div id="ref-karamanou2017lumican" class="csl-entry">
+Karamanou, Konstantina, Marco Franchi, Zoi Piperigkou, Corinne Perreau, Francois-Xavier Maquart, Demitrios H Vynios, and Stephane Brezillon. 2017. <span>“Lumican Effectively Regulates the Estrogen Receptors-Associated Functional Properties of Breast Cancer Cells, Expression of Matrix Effectors and Epithelial-to-Mesenchymal Transition.”</span> <em>Scientific Reports</em> 7 (1): 1–15.
+</div>
+<div id="ref-lee2009performance" class="csl-entry">
+Lee, Hyeyoung, and Sujit K Ghosh. 2009. <span>“Performance of Information Criteria for Spatial Models.”</span> <em>Journal of Statistical Computation and Simulation</em> 79 (1): 93–106.
+</div>
+<div id="ref-mickelsen2020cellular" class="csl-entry">
+Mickelsen, Laura E, William F Flynn, Kristen Springer, Lydia Wilson, Eric J Beltrami, Mohan Bolisetty, Paul Robson, and Alexander C Jackson. 2020. <span>“Cellular Taxonomy and Spatial Organization of the Murine Ventral Posterior Hypothalamus.”</span> <em>Elife</em> 9: e58901.
 </div>
 <div id="ref-Moffitteaau5324" class="csl-entry">
 Moffitt, Jeffrey R., Dhananjay Bambah-Mukku, Stephen W. Eichhorn, Eric Vaughn, Karthik Shekhar, Julio D. Perez, Nimrod D. Rubinstein, et al. 2018. <span>“Molecular, Spatial, and Functional Single-Cell Profiling of the Hypothalamic Preoptic Region.”</span> <em>Science</em> 362 (6416). <a href="https://doi.org/10.1126/science.aau5324">https://doi.org/10.1126/science.aau5324</a>.
 </div>
+<div id="ref-mohebi2020expression" class="csl-entry">
+Mohebi, Mehdi, Soudeh Ghafouri-Fard, Mohammad Hossein Modarressi, Sepideh Dashti, Ali Zekri, Vahid Kholghi-Oskooei, and Mohammad Taheri. 2020. <span>“Expression Analysis of Vimentin and the Related lncRNA Network in Breast Cancer.”</span> <em>Experimental and Molecular Pathology</em> 115: 104439.
+</div>
 <div id="ref-staahl2016visualization" class="csl-entry">
 Ståhl, Patrik L, Fredrik Salmén, Sanja Vickovic, Anna Lundmark, José Fernández Navarro, Jens Magnusson, Stefania Giacomello, et al. 2016. <span>“Visualization and Analysis of Gene Expression in Tissue Sections by Spatial Transcriptomics.”</span> <em>Science</em> 353 (6294): 78–82.
+</div>
+<div id="ref-sun2020high" class="csl-entry">
+Sun, Yang, Chunlin Zhao, Yanwei Ye, Zhen Wang, Yuanhang He, Yulin Li, and Haoxun Mao. 2020. <span>“High Expression of Fibronectin 1 Indicates Poor Prognosis in Gastric Cancer.”</span> <em>Oncology Letters</em> 19 (1): 93–102.
+</div>
+<div id="ref-tian2005hamming" class="csl-entry">
+Tian, Hui, and Hong Shen. 2005. <span>“Hamming Distance and Hop Count Based Classification for Multicast Network Topology Inference.”</span> In <em>19th International Conference on Advanced Information Networking and Applications (AINA’05) Volume 1 (AINA Papers)</em>, 1:267–72. IEEE.
+</div>
+<div id="ref-tian2006multicast" class="csl-entry">
+———. 2006. <span>“Multicast-Based Inference for Topology and Network-Internal Loss Performance from End-to-End Measurements.”</span> <em>Computer Communications</em> 29 (11): 1936–47.
+</div>
+<div id="ref-watanabe2010asymptotic" class="csl-entry">
+Watanabe, Sumio. 2010. <span>“Asymptotic Equivalence of <span>B</span>ayes Cross Validation and Widely Applicable Information Criterion in Singular Learning Theory.”</span> <em>Journal of Machine Learning Research</em> 11 (Dec): 3571–94.
+</div>
+<div id="ref-watanabe2013widely" class="csl-entry">
+———. 2013. <span>“A Widely Applicable Bayesian Information Criterion.”</span> <em>Journal of Machine Learning Research</em> 14 (Mar): 867–97.
+</div>
+<div id="ref-weinstein2013cancer" class="csl-entry">
+Weinstein, John N, Eric A Collisson, Gordon B Mills, Kenna R Shaw, Brad A Ozenberger, Kyle Ellrott, Ilya Shmulevich, Chris Sander, and Joshua M Stuart. 2013. <span>“The Cancer Genome Atlas Pan-Cancer Analysis Project.”</span> <em>Nature Genetics</em> 45 (10): 1113–20.
+</div>
+<div id="ref-wirth2011expression" class="csl-entry">
+Wirth, Henry, Markus Löffler, Martin von Bergen, and Hans Binder. 2011. <span>“Expression Cartography of Human Tissues Using Self Organizing Maps.”</span> <em>Nature Precedings</em>, 1–1.
+</div>
+<div id="ref-xu2019role" class="csl-entry">
+Xu, Shuaishuai, Huaxiang Xu, Wenquan Wang, Shuo Li, Hao Li, Tianjiao Li, Wuhu Zhang, Xianjun Yu, and Liang Liu. 2019. <span>“The Role of Collagen in Cancer: From Bench to Bedside.”</span> <em>Journal of Translational Medicine</em> 17 (1): 1–22.
 </div>
 </div>
             </section>

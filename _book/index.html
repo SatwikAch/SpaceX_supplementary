@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics</title>
   <meta name="description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
 
 
-<meta name="date" content="2022-02-03" />
+<meta name="date" content="2022-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 
 <link rel="next" href="method.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -163,15 +162,26 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="A" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>A</b> Methodology</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.1</b> Poisson Mixed Model</a></li>
-<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.2</b> Multi-Study Factor Model (MSFA)</a></li>
-<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.3</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#spacex-model"><i class="fa fa-check"></i><b>A.1</b> SpaceX model</a></li>
+<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.2</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.3</b> Multi-Study Factor Model (MSFA)</a></li>
+<li class="chapter" data-level="A.4" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.4</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.5" data-path="method.html"><a href="method.html#novelty-in-methodology-and-estimation-procedure"><i class="fa fa-check"></i><b>A.5</b> Novelty in Methodology and Estimation Procedure</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="method.html"><a href="method.html#differences-from-individual-methods-pqlseq-spark-and-msfa"><i class="fa fa-check"></i><b>A.5.1</b> Differences from individual methods (PQLseq, SPARK and MSFA)</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="method.html"><a href="method.html#modifiend-version-of-the-model-for-cell-type-based-clusters"><i class="fa fa-check"></i><b>A.6</b> Modifiend version of the model for cell-type based clusters</a></li>
 </ul></li>
 <li class="chapter" data-level="B" data-path="simulation.html"><a href="simulation.html"><i class="fa fa-check"></i><b>B</b> Simulation Study</a>
 <ul>
 <li class="chapter" data-level="B.1" data-path="simulation.html"><a href="simulation.html#induced-correlation-study"><i class="fa fa-check"></i><b>B.1</b> Induced Correlation Study</a></li>
-<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2</b> Comparative analysis with different norm measures</a></li>
-<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.3</b> Estimation of latent factors</a></li>
+<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#data-generation-with-spatial-correlation"><i class="fa fa-check"></i><b>B.2</b> Data generation with spatial correlation</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2.1</b> Comparative analysis with different norm measures</a></li>
+<li class="chapter" data-level="B.2.2" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.2.2</b> Estimation of latent factors</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#data-generation-with-no-spatial-correlation"><i class="fa fa-check"></i><b>B.3</b> Data generation with no spatial correlation</a></li>
+<li class="chapter" data-level="B.4" data-path="simulation.html"><a href="simulation.html#hub-gene-detection-based-simulation"><i class="fa fa-check"></i><b>B.4</b> Hub gene detection based simulation</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="realdata.html"><a href="realdata.html"><i class="fa fa-check"></i><b>C</b> Real Data Analysis</a>
 <ul>
@@ -181,7 +191,10 @@ div.csl-indent {
 <li class="chapter" data-level="C.1.2" data-path="realdata.html"><a href="realdata.html#breast-cancer-data"><i class="fa fa-check"></i><b>C.1.2</b> Breast Cancer Data</a></li>
 </ul></li>
 <li class="chapter" data-level="C.2" data-path="realdata.html"><a href="realdata.html#communitydetection"><i class="fa fa-check"></i><b>C.2</b> Community detection</a></li>
-<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.3</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#benchmarking-on-real-spatial-transcriptomics-data"><i class="fa fa-check"></i><b>C.3</b> Benchmarking on real spatial transcriptomics data</a></li>
+<li class="chapter" data-level="C.4" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.4</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.5" data-path="realdata.html"><a href="realdata.html#corroboration-with-tcga-breast-cancer-data"><i class="fa fa-check"></i><b>C.5</b> Corroboration with TCGA Breast Cancer Data</a></li>
+<li class="chapter" data-level="C.6" data-path="realdata.html"><a href="realdata.html#network-similarity-between-cell-type-specific-networks"><i class="fa fa-check"></i><b>C.6</b> Network similarity between cell-type specific networks</a></li>
 </ul></li>
 <li class="chapter" data-level="D" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html"><i class="fa fa-check"></i><b>D</b> Implementation of SpaceX</a>
 <ul>
@@ -214,10 +227,10 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics</h1>
 <p class="author"><em>Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani</em></p>
-<p class="date"><em>2022-02-03</em></p>
+<p class="date"><em>2022-05-19</em></p>
 </div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
+<div id="introduction" class="section level1 unnumbered hasAnchor">
+<h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The spatial transcriptomics method depicts the positioning of a single cell on a spatially structured tissue. Knowledge about gene expressions and the spatial distribution of mRNA allows us to uncover cellular and subcellular heterogeneity in tissues, tumors, and immune cells. Spatial transcriptomics provides a unique opportunity to decipher both the cellular and subcellular architecture in both tissues and individual cells along with detection of gene co-expression patterns at both levels. These approaches are very insightful to study disease propagation in the field of embryology, oncology, and histology. The SpaceX method is a statistical tool to quantify spatially varying gene co-expression patterns in a tissue consists of different cell type based or sptailly contiguous clusters.</p>
 <p>This is a supplementary file of the paper named SpaceX: Gene Co-expression Network Estimation in Spatial Transcriptomics. The sectional contents of the supplementary file is mentioned below.</p>
 <ol style="list-style-type: decimal">

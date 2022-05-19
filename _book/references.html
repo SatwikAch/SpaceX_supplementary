@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>References | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics</title>
   <meta name="description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="References | Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This containes all the supplementary materials for the paper named SpaceX: Gene Co-expression Network Estimation for Spatial Transcriptomics." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
 
 
-<meta name="date" content="2022-02-03" />
+<meta name="date" content="2022-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="ImplementSpaceX.html"/>
 
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -163,15 +162,26 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="A" data-path="method.html"><a href="method.html"><i class="fa fa-check"></i><b>A</b> Methodology</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.1</b> Poisson Mixed Model</a></li>
-<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.2</b> Multi-Study Factor Model (MSFA)</a></li>
-<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.3</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.1" data-path="method.html"><a href="method.html#spacex-model"><i class="fa fa-check"></i><b>A.1</b> SpaceX model</a></li>
+<li class="chapter" data-level="A.2" data-path="method.html"><a href="method.html#poisson-mixed-model"><i class="fa fa-check"></i><b>A.2</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="A.3" data-path="method.html"><a href="method.html#multi-study-factor-model-msfa"><i class="fa fa-check"></i><b>A.3</b> Multi-Study Factor Model (MSFA)</a></li>
+<li class="chapter" data-level="A.4" data-path="method.html"><a href="method.html#multiplicative-gamma-shrinkage-prior"><i class="fa fa-check"></i><b>A.4</b> Multiplicative gamma shrinkage prior</a></li>
+<li class="chapter" data-level="A.5" data-path="method.html"><a href="method.html#novelty-in-methodology-and-estimation-procedure"><i class="fa fa-check"></i><b>A.5</b> Novelty in Methodology and Estimation Procedure</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="method.html"><a href="method.html#differences-from-individual-methods-pqlseq-spark-and-msfa"><i class="fa fa-check"></i><b>A.5.1</b> Differences from individual methods (PQLseq, SPARK and MSFA)</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="method.html"><a href="method.html#modifiend-version-of-the-model-for-cell-type-based-clusters"><i class="fa fa-check"></i><b>A.6</b> Modifiend version of the model for cell-type based clusters</a></li>
 </ul></li>
 <li class="chapter" data-level="B" data-path="simulation.html"><a href="simulation.html"><i class="fa fa-check"></i><b>B</b> Simulation Study</a>
 <ul>
 <li class="chapter" data-level="B.1" data-path="simulation.html"><a href="simulation.html#induced-correlation-study"><i class="fa fa-check"></i><b>B.1</b> Induced Correlation Study</a></li>
-<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2</b> Comparative analysis with different norm measures</a></li>
-<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.3</b> Estimation of latent factors</a></li>
+<li class="chapter" data-level="B.2" data-path="simulation.html"><a href="simulation.html#data-generation-with-spatial-correlation"><i class="fa fa-check"></i><b>B.2</b> Data generation with spatial correlation</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="simulation.html"><a href="simulation.html#comparative-analysis-with-different-norm-measures"><i class="fa fa-check"></i><b>B.2.1</b> Comparative analysis with different norm measures</a></li>
+<li class="chapter" data-level="B.2.2" data-path="simulation.html"><a href="simulation.html#estimation-of-latent-factors"><i class="fa fa-check"></i><b>B.2.2</b> Estimation of latent factors</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="simulation.html"><a href="simulation.html#data-generation-with-no-spatial-correlation"><i class="fa fa-check"></i><b>B.3</b> Data generation with no spatial correlation</a></li>
+<li class="chapter" data-level="B.4" data-path="simulation.html"><a href="simulation.html#hub-gene-detection-based-simulation"><i class="fa fa-check"></i><b>B.4</b> Hub gene detection based simulation</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="realdata.html"><a href="realdata.html"><i class="fa fa-check"></i><b>C</b> Real Data Analysis</a>
 <ul>
@@ -181,7 +191,10 @@ div.csl-indent {
 <li class="chapter" data-level="C.1.2" data-path="realdata.html"><a href="realdata.html#breast-cancer-data"><i class="fa fa-check"></i><b>C.1.2</b> Breast Cancer Data</a></li>
 </ul></li>
 <li class="chapter" data-level="C.2" data-path="realdata.html"><a href="realdata.html#communitydetection"><i class="fa fa-check"></i><b>C.2</b> Community detection</a></li>
-<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.3</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.3" data-path="realdata.html"><a href="realdata.html#benchmarking-on-real-spatial-transcriptomics-data"><i class="fa fa-check"></i><b>C.3</b> Benchmarking on real spatial transcriptomics data</a></li>
+<li class="chapter" data-level="C.4" data-path="realdata.html"><a href="realdata.html#list-of-hub-genes-and-edges"><i class="fa fa-check"></i><b>C.4</b> List of hub genes and edges</a></li>
+<li class="chapter" data-level="C.5" data-path="realdata.html"><a href="realdata.html#corroboration-with-tcga-breast-cancer-data"><i class="fa fa-check"></i><b>C.5</b> Corroboration with TCGA Breast Cancer Data</a></li>
+<li class="chapter" data-level="C.6" data-path="realdata.html"><a href="realdata.html#network-similarity-between-cell-type-specific-networks"><i class="fa fa-check"></i><b>C.6</b> Network similarity between cell-type specific networks</a></li>
 </ul></li>
 <li class="chapter" data-level="D" data-path="ImplementSpaceX.html"><a href="ImplementSpaceX.html"><i class="fa fa-check"></i><b>D</b> Implementation of SpaceX</a>
 <ul>
@@ -211,10 +224,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
+<div id="references" class="section level1 unnumbered hasAnchor">
+<h1>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Akaike, Hirotogu. 1998. <span>“Information Theory and an Extension of the Maximum Likelihood Principle.”</span> In <em>Selected Papers of Hirotugu Akaike</em>, 199–213. Springer.
+</div>
+<div class="csl-entry">
+Banerjee, Sudipto, Alan E Gelfand, and Wolfgang Polasek. 2000. <span>“Geostatistical Modelling for Spatial Interaction Data with Application to Postal Service Performance.”</span> <em>Journal of Statistical Planning and Inference</em> 90 (1): 87–105.
+</div>
+<div class="csl-entry">
+Banerjee, Sudipto, Melanie M Wall, and Bradley P Carlin. 2003. <span>“Frailty Modeling for Spatially Correlated Survival Data, with Application to Infant Mortality in Minnesota.”</span> <em>Biostatistics</em> 4 (1): 123–42.
+</div>
 <div class="csl-entry">
 Bhattacharya, Anirban, and David B Dunson. 2011. <span>“Sparse Bayesian Infinite Factor Models.”</span> <em>Biometrika</em>, 291–306.
 </div>
@@ -222,19 +244,46 @@ Bhattacharya, Anirban, and David B Dunson. 2011. <span>“Sparse Bayesian Infini
 Brandes, Ulrik, Daniel Delling, Marco Gaertler, Robert Gorke, Martin Hoefer, Zoran Nikoloski, and Dorothea Wagner. 2007. <span>“On Modularity Clustering.”</span> <em>IEEE Transactions on Knowledge and Data Engineering</em> 20 (2): 172–88.
 </div>
 <div class="csl-entry">
-De Vito, Roberta, Ruggero Bellio, Lorenzo Trippa, and Giovanni Parmigiani. 2018. <span>“Bayesian Multi-Study Factor Analysis for High-Throughput Biological Data.”</span> <em>arXiv Preprint arXiv:1806.09896</em>.
+Chen, Renchao, Xiaoji Wu, Lan Jiang, and Yi Zhang. 2017. <span>“Single-Cell RNA-Seq Reveals Hypothalamic Cell Diversity.”</span> <em>Cell Reports</em> 18 (13): 3227–41.
 </div>
 <div class="csl-entry">
-Dryden, Ian L, Alexey Koloydenko, Diwei Zhou, and others. 2009. <span>“Non-Euclidean Statistics for Covariance Matrices, with Applications to Diffusion Tensor Imaging.”</span> <em>The Annals of Applied Statistics</em> 3 (3): 1102–23.
+Chen, Shanshan, Jing Chen, Xin Hua, Yue Sun, Rui Cui, Jun Sha, and Xiaoli Zhu. 2020. <span>“The Emerging Role of Xbp1 in Cancer.”</span> <em>Biomedicine &amp; Pharmacotherapy</em> 127: 110069.
+</div>
+<div class="csl-entry">
+De Vito, Roberta, Ruggero Bellio, Lorenzo Trippa, and Giovanni Parmigiani. 2021. <span>“Bayesian Multistudy Factor Analysis for High-Throughput Biological Data.”</span> <em>The Annals of Applied Statistics</em> 15 (4): 1723–41.
+</div>
+<div class="csl-entry">
+Dryden, Ian L, Alexey Koloydenko, Diwei Zhou, et al. 2009. <span>“Non-Euclidean Statistics for Covariance Matrices, with Applications to Diffusion Tensor Imaging.”</span> <em>The Annals of Applied Statistics</em> 3 (3): 1102–23.
+</div>
+<div class="csl-entry">
+Ehounou, Wilfried Joseph, Dominique Barth, Arnaud De Moissac, Dimitri Watel, and Marc-Antoine Weisser. 2020. <span>“Minimizing the Hamming Distance Between a Graph and a Line-Graph to Discover the Topology of an Electrical Network.”</span> <em>J. Graph Algorithms Appl.</em> 24 (3): 133–53.
+</div>
+<div class="csl-entry">
+Gelman, Andrew, Jessica Hwang, and Aki Vehtari. 2014. <span>“Understanding Predictive Information Criteria for <span>B</span>ayesian Models.”</span> <em>Statistics and Computing</em> 24 (6): 997–1016.
 </div>
 <div class="csl-entry">
 Geweke, John, and Guofu Zhou. 1996. <span>“Measuring the Pricing Error of the Arbitrage Pricing Theory.”</span> <em>The Review of Financial Studies</em> 9 (2): 557–87.
 </div>
 <div class="csl-entry">
+Ha, Min Jin, Sayantan Banerjee, Rehan Akbani, Han Liang, Gordon B Mills, Kim-Anh Do, and Veerabhadran Baladandayuthapani. 2018. <span>“Personalized Integrated Network Modeling of the Cancer Proteome Atlas.”</span> <em>Scientific Reports</em> 8 (1): 1–14.
+</div>
+<div class="csl-entry">
+Karamanou, Konstantina, Marco Franchi, Zoi Piperigkou, Corinne Perreau, Francois-Xavier Maquart, Demitrios H Vynios, and Stephane Brezillon. 2017. <span>“Lumican Effectively Regulates the Estrogen Receptors-Associated Functional Properties of Breast Cancer Cells, Expression of Matrix Effectors and Epithelial-to-Mesenchymal Transition.”</span> <em>Scientific Reports</em> 7 (1): 1–15.
+</div>
+<div class="csl-entry">
+Lee, Hyeyoung, and Sujit K Ghosh. 2009. <span>“Performance of Information Criteria for Spatial Models.”</span> <em>Journal of Statistical Computation and Simulation</em> 79 (1): 93–106.
+</div>
+<div class="csl-entry">
 Lopes, Hedibert Freitas, and Mike West. 2004. <span>“Bayesian Model Assessment in Factor Analysis.”</span> <em>Statistica Sinica</em>, 41–67.
 </div>
 <div class="csl-entry">
+Mickelsen, Laura E, William F Flynn, Kristen Springer, Lydia Wilson, Eric J Beltrami, Mohan Bolisetty, Paul Robson, and Alexander C Jackson. 2020. <span>“Cellular Taxonomy and Spatial Organization of the Murine Ventral Posterior Hypothalamus.”</span> <em>Elife</em> 9: e58901.
+</div>
+<div class="csl-entry">
 Moffitt, Jeffrey R., Dhananjay Bambah-Mukku, Stephen W. Eichhorn, Eric Vaughn, Karthik Shekhar, Julio D. Perez, Nimrod D. Rubinstein, et al. 2018. <span>“Molecular, Spatial, and Functional Single-Cell Profiling of the Hypothalamic Preoptic Region.”</span> <em>Science</em> 362 (6416). <a href="https://doi.org/10.1126/science.aau5324">https://doi.org/10.1126/science.aau5324</a>.
+</div>
+<div class="csl-entry">
+Mohebi, Mehdi, Soudeh Ghafouri-Fard, Mohammad Hossein Modarressi, Sepideh Dashti, Ali Zekri, Vahid Kholghi-Oskooei, and Mohammad Taheri. 2020. <span>“Expression Analysis of Vimentin and the Related lncRNA Network in Breast Cancer.”</span> <em>Experimental and Molecular Pathology</em> 115: 104439.
 </div>
 <div class="csl-entry">
 Robert, Paul, and Yves Escoufier. 1976. <span>“A Unifying Tool for Linear Multivariate Statistical Methods: The RV-Coefficient.”</span> <em>Journal of the Royal Statistical Society: Series C (Applied Statistics)</em> 25 (3): 257–65.
@@ -243,7 +292,34 @@ Robert, Paul, and Yves Escoufier. 1976. <span>“A Unifying Tool for Linear Mult
 Ståhl, Patrik L, Fredrik Salmén, Sanja Vickovic, Anna Lundmark, José Fernández Navarro, Jens Magnusson, Stefania Giacomello, et al. 2016. <span>“Visualization and Analysis of Gene Expression in Tissue Sections by Spatial Transcriptomics.”</span> <em>Science</em> 353 (6294): 78–82.
 </div>
 <div class="csl-entry">
-Sun, Shiquan, Michelle Hood, Laura Scott, Qinke Peng, Sayan Mukherjee, Jenny Tung, and Xiang Zhou. 2017. <span>“Differential Expression Analysis for RNAseq Using Poisson Mixed Models.”</span> <em>Nucleic Acids Research</em> 45 (11): e106–6.
+Sun, Shiquan, Jiaqiang Zhu, Sahar Mozaffari, Carole Ober, Mengjie Chen, and Xiang Zhou. 2018. <span>“Heritability Estimation and Differential Analysis of Count Data with Generalized Linear Mixed Models in Genomic Sequencing Studies.”</span> <em>Bioinformatics</em> 35 (3): 487–96.
+</div>
+<div class="csl-entry">
+Sun, Shiquan, Jiaqiang Zhu, and Xiang Zhou. 2020. <span>“Statistical Analysis of Spatial Expression Patterns for Spatially Resolved Transcriptomic Studies.”</span> <em>Nature Methods</em> 17 (2): 193–200.
+</div>
+<div class="csl-entry">
+Sun, Yang, Chunlin Zhao, Yanwei Ye, Zhen Wang, Yuanhang He, Yulin Li, and Haoxun Mao. 2020. <span>“High Expression of Fibronectin 1 Indicates Poor Prognosis in Gastric Cancer.”</span> <em>Oncology Letters</em> 19 (1): 93–102.
+</div>
+<div class="csl-entry">
+Tian, Hui, and Hong Shen. 2005. <span>“Hamming Distance and Hop Count Based Classification for Multicast Network Topology Inference.”</span> In <em>19th International Conference on Advanced Information Networking and Applications (AINA’05) Volume 1 (AINA Papers)</em>, 1:267–72. IEEE.
+</div>
+<div class="csl-entry">
+———. 2006. <span>“Multicast-Based Inference for Topology and Network-Internal Loss Performance from End-to-End Measurements.”</span> <em>Computer Communications</em> 29 (11): 1936–47.
+</div>
+<div class="csl-entry">
+Watanabe, Sumio. 2010. <span>“Asymptotic Equivalence of <span>B</span>ayes Cross Validation and Widely Applicable Information Criterion in Singular Learning Theory.”</span> <em>Journal of Machine Learning Research</em> 11 (Dec): 3571–94.
+</div>
+<div class="csl-entry">
+———. 2013. <span>“A Widely Applicable Bayesian Information Criterion.”</span> <em>Journal of Machine Learning Research</em> 14 (Mar): 867–97.
+</div>
+<div class="csl-entry">
+Weinstein, John N, Eric A Collisson, Gordon B Mills, Kenna R Shaw, Brad A Ozenberger, Kyle Ellrott, Ilya Shmulevich, Chris Sander, and Joshua M Stuart. 2013. <span>“The Cancer Genome Atlas Pan-Cancer Analysis Project.”</span> <em>Nature Genetics</em> 45 (10): 1113–20.
+</div>
+<div class="csl-entry">
+Wirth, Henry, Markus Löffler, Martin von Bergen, and Hans Binder. 2011. <span>“Expression Cartography of Human Tissues Using Self Organizing Maps.”</span> <em>Nature Precedings</em>, 1–1.
+</div>
+<div class="csl-entry">
+Xu, Shuaishuai, Huaxiang Xu, Wenquan Wang, Shuo Li, Hao Li, Tianjiao Li, Wuhu Zhang, Xianjun Yu, and Liang Liu. 2019. <span>“The Role of Collagen in Cancer: From Bench to Bedside.”</span> <em>Journal of Translational Medicine</em> 17 (1): 1–22.
 </div>
 </div>
 </div>
