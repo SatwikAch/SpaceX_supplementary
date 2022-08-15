@@ -23,7 +23,7 @@
 <meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
 
 
-<meta name="date" content="2022-05-19" />
+<meta name="date" content="2022-08-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -229,6 +229,12 @@ div.csl-indent {
 <p>SpaceX function extimates shared and cluster specfic gene co-expression networks for spatial transcriptomics data. More details about the SpaceX method can be found in the main manuscript. See below for detailed discussion on installation of SpaceX package, Data inputs and outputs followed by an example.</p>
 <div id="installation" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">D.1</span> Installation<a href="ImplementSpaceX.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This package requires a Fortran compiler in order to work. Here are the instructions:</p>
+<ul>
+<li><p>Windows: install the Rtools package that is appropriate for your version of R</p></li>
+<li><p>Mac: Go to this website and follow the instructions: (<a href="https://mac.R-project.org/tools/" class="uri">https://mac.R-project.org/tools/</a>)</p></li>
+<li><p>Linux: From a terminal, do the following: <code>sudo apt install gcc</code>. That will bring in multiple compilers.</p></li>
+</ul>
 <p>The package requires a dependency that is not available on CRAN. Install it with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ImplementSpaceX.html#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rdevito/MSFA&quot;</span>)</span></code></pre></div>
 <p>You can install the released version of SpaceX from (<a href="https://github.com/SatwikAch/SpaceX" class="uri">https://github.com/SatwikAch/SpaceX</a>) with:</p>
@@ -242,7 +248,8 @@ div.csl-indent {
 <p>The second input is <strong>Spatial_locations</strong> is a dataframe which contains spatial coordinates.</p>
 <p>The third input is <strong>Cluster_annotations</strong>.</p>
 <p>The fourth input is <strong>sPMM</strong>. If TRUE, the code will return the estimates of sigma1_sq and sigma2_sq from the spatial Poisson mixed model.</p>
-<p>The fifth input is <strong>Post_process</strong>. If TRUE, the code will return all the posterior samples, shared and cluster specific co-expressions. Please make sure to request for large enough memory to work with the posterior samples. Default is FALSE and the code will return the posterior samples of <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\Psi^c\)</span> (based on definition in equation 1 of the SpaceX paper) only.</p>
+<p>The fifth input is <strong>Post_process</strong>. If FALSE, the code will return the posterior samples of <span class="math inline">\(\Phi\)</span> and <span class="math inline">\(\Psi^c\)</span> (based on definition in equation 1 of the SpaceX paper) only. Default is TRUE and the code will return all the posterior samples, shared and cluster specific co-expressions.</p>
+<p>The final input is <strong>numCore</strong>. The number of requested cores for parallel computing and default is set to be 1.</p>
 </div>
 <div id="output" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">D.3</span> Output<a href="ImplementSpaceX.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -267,7 +274,7 @@ div.csl-indent {
 <span id="cb3-11"><a href="ImplementSpaceX.html#cb3-11" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span><span class="fu">dim</span>(BC_count)[<span class="dv">1</span>] <span class="co"># number of locations</span></span></code></pre></div>
 <p>Next, we’ll apply the SpaceX method on the Breast cancer dataset.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="ImplementSpaceX.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Application to SpaceX method</span></span>
-<span id="cb4-2"><a href="ImplementSpaceX.html#cb4-2" aria-hidden="true" tabindex="-1"></a>BC_fit <span class="ot">&lt;-</span> <span class="fu">SpaceX</span>(BC_count,BC_loc[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>],BC_loc[,<span class="dv">3</span>],<span class="at">sPMM=</span><span class="cn">FALSE</span>,<span class="at">Post_process =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-2"><a href="ImplementSpaceX.html#cb4-2" aria-hidden="true" tabindex="-1"></a>BC_fit <span class="ot">&lt;-</span> <span class="fu">SpaceX</span>(BC_count,BC_loc[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>],BC_loc[,<span class="dv">3</span>],<span class="at">sPMM=</span><span class="cn">FALSE</span>,<span class="at">Post_process =</span> <span class="cn">TRUE</span>, <span class="at">numCore=</span><span class="dv">2</span>)</span>
 <span id="cb4-3"><a href="ImplementSpaceX.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="ImplementSpaceX.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Shared_network :: Shared co-expression matrix</span></span>
 <span id="cb4-5"><a href="ImplementSpaceX.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cluster_network :: Cluster specific co-expression matrices</span></span></code></pre></div>

@@ -23,7 +23,7 @@
 <meta name="author" content="Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani" />
 
 
-<meta name="date" content="2022-05-19" />
+<meta name="date" content="2022-08-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -164,15 +228,15 @@ div.csl-indent {
 <h1><span class="header-section-number">B</span> Simulation Study<a href="simulation.html#simulation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="induced-correlation-study" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">B.1</span> Induced Correlation Study<a href="simulation.html#induced-correlation-study" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this section, we provide more details about the simulation study. First we consider <span class="math inline">\(3\)</span> different values of <span class="math inline">\(\rho\)</span> <span class="math inline">\((0.1,0.15,0.2)\)</span> and make a induced correlation plot by using the squared exponential spatial kernel. The plots are generented for all cell types and cell type specific cases. The vertical line denotes the value of induced correlation at the distance <span class="math inline">\(0.01\)</span>. For example the induced spatial correlations for all cell types (first Figure of <a href="#fig:induceCORR"><strong>??</strong></a>) w.r.t. <span class="math inline">\(0.01\)</span> distance are <span class="math inline">\(0.88\)</span>, <span class="math inline">\(0.80\)</span>, <span class="math inline">\(0.61\)</span> for <span class="math inline">\(\text S_{\text High}\)</span> (<span class="math inline">\(\rho = 0.2\)</span>), <span class="math inline">\(\text S_{\text Med}\)</span> (<span class="math inline">\(\rho = 0.15\)</span>), <span class="math inline">\(\text S_{\text Low}\)</span> (<span class="math inline">\(\rho = 0.1\)</span>) methods respectively.</p>
-<div class="figure" style="text-align: center">
+<p>In this section, we provide more details about the simulation study. First we consider <span class="math inline">\(3\)</span> different values of <span class="math inline">\(\rho\)</span> <span class="math inline">\((0.1,0.15,0.2)\)</span> and make a induced correlation plot by using the squared exponential spatial kernel. The plots are generented for all cell types and cell type specific cases. The vertical line denotes the value of induced correlation at the distance <span class="math inline">\(0.01\)</span>. For example the induced spatial correlations for all cell types (first Figure of <a href="simulation.html#fig:induceCORR">B.1</a>) w.r.t. <span class="math inline">\(0.01\)</span> distance are <span class="math inline">\(0.88\)</span>, <span class="math inline">\(0.80\)</span>, <span class="math inline">\(0.61\)</span> for <span class="math inline">\(\text S_{\text High}\)</span> (<span class="math inline">\(\rho = 0.2\)</span>), <span class="math inline">\(\text S_{\text Med}\)</span> (<span class="math inline">\(\rho = 0.15\)</span>), <span class="math inline">\(\text S_{\text Low}\)</span> (<span class="math inline">\(\rho = 0.1\)</span>) methods respectively.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:induceCORR"></span>
 <img src="images/Merfish_induced_correlation_final.jpeg" alt="Induced correlation plot for the Merfish data" width="80%" />
 <p class="caption">
-(#fig:fig:induceCORR)Induced correlation plot for the Merfish data
+Figure B.1: Induced correlation plot for the Merfish data
 </p>
 </div>
 <p><strong>Estimation of parameter <span class="math inline">\(\rho\)</span> :</strong>
-We adapt the steps from the section 1.1 of supplementary information of <span class="citation">Sun, Zhu, and Zhou (<a href="#ref-sun2020statistical" role="doc-biblioref">2020</a>)</span> to estimate the length scale parameter of the spatial kernel <span class="math inline">\(\rho_{c}\)</span> based on several grid points. The estimation procedure of <span class="math inline">\(\rho_{c}\)</span> uses the pair-wise distances among spatial locations in the data to ensure scale-invariance. First the maximum <span class="math inline">\((m_{1})\)</span> and minimum <span class="math inline">\((m_{2})\)</span> value of those pairwise spatial distances are obtained. Next, equidistant <span class="math inline">\(L\)</span> points are identified in the range from <span class="math inline">\(\text{log}(m_{1}/2)\)</span> to <span class="math inline">\(\text{log}(m_{2}*2)\)</span>. In our case, we consider <span class="math inline">\(L=10\)</span> as a default value for all our simulations and spatial transcriptomics data applications. We consider the middle value of those <span class="math inline">\(10\)</span> grid points as the estimate of <span class="math inline">\(\rho_{c}\)</span>. Table <a href="simulation.html#tab:rhoest">B.1</a> shows the true and estimated values of <span class="math inline">\(\rho_{c}\)</span> which shows the grid points based estimation procedure is effective.</p>
+We adapt the steps from the section 1.1 of supplementary information of <span class="citation">S. Sun, Zhu, and Zhou (<a href="#ref-sun2020statistical" role="doc-biblioref">2020</a>)</span> to estimate the length scale parameter of the spatial kernel <span class="math inline">\(\rho_{c}\)</span> based on several grid points. The estimation procedure of <span class="math inline">\(\rho_{c}\)</span> uses the pair-wise distances among spatial locations in the data to ensure scale-invariance. First the maximum <span class="math inline">\((m_{1})\)</span> and minimum <span class="math inline">\((m_{2})\)</span> value of those pairwise spatial distances are obtained. Next, equidistant <span class="math inline">\(L\)</span> points are identified in the range from <span class="math inline">\(\text{log}(m_{1}/2)\)</span> to <span class="math inline">\(\text{log}(m_{2}*2)\)</span>. In our case, we consider <span class="math inline">\(L=10\)</span> as a default value for all our simulations and spatial transcriptomics data applications. We consider the middle value of those <span class="math inline">\(10\)</span> grid points as the estimate of <span class="math inline">\(\rho_{c}\)</span>. Table <a href="simulation.html#tab:rhoest">B.1</a> shows the true and estimated values of <span class="math inline">\(\rho_{c}\)</span> which shows the grid points based estimation procedure is effective.</p>
 <table>
 <thead>
 <tr>
@@ -371,56 +435,27 @@ Riemanian
 </table>
 <div id="comparative-analysis-with-different-norm-measures" class="section level3 hasAnchor" number="2.2.1">
 <h3><span class="header-section-number">B.2.1</span> Comparative analysis with different norm measures<a href="simulation.html#comparative-analysis-with-different-norm-measures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<!-- We consider the simulation setting discussed in the section 3 of the manuscript. The $5$  different methods are compared w.r.t. different norms other than **RV coefficent** [@robert1976unifying]. The **RV coefficent** between two matrices $S_{1}$ and $S_{2}$ is defined as $$\text{RV}(S_{1},S_{2}) = \frac{ tr(  S_{1}^{T} S_{2} ) }{ \sqrt{ tr(  S_{1}^{T} S_{1} )  tr(  S_{2}^{T} S_{2} ) }  }.$$ We consider 4 different norms: -->
-<!-- I. **Euclidean or Frobenius**  -->
-<!-- $$ -->
-<!-- d_{E}(S_{1},S_{2}) = \mid \mid S_{1} - S_{2} \mid \mid,  -->
-<!-- $$ -->
-<!-- II. **Log-Euclidean** -->
-<!-- $$ -->
-<!-- d_{L}(S_{1},S_{2}) = \mid \mid \log(S_{1}) - \log(S_{2}) \mid \mid, -->
-<!-- $$ -->
-<!-- III. **Root Euclidean**  -->
-<!-- $$ -->
-<!-- d_{H}(S_{1},S_{2}) = \mid \mid S_{1}^{1/2} - S_{2}^{1/2} \mid \mid,  -->
-<!-- $$ -->
-<!-- IV. **Riemanian**  -->
-<!-- $$ -->
-<!-- d_{R}(S_{1},S_{2}) = \mid \mid S_{1}^{-1/2} S_{2} S_{1}^{-1/2} \mid \mid. -->
-<!-- $$ -->
-<p>Figure <a href="simulation.html#fig:AllEuclid">B.1</a> represents the boxplot of distances between true <span class="math inline">\((\Sigma_{True})\)</span> and estimated <span class="math inline">\((\Sigma_{Est})\)</span> covariance matrices where the distances are measured in <strong>Euclidean, root Euclidean, log Euclidean and Riemanian</strong> norms respectively. In all the norms we observe that spatial settings are performing better in terms of estimation than the no-spatial settings. Among the spatial settings the estimation accuracy increase with an increment in induced spatial correlation.</p>
+<p>Figure <a href="simulation.html#fig:AllEuclid">B.2</a> represents the boxplot of distances between true <span class="math inline">\((\Sigma_{True})\)</span> and estimated <span class="math inline">\((\Sigma_{Est})\)</span> covariance matrices where the distances are measured in <strong>Euclidean, root Euclidean, log Euclidean and Riemanian</strong> norms respectively. In all the norms we observe that spatial settings are performing better in terms of estimation than the no-spatial settings. Among the spatial settings the estimation accuracy increase with an increment in induced spatial correlation.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:AllEuclid"></span>
 <img src="images/Norm_plot_rev.jpg" alt=" **Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated from a spatially correlated setting**. Boxplot of Euclidean, log-Euclidean,  root-Euclidean, Riemannian distance (Figure A, B, C and D respectively) across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We compare the norm distances for different settings for data generation with spatial correlation." width="80%" />
 <p class="caption">
-Figure B.1:  <strong>Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated from a spatially correlated setting</strong>. Boxplot of Euclidean, log-Euclidean, root-Euclidean, Riemannian distance (Figure A, B, C and D respectively) across <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{l}\)</span> <span class="math inline">\((l = 1, \dots , L)\)</span>. We compare the norm distances for different settings for data generation with spatial correlation.
+Figure B.2:  <strong>Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated from a spatially correlated setting</strong>. Boxplot of Euclidean, log-Euclidean, root-Euclidean, Riemannian distance (Figure A, B, C and D respectively) across <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{l}\)</span> <span class="math inline">\((l = 1, \dots , L)\)</span>. We compare the norm distances for different settings for data generation with spatial correlation.
 </p>
 </div>
-<!-- ```{r Euclid,echo=F, fig.cap="Boxplot of **Euclidean** distance $d_E(\\Sigma_{True}, \\Sigma_{Est})$ across  $50$ replicates for $\\Sigma_{\\Phi} = \\Phi \\Phi^{T}$ and $\\Sigma_{l}$ $(l = 1, \\dots , L)$. We compare the Euclidean distance for different method settings.", out.width='80%', fig.asp=0.6, fig.align='center'} -->
-<!-- knitr::include_graphics("images/Distance_Euclidean_plot.jpeg") -->
-<!-- ``` -->
-<!-- ```{r RootEuclid,echo=F, fig.cap="Boxplot of **root Euclidean** distance $d_{H}(\\Sigma_{True}, \\Sigma_{Est})$ across  $50$ replicates for $\\Sigma_{\\Phi} = \\Phi \\Phi^{T}$ and $\\Sigma_{l}$ $(l = 1, \\dots , L)$. We compare the root Euclidean distance for different method settings.", out.width='80%', fig.asp=0.6, fig.align='center'} -->
-<!-- knitr::include_graphics("images/Root_Euclidean_plot.jpeg") -->
-<!-- ``` -->
-<!-- ```{r LogEuclid,echo=F, fig.cap="Boxplot of **log Euclidean** distance $d_{L}( \\Sigma_{True}, \\Sigma_{Est})$ across  $50$ replicates for $\\Sigma_{\\Phi} = \\Phi \\Phi^{T}$ and $\\Sigma_{l}$ $(l = 1, \\dots , L)$. We compare the log Euclidean distance for different method settings.", out.width='80%', fig.asp=0.6, fig.align='center'} -->
-<!-- knitr::include_graphics("images/Log_Euclidean_plot.jpeg") -->
-<!-- ``` -->
-<!-- ```{r ReiEuclid,echo=F, fig.cap="Boxplot of **Riemanian** distance $d_{R}( \\Sigma_{True}, \\Sigma_{Est})$ across  $50$ replicates for $\\Sigma_{\\Phi} = \\Phi \\Phi^{T}$ and $\\Sigma_{l}$ $(l = 1, \\dots , L)$. We compare the Riemanian distance for different method settings.", out.width='80%', fig.asp=0.6, fig.align='center'} -->
-<!-- knitr::include_graphics("images/Rei_Euclidean_plot.jpeg") -->
-<!-- ``` -->
 </div>
 <div id="estimation-of-latent-factors" class="section level3 hasAnchor" number="2.2.2">
 <h3><span class="header-section-number">B.2.2</span> Estimation of latent factors<a href="simulation.html#estimation-of-latent-factors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We follow same procedure from section 3.3 of <span class="citation">De Vito et al. (<a href="#ref-de2018bayesian" role="doc-biblioref">2021</a>)</span> to estimate shared and cluster specific number of factors i.e. <span class="math inline">\(K\)</span> and <span class="math inline">\(K_{c}\)</span> <span class="math inline">\((c=1,2, \dots C)\)</span>. Figure <a href="simulation.html#fig:factor1">B.2</a> shows shared and cluster specfic estimated factor loadings accross <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(5\)</span> different methods. Figure <a href="simulation.html#fig:factor2">B.3</a> shows the median estimate of shared and cluster specfic factor loadings for <span class="math inline">\(5\)</span> different methods. From both figures one can observe that spatial settings are estimating the loadings more precisely than the non-spatial settings.</p>
+<p>We follow same procedure from section 3.3 of <span class="citation">De Vito et al. (<a href="#ref-de2018bayesian" role="doc-biblioref">2021</a>)</span> to estimate shared and cluster specific number of factors i.e. <span class="math inline">\(K\)</span> and <span class="math inline">\(K_{c}\)</span> <span class="math inline">\((c=1,2, \dots C)\)</span>. Figure <a href="simulation.html#fig:factor1">B.3</a> shows shared and cluster specfic estimated factor loadings accross <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(5\)</span> different methods. Figure <a href="simulation.html#fig:factor2">B.4</a> shows the median estimate of shared and cluster specfic factor loadings for <span class="math inline">\(5\)</span> different methods. From both figures one can observe that spatial settings are estimating the loadings more precisely than the non-spatial settings.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:factor1"></span>
 <img src="images/Loading_Dimension_plot.jpeg" alt="Estimated dimension of factor loadings for shared and cluster specific cases accross $50$ replicates. Black solid line denotes the true dimensions." width="80%" />
 <p class="caption">
-Figure B.2: Estimated dimension of factor loadings for shared and cluster specific cases accross <span class="math inline">\(50\)</span> replicates. Black solid line denotes the true dimensions.
+Figure B.3: Estimated dimension of factor loadings for shared and cluster specific cases accross <span class="math inline">\(50\)</span> replicates. Black solid line denotes the true dimensions.
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:factor2"></span>
 <img src="images/Median_Loading_plot.jpeg" alt="Estimated Factor loadings with credible intervals." width="80%" />
 <p class="caption">
-Figure B.3: Estimated Factor loadings with credible intervals.
+Figure B.4: Estimated Factor loadings with credible intervals.
 </p>
 </div>
 </div>
@@ -430,27 +465,26 @@ Figure B.3: Estimated Factor loadings with credible intervals.
 <p><strong>Simulation design</strong>:
 We consider the same simulation design, comparative models and metrics for comparison. Now, we generate the from <span class="math inline">\(\text NS_{\text P}\)</span> model where we do not consider any spatial correlation. We model the spatial parameter with a multi-variate normal distribution with mean <span class="math inline">\(0\)</span> and identity as covariance matrix. We generate the data with no spatial correlation model <span class="math inline">\(\text NS_{\text P}\)</span> and fit all the comparative models as mentioned in Table <a href="simulation.html#tab:differentmodeloverview">B.2</a>. We summarize our results based on <span class="math inline">\(50\)</span> replicated simulation study w.r.t co-expression estimation and network recovery.</p>
 <p><strong>Co-expression estimation:</strong>
-We display the boxplot of RV coefficients for shared (<span class="math inline">\(\bf G_{s}\)</span>) and cluster-specific (<span class="math inline">\(\bf G_{c}\)</span>, <span class="math inline">\(c=1, \dots, C\)</span>) covariance matrices in Figure <a href="simulation.html#fig:nullsimulationRVAUC">B.4</a>A across 3 comparative models in Table <a href="simulation.html#tab:differentmodeloverview">B.2</a>. Based on RV coefficients, the highest level of precision in estimation is obtained for the non-spatial setting in (IV) i.e. <span class="math inline">\(\text NS_{\text P}\)</span>. For spatial settings, we do not observe a significant loss in estimation accuracy. For example, we only loose 1.3% accuracy in estimation for spatial settings with the SpaceX method in case of the shared network. A similar inference can be drawn based on different norm measures (Euclidean, log-Euclidean, root-Euclidean, Riemannian as defined in Table <a href="simulation.html#tab:Normtable">B.3</a> as provided in Figure <a href="simulation.html#fig:nullsimulationnorm">B.5</a> (in clock-wise manner).</p>
-<p><strong>Network recovery:</strong> AUC based comparisons for shared and cluster specific networks are shown in Figure <a href="simulation.html#fig:nullsimulationRVAUC">B.4</a>B. The Figure leads us to infer that no significant reduction in network recovery while comparing the spatial and non-spatial settings while data is generated without spatial correlation.</p>
+We display the boxplot of RV coefficients for shared (<span class="math inline">\(\bf G_{s}\)</span>) and cluster-specific (<span class="math inline">\(\bf G_{c}\)</span>, <span class="math inline">\(c=1, \dots, C\)</span>) covariance matrices in Figure <a href="simulation.html#fig:nullsimulationRVAUC">B.5</a>A across 3 comparative models in Table <a href="simulation.html#tab:differentmodeloverview">B.2</a>. Based on RV coefficients, the highest level of precision in estimation is obtained for the non-spatial setting in (IV) i.e. <span class="math inline">\(\text NS_{\text P}\)</span>. For spatial settings, we do not observe a significant loss in estimation accuracy. For example, we only loose 1.3% accuracy in estimation for spatial settings with the SpaceX method in case of the shared network. A similar inference can be drawn based on different norm measures (Euclidean, log-Euclidean, root-Euclidean, Riemannian as defined in Table <a href="simulation.html#tab:Normtable">B.3</a> as provided in Figure <a href="simulation.html#fig:nullsimulationnorm">B.6</a> (in clock-wise manner).</p>
+<p><strong>Network recovery:</strong> AUC based comparisons for shared and cluster specific networks are shown in Figure <a href="simulation.html#fig:nullsimulationRVAUC">B.5</a>B. The Figure leads us to infer that no significant reduction in network recovery while comparing the spatial and non-spatial settings while data is generated without spatial correlation.</p>
 <p><strong>In summary</strong>, we do not observe a significant loss in precision while applying the SpaceX model to the simulated data without any spatial correlation.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:nullsimulationRVAUC"></span>
-<img src="images/Null_sim_RV_ROC.jpg" alt=" **Accuracy comparison of different methodological settings in estimation and recovery of gene co-expression networks in simulation study while the data is generated without any spatial correlation. A)** The RV coefficient measures the distance between the true and estimated networks. In the left panel, we have boxplot of RV coefficients across $50$ replicates for shared and cluster-specific networks. We compare the RV coefficients for 3 different methods (I) SpaceX, (IV) $\text NS_{\text P}$ ($\rho = 0$) and (V) $\text NS_{\text G}$ (the PMM and spatial informations are not taken under consideration). **B) In the right panel**, we use AUC metric as a measure of network recovery. The Figure represents ROC curves with color-coded AUC values of networks for different settings except for $\text NS_{\text G}$ method." width="6342" />
+<img src="images/Null_sim_RV_ROC.jpeg" alt=" **Accuracy comparison of different methodological settings in estimation and recovery of gene co-expression networks in simulation study while the data is generated without any spatial correlation. A)** The RV coefficient measures the distance between the true and estimated networks. In the left panel, we have boxplot of RV coefficients across $50$ replicates for shared and cluster-specific networks. We compare the RV coefficients for 3 different methods (I) SpaceX, (IV) $\text NS_{\text P}$ ($\rho = 0$) and (V) $\text NS_{\text G}$ (the PMM and spatial informations are not taken under consideration). **B) In the right panel**, we use AUC metric as a measure of network recovery. The Figure represents ROC curves with color-coded AUC values of networks for different settings except for $\text NS_{\text G}$ method." width="6342" />
 <p class="caption">
-Figure B.4:  <strong>Accuracy comparison of different methodological settings in estimation and recovery of gene co-expression networks in simulation study while the data is generated without any spatial correlation. A)</strong> The RV coefficient measures the distance between the true and estimated networks. In the left panel, we have boxplot of RV coefficients across <span class="math inline">\(50\)</span> replicates for shared and cluster-specific networks. We compare the RV coefficients for 3 different methods (I) SpaceX, (IV) <span class="math inline">\(\text NS_{\text P}\)</span> (<span class="math inline">\(\rho = 0\)</span>) and (V) <span class="math inline">\(\text NS_{\text G}\)</span> (the PMM and spatial informations are not taken under consideration). <strong>B) In the right panel</strong>, we use AUC metric as a measure of network recovery. The Figure represents ROC curves with color-coded AUC values of networks for different settings except for <span class="math inline">\(\text NS_{\text G}\)</span> method.
+Figure B.5:  <strong>Accuracy comparison of different methodological settings in estimation and recovery of gene co-expression networks in simulation study while the data is generated without any spatial correlation. A)</strong> The RV coefficient measures the distance between the true and estimated networks. In the left panel, we have boxplot of RV coefficients across <span class="math inline">\(50\)</span> replicates for shared and cluster-specific networks. We compare the RV coefficients for 3 different methods (I) SpaceX, (IV) <span class="math inline">\(\text NS_{\text P}\)</span> (<span class="math inline">\(\rho = 0\)</span>) and (V) <span class="math inline">\(\text NS_{\text G}\)</span> (the PMM and spatial informations are not taken under consideration). <strong>B) In the right panel</strong>, we use AUC metric as a measure of network recovery. The Figure represents ROC curves with color-coded AUC values of networks for different settings except for <span class="math inline">\(\text NS_{\text G}\)</span> method.
 </p>
 </div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:nullsimulationnorm"></span>
-<img src="images/Null_sim_norm.jpg" alt=" **Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated without any spatial correlation**. Boxplot of Euclidean, log-Euclidean, root-Euclidean, Riemannian distances (Figure A, B, C and D respectively) across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We provide the definitions of all the norms in Table \@ref(tab:Normtable) and compare the distances for different methodological settings." width="5161" />
+<img src="images/Null_sim_norm.jpeg" alt=" **Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated without any spatial correlation**. Boxplot of Euclidean, log-Euclidean, root-Euclidean, Riemannian distances (Figure A, B, C and D respectively) across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We provide the definitions of all the norms in Table B.3 and compare the distances for different methodological settings." width="1500" />
 <p class="caption">
-Figure B.5:  <strong>Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated without any spatial correlation</strong>. Boxplot of Euclidean, log-Euclidean, root-Euclidean, Riemannian distances (Figure A, B, C and D respectively) across <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{l}\)</span> <span class="math inline">\((l = 1, \dots , L)\)</span>. We provide the definitions of all the norms in Table <a href="simulation.html#tab:Normtable">B.3</a> and compare the distances for different methodological settings.
+Figure B.6:  <strong>Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated without any spatial correlation</strong>. Boxplot of Euclidean, log-Euclidean, root-Euclidean, Riemannian distances (Figure A, B, C and D respectively) across <span class="math inline">\(50\)</span> replicates for <span class="math inline">\(\Sigma_{\Phi} = \Phi \Phi^{T}\)</span> and <span class="math inline">\(\Sigma_{l}\)</span> <span class="math inline">\((l = 1, \dots , L)\)</span>. We provide the definitions of all the norms in Table B.3 and compare the distances for different methodological settings.
 </p>
 </div>
-<!-- \textbf{Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated without any spatial correlation}. Boxplot of Euclidean, log-Euclidean, root-Euclidean, Riemannian distances (Figure A, B, C and D respectively) across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We provide the definitions of all the norms in Table \eqref{Norm_table} and compare the distances for different methodological settings. -->
 </div>
 <div id="hub-gene-detection-based-simulation" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">B.4</span> Hub gene detection based simulation<a href="simulation.html#hub-gene-detection-based-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Given the lack of ground truth for real data, we used a simulation study mimicking the real data structure, to evaluate the accuracy of the SpaceX method to recover true hub genes. To this end, we generate the data consisting of <span class="math inline">\(160\)</span> genes and <span class="math inline">\(5000\)</span> locations with <span class="math inline">\(7\)</span> clusters; additional design parameters and details about the simulation settings are provided in Section 3 of the paper. Next, we apply our SpaceX model to the simulated data to estimate the hub genes for each of the <span class="math inline">\(7\)</span> spatial clusters. We classify the hub gene into two categories: one with more than 40% connectivity (named “High”) and another with less than 40% connectivity (named “Low”). We choose this cut-off based on degree connectivity we found in the real data example (Section 4). Table B.4 shows the percentage of hub gene recovered for each cluster by setting <span class="math inline">\(3\)</span> different values of the spatial correlation parameter: <span class="math inline">\(\rho = 0.2, 0.15\)</span> and <span class="math inline">\(0.1\)</span> corresponding to low, medium and high levels of spatial correlation. The denominator of recovery rate is the total number of hub genes calculated from the true simulation settings whereas the numerator denotes the estimated number of hub genes obtained from the SpaceX method. From Table B.4, we observe that the percentage hub gene recovery increases with an increase as the level of spatial correlations increase <span class="math inline">\(\rho\)</span> and size of the cluster. For example, cluster 5 (size = 1700) has the following recovery rates 97.5% , 95.2%, 92.3% for highly connected hub genes corresponding to different level of spatial correlations i.e. <span class="math inline">\(\rho = 0.2,0.15\)</span> and <span class="math inline">\(0.1\)</span> respectively. The recovery rates are 97.5%, 93.2%, 90.3% for cluster 5, 4 and 1 respectively with different cluster sizes (<span class="math inline">\(N_{5}=1700\)</span>, <span class="math inline">\(N_{4}=1000\)</span>, <span class="math inline">\(N_{1}=700\)</span>). As expected, the recovery rate of the hub genes with higher connectivity is more than in the ones with low connectivity.</p>
-<p><img src="images/Table_6.jpg" width="110%" style="display: block; margin: auto;" /></p>
+<p><img src="images/Table_6.jpeg" width="110%" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

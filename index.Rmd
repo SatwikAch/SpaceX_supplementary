@@ -19,8 +19,8 @@ The spatial transcriptomics method depicts the positioning of a single cell on a
 This is a supplementary file of the paper named SpaceX: Gene Co-expression Network Estimation in Spatial Transcriptomics. The sectional contents of the supplementary file is mentioned below. 
 
 1. We start with a detailed description of the methodology in section \@ref(method). 
-2. In section \@ref(simulation), further details of simulation study have been discussed. 
-3. Eploratory analysis and more findings of real data analysis have been laid out in section \@ref(realdata). 
-4. Finally, we discuss the detailed steps for implementation of the SpaceX package in section \@ref(ImplementSpaceX). 
+2. In section \@ref(simulation), further details of simulation study have been discussed.
+3. Eploratory analysis and more findings of real data analysis have been laid out in section \@ref(realdata).
+4. Finally, we discuss the detailed steps for implementation of the SpaceX package in section \@ref(ImplementSpaceX).
 
 

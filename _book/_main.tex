@@ -33,14 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics},
-  pdfauthor={Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -125,10 +117,18 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics},
+  pdfauthor={Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Supplementary Materials for Gene Co-expression Network Estimation for Spatial Transcriptomics}
 \author{Satwik Acharyya, Xiang Zhou, Veera Baladandayuthapani}
-\date{2022-05-19}
+\date{2022-08-14}
 
 \begin{document}
 \maketitle
@@ -542,11 +542,11 @@ We display the boxplot of RV coefficients for shared (\(\bf G_{s}\)) and cluster
 
 \begin{figure}
 
-{\centering \includegraphics[width=143.36in]{images/Null_sim_norm} 
+{\centering \includegraphics[width=41.67in]{images/Null_sim_norm} 
 
 }
 
-\caption{ **Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated without any spatial correlation**. Boxplot of Euclidean, log-Euclidean, root-Euclidean, Riemannian distances (Figure A, B, C and D respectively) across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We provide the definitions of all the norms in Table \\ref{tab:Normtable} and compare the distances for different methodological settings.}\label{fig:nullsimulationnorm}
+\caption{ **Comparison of different methods based on several norms for estimation of gene co-expression in simulation study while the data is generated without any spatial correlation**. Boxplot of Euclidean, log-Euclidean, root-Euclidean, Riemannian distances (Figure A, B, C and D respectively) across  $50$ replicates for $\Sigma_{\Phi} = \Phi \Phi^{T}$ and $\Sigma_{l}$ $(l = 1, \dots , L)$. We provide the definitions of all the norms in Table B.3 and compare the distances for different methodological settings.}\label{fig:nullsimulationnorm}
 \end{figure}
 
 \hypertarget{hub-gene-detection-based-simulation}{%
@@ -689,6 +689,17 @@ SpaceX function extimates shared and cluster specfic gene co-expression networks
 \hypertarget{installation}{%
 \section{Installation}\label{installation}}
 
+This package requires a Fortran compiler in order to work. Here are the instructions:
+
+\begin{itemize}
+\item
+  Windows: install the Rtools package that is appropriate for your version of R
+\item
+  Mac: Go to this website and follow the instructions: (\url{https://mac.R-project.org/tools/})
+\item
+  Linux: From a terminal, do the following: \texttt{sudo\ apt\ install\ gcc}. That will bring in multiple compilers.
+\end{itemize}
+
 The package requires a dependency that is not available on CRAN. Install it with:
 
 \begin{Shaded}
@@ -719,7 +730,9 @@ The third input is \textbf{Cluster\_annotations}.
 
 The fourth input is \textbf{sPMM}. If TRUE, the code will return the estimates of sigma1\_sq and sigma2\_sq from the spatial Poisson mixed model.
 
-The fifth input is \textbf{Post\_process}. If TRUE, the code will return all the posterior samples, shared and cluster specific co-expressions. Please make sure to request for large enough memory to work with the posterior samples. Default is FALSE and the code will return the posterior samples of \(\Phi\) and \(\Psi^c\) (based on definition in equation 1 of the SpaceX paper) only.
+The fifth input is \textbf{Post\_process}. If FALSE, the code will return the posterior samples of \(\Phi\) and \(\Psi^c\) (based on definition in equation 1 of the SpaceX paper) only. Default is TRUE and the code will return all the posterior samples, shared and cluster specific co-expressions.
+
+The final input is \textbf{numCore}. The number of requested cores for parallel computing and default is set to be 1.
 
 \hypertarget{output}{%
 \section{Output}\label{output}}
@@ -758,7 +771,7 @@ Next, we'll apply the SpaceX method on the Breast cancer dataset.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Application to SpaceX method}
-\NormalTok{BC\_fit }\OtherTok{\textless{}{-}} \FunctionTok{SpaceX}\NormalTok{(BC\_count,BC\_loc[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{],BC\_loc[,}\DecValTok{3}\NormalTok{],}\AttributeTok{sPMM=}\ConstantTok{FALSE}\NormalTok{,}\AttributeTok{Post\_process =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{BC\_fit }\OtherTok{\textless{}{-}} \FunctionTok{SpaceX}\NormalTok{(BC\_count,BC\_loc[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{],BC\_loc[,}\DecValTok{3}\NormalTok{],}\AttributeTok{sPMM=}\ConstantTok{FALSE}\NormalTok{,}\AttributeTok{Post\_process =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{numCore=}\DecValTok{2}\NormalTok{)}
 
 \CommentTok{\# Shared\_network :: Shared co{-}expression matrix}
 \CommentTok{\# Cluster\_network :: Cluster specific co{-}expression matrices}
